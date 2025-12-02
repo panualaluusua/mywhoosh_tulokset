@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data files (Sensitive rider info)
+all_results.json
+results.txt
+tulokset.txt
+results.md
+*.csv
+debug_*.json
+debug_*.txt
+test_*.json
+
+# Generated content
+kuvat/
+debug_error.png
+
+# Environment variables
+.env
+
+# OS generated files
+Thumbs.db
+Desktop.ini

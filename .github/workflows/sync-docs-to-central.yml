@@ -1,0 +1,21 @@
+# Sync project documentation to central repository
+name: Sync Docs to Central
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'docs/**'
+      - '.github/workflows/sync-docs-to-central.yml'
+
+jobs:
+  sync-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Sync docs to central repo
+        run: |
+          echo "Syncing docs..."
+          # Add your sync logic here (e.g., rsync, API call, etc.)
