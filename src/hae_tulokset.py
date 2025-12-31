@@ -6,16 +6,53 @@ from playwright.async_api import async_playwright
 
 # Global variable to store the captured data
 captured_data = None
+event_details = None
 
 async def handle_response(response):
-    global captured_data
-    # Check if this is the API call we are looking for
+    global captured_data, event_details
+    
+    # Capture Event Details (Prize Money)
+    if "/public/event/" in response.url and "getEventResult" not in response.url and response.status == 200:
+        try:
+            json_data = await response.json()
+            # Verify it has prizeMoney
+            if "data" in json_data and "prizeMoney" in json_data["data"]:
+                print(f"Intercepted Event Details from: {response.url}")
+                event_details = json_data
+                with open('event_details.json', 'w', encoding='utf-8') as f:
+                    json.dump(event_details, f, indent=4)
+                print("Saved event_details.json")
+        except Exception as e:
+            pass
+
+    # Check if this is the API call we are looking for (Results)
     if "getEventResult" in response.url and response.status == 200:
         print(f"Intercepted API response from: {response.url}")
         try:
             json_data = await response.json()
-            captured_data = json_data
-            print("Successfully captured JSON data.")
+            
+            # Check if this is main results or segment results
+            # Segment results usually have 'gateType' in the first record
+            is_segment = False
+            if "data" in json_data and "resultData" in json_data["data"]:
+                res_data = json_data["data"]["resultData"]
+                if len(res_data) > 0 and "gateType" in res_data[0]:
+                    g_type = res_data[0]["gateType"]
+                    if g_type == 9:
+                        print("Captured SPRINT results.")
+                        with open('sprint_results.json', 'w', encoding='utf-8') as f:
+                            json.dump(json_data, f, indent=4)
+                        is_segment = True
+                    elif g_type == 4:
+                        print("Captured KOM results.")
+                        with open('kom_results.json', 'w', encoding='utf-8') as f:
+                            json.dump(json_data, f, indent=4)
+                        is_segment = True
+
+            if not is_segment:
+                captured_data = json_data
+                print("Successfully captured MAIN JSON data.")
+                
         except Exception as e:
             print(f"Failed to parse JSON: {e}")
 
@@ -33,6 +70,35 @@ async def run(url, show_all=False):
 
         # Wait for data to be captured (timeout after 30s)
         print("Waiting for API response...")
+        
+        # Wait for initial load
+        await page.wait_for_timeout(5000)
+        
+        # Try to find and click tabs to fetch Segment Data
+        print("Looking for Sprint/KOM tabs...")
+        try:
+            # Sprint
+            sprint_tab = page.get_by_text("Sprint", exact=False).first
+            if await sprint_tab.count() > 0:
+                print("Clicking Sprint tab...")
+                await sprint_tab.click()
+                await page.wait_for_timeout(3000)
+            
+            # KOM
+            kom_tab = page.get_by_text("KOM", exact=False).first
+            if await kom_tab.count() == 0:
+                kom_tab = page.get_by_text("King of the Mountain", exact=False).first
+            
+            if await kom_tab.count() > 0:
+                print("Clicking KOM tab...")
+                await kom_tab.click()
+                await page.wait_for_timeout(3000)
+            else:
+                print("KOM tab not found.")
+                
+        except Exception as e:
+            print(f"Error interacting with tabs: {e}")
+
         for _ in range(60):
             if captured_data:
                 break
@@ -108,8 +174,23 @@ async def run(url, show_all=False):
         # Sort by Category and Time
         df_all = df_all.sort_values(by=['category', 'time_ms'])
         
-        # Calculate Rank within Category
-        df_all['calculated_rank'] = df_all.groupby('category').cumcount() + 1
+        # Calculate Rank within Category, EXCLUDING ANL riders
+        # First, identify valid riders
+        # selectionStatus might be in 'raw' dict inside the row, but we didn't extract it to top level col yet.
+        # Let's extract it for easier filtering.
+        df_all['selection_status'] = df_all['raw'].apply(lambda x: x.get('selectionStatus'))
+        
+        # Create a mask for valid riders (not ANL)
+        valid_mask = df_all['selection_status'] != 'ANL'
+        
+        # Calculate rank only for valid riders
+        df_all.loc[valid_mask, 'calculated_rank'] = df_all[valid_mask].groupby('category').cumcount() + 1
+        
+        # Assign 0 or similar to ANL riders
+        df_all.loc[~valid_mask, 'calculated_rank'] = 0
+        
+        # Fill NaN if any (shouldn't be for valid rows)
+        df_all['calculated_rank'] = df_all['calculated_rank'].fillna(0).astype(int)
         
         # Save all results to JSON as requested
         print("Saving all results to all_results.json...")
@@ -259,8 +340,28 @@ if __name__ == "__main__":
             
             # Generate text report
             print("\nLuodaan tulosraportti (tulokset.txt)...")
-            from palkintolaskuri import save_results_report
+            from palkintolaskuri import save_results_report, tallenna_palkintodata
             save_results_report("all_results.json", "tulokset.txt")
+            
+            # Save intermediate prize data
+            print("\nLasketaan ja tallennetaan palkintodata (palkintodata.json)...")
+            
+            # Extract EventID
+            event_id = "Unknown"
+            if data and len(data) > 0:
+                # data contains rider dicts, original json is in 'raw'
+                if 'raw' in data[0]:
+                    event_id = data[0]['raw'].get('eventId', 'Unknown')
+                else:
+                    # Fallback if structure is different
+                    event_id = data[0].get('eventId', 'Unknown')
+            
+            tallenna_palkintodata("all_results.json", "palkintodata.json", race_name, race_date, event_id)
+            
+            print("\nPalkintodata valmis. Aja 'python src/paivita_varasto.py' tallentaaksesi palkinnot tietovarastoon.")
+            
+        except Exception as e:
+            print(f"Virhe grafiikoiden/raportin/palkintodatan luonnissa: {e}")
             
         except Exception as e:
             print(f"Virhe grafiikoiden/raportin luonnissa: {e}")
@@ -269,4 +370,5 @@ if __name__ == "__main__":
         print(f"\nVirhe ohjelman suorituksessa: {e}")
 
     print("\nValmis!")
-    input("Paina Enter sulkeaksesi ikkunan...")
+    print("\nValmis!")
+    # input("Paina Enter sulkeaksesi ikkunan...") # Poistettu, jotta bat-tiedosto jatkaa heti

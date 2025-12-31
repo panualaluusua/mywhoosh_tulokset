@@ -2,25 +2,74 @@ import pandas as pd
 import json
 import os
 
-# Palkintotaulukot (Samat kuin aiemmin)
-# Palkintotaulukot
-PRIZES_INDIVIDUAL = {
-    1: [2170, 1630, 1360, 820, 540, 490, 440, 330, 240, 140], # Category 1
-    2: [1310, 980, 820, 490, 330, 290, 260, 200, 150, 80],    # Category 2
-    3: [780, 590, 490, 290, 196, 180, 160, 120, 90, 50],      # Category 3
-    4: [470, 350, 290, 180, 120, 110, 90, 80, 50, 30],        # Category 4
-    5: [280, 200, 180, 100, 70, 65, 55, 40, 30, 20],          # Category 5
-    6: [170, 130, 110, 60, 45, 40, 35, 30, 20, 10],           # Category 6
-}
+# Palkintotaulukot (Dynaaminen lataus)
+PRIZES_INDIVIDUAL = {}
+PRIZES_TEAM = {}
+PRIZES_SPRINT = {}
+PRIZES_KOM = {}
+PRIZES_SEGMENT = {}
 
-PRIZES_TEAM = {
-    1: [9520, 6800, 5440, 3270, 2720, 2180, 1360], # Category 1 Teams
-    2: [5710, 4080, 3270, 1960, 1630, 1310, 820],  # Category 2 Teams
-    3: [3430, 2450, 1960, 1180, 980, 780, 490],    # Category 3 Teams
-    4: [2000, 1470, 1200, 700, 590, 470, 295],     # Category 4 Teams
-    5: [1230, 890, 710, 430, 350, 280, 180],       # Category 5 Teams
-    6: [740, 530, 430, 250, 210, 170, 110],        # Category 6 Teams
-}
+def load_dynamic_prizes(event_details_file="event_details.json"):
+    """
+    Lataa palkintotiedot event_details.json -tiedostosta.
+    Muuntaa AED -> USD (tai käyttää conversionRatea).
+    """
+    global PRIZES_INDIVIDUAL, PRIZES_TEAM, PRIZES_SPRINT, PRIZES_KOM, PRIZES_SEGMENT
+    
+    if not os.path.exists(event_details_file):
+        print(f"Varoitus: {event_details_file} puuttuu. Käytetään tyhjiä palkintotaulukoita.")
+        return
+
+    try:
+        with open(event_details_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            
+        prize_data = data.get('data', {}).get('prizeMoney', {})
+        if not prize_data:
+            print("Varoitus: Palkintodataa ei löytynyt JSONista.")
+            return
+
+        rate = prize_data.get('conversionRate', 1.0)
+        categories = prize_data.get('categories', {})
+        
+        print(f"Ladataan palkintoja. Valuuttakurssi: {rate}")
+        
+        PRIZES_INDIVIDUAL = {}
+        PRIZES_TEAM = {}
+        PRIZES_SPRINT = {}
+        PRIZES_KOM = {}
+        
+        for cat_id_str, cat_data in categories.items():
+            cat_id = int(cat_id_str)
+            
+            # Individual
+            indiv_raw = cat_data.get('individual', {}).get('prizes', [])
+            PRIZES_INDIVIDUAL[cat_id] = [round(p / rate) for p in indiv_raw]
+            
+            # Team
+            team_raw = cat_data.get('teams', {}).get('prizes', [])
+            PRIZES_TEAM[cat_id] = [round(p / rate) for p in team_raw]
+
+            # Sprint (gateType 9)
+            sprint_raw = cat_data.get('9', {}).get('prizes', [])
+            PRIZES_SPRINT[cat_id] = [round(p / rate) for p in sprint_raw]
+
+            # KOM (gateType 4)
+            kom_raw = cat_data.get('4', {}).get('prizes', [])
+            PRIZES_KOM[cat_id] = [round(p / rate) for p in kom_raw]
+
+            # Segment Winners (gateType 'segments')
+            seg_raw = cat_data.get('segments', {}).get('prizes', [])
+            PRIZES_SEGMENT[cat_id] = [round(p / rate) for p in seg_raw]
+            
+        print("Palkintotaulukot päivitetty dynaamisesti (Indiv, Team, Sprint, KOM, Segments).")
+        
+    except Exception as e:
+        print(f"Virhe palkintojen latauksessa: {e}")
+
+# Alusta tyhjät, täytetään myöhemmin
+PRIZES_INDIVIDUAL = {}
+PRIZES_TEAM = {}
 
 def get_all_prizes(json_file="all_results.json", is_final=False):
     """
@@ -36,6 +85,9 @@ def get_all_prizes(json_file="all_results.json", is_final=False):
     """
     if not os.path.exists(json_file):
         return {}, {}
+
+    # Lataa dynaamiset palkinnot
+    load_dynamic_prizes()
 
     with open(json_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -143,6 +195,7 @@ def get_all_prizes(json_file="all_results.json", is_final=False):
                     prize_map[name] += prizes[rank-1]
 
         # B. Tiimipalkinto & Sijoitus
+        # ... (rest is same) ...
         # Hae sijoitus (vaikka olisi ANL, sijoitus on olemassa jos tiimi pärjäsi)
         if t_name_clean in team_rank_by_name:
             team_rank_map[name] = team_rank_by_name[t_name_clean]
@@ -153,7 +206,234 @@ def get_all_prizes(json_file="all_results.json", is_final=False):
 
     return prize_map, team_rank_map
 
-    return prize_map, team_rank_map
+def laske_palkinto_erittely(json_file="all_results.json"):
+    """
+    Laskee palkinnot eritellen henkilökohtaisen ja tiimiosuuden.
+    Palauttaa listan sanakirjoja:
+    [
+      {
+        "nimi": "Matti",
+        "tiimi": "Team",
+        "kategoria": 1,
+        "individual": 100,
+        "team_share": 50,
+        "total": 150
+      },
+      ...
+    ]
+    """
+    if not os.path.exists(json_file):
+        return []
+
+    # Lataa dynaamiset palkinnot
+    load_dynamic_prizes()
+
+    with open(json_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    # --- 1. LASKETAAN TIIMIPOTIT (KOKO DATA) ---
+    team_prize_share = {}    # { "Clean Team Name": share_per_member }
+    team_ranks = {}          # { "Clean Team Name": rank }
+    
+    df_all = pd.DataFrame(data)
+    required_cols = ['categoryId', 'teamName', 'finishedTime', 'selectionStatus', 'userFullName']
+    for col in required_cols:
+        if col not in df_all.columns:
+            df_all[col] = None
+    df_all['clean_team_name'] = df_all['teamName'].fillna("").astype(str).str.strip()
+
+    for cat_id, cat_group in df_all.groupby('categoryId'):
+        if cat_id not in PRIZES_TEAM:
+            continue
+        
+        team_results = []
+        for team_name, team_group in cat_group.groupby('clean_team_name'):
+            if team_name in ["", "-", "Individual", "None", "nan"]: 
+                continue
+            valid_times = team_group[
+                (team_group['finishedTime'] > 0) & 
+                (team_group['selectionStatus'] != "ANL")
+            ].copy()
+            valid_times = valid_times.sort_values('finishedTime')
+            
+            if len(valid_times) >= 3:
+                top3 = valid_times.head(3)
+                total_time = top3['finishedTime'].sum()
+                team_results.append({
+                    'team': team_name, 
+                    'total_time_ms': total_time,
+                    'total_members': len(team_group)
+                })
+        
+        team_results.sort(key=lambda x: x['total_time_ms'])
+        prizes = PRIZES_TEAM[cat_id]
+        
+        for i, res in enumerate(team_results):
+            rank = i + 1
+            team_ranks[res['team']] = rank
+            
+            if rank <= len(prizes):
+                total_prize = prizes[rank-1]
+                if res['total_members'] > 0:
+                    share = round(total_prize / res['total_members'], 2)
+                    team_prize_share[res['team']] = share
+
+    # --- 1.5 LASKETAAN SPRINT & KOM PALKINNOT ---
+    # { userId: {'amount': 0, 'types': []} }
+    extra_prizes_data = {} 
+    
+    def add_extra_prize(uid, amount, prize_type):
+        if uid not in extra_prizes_data:
+            extra_prizes_data[uid] = {'amount': 0, 'types': []}
+        extra_prizes_data[uid]['amount'] += amount
+        extra_prizes_data[uid]['types'].append(prize_type)
+
+    # Create a set of valid user IDs (finishers) from the main data
+    valid_user_ids = set(r.get('userId') for r in data if r.get('result_status') != 'DNF') 
+    
+    def process_segment_file(filename, overall_prize_table, segment_prize_table, type_overall, type_segment):
+        if not os.path.exists(filename):
+            return
+        
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                seg_data = json.load(f)
+            
+            if "data" in seg_data and "resultData" in seg_data["data"]:
+                results = seg_data["data"]["resultData"]
+                
+                # Group by Category
+                by_cat = {}
+                for r in results:
+                    c = r.get('categoryId')
+                    if c not in by_cat: by_cat[c] = []
+                    by_cat[c].append(r)
+                    
+                for cat_id, cat_results in by_cat.items():
+                    # 1. OVERALL (Points based)
+                    if cat_id in overall_prize_table:
+                        # Sum points per user
+                        user_points = {}
+                        for r in cat_results:
+                            uid = r.get('userId')
+                            # Filter by valid finishers
+                            if uid not in valid_user_ids:
+                                continue
+                                
+                            pts = r.get('points', 0)
+                            if uid:
+                                user_points[uid] = user_points.get(uid, 0) + pts
+                        
+                        # Sort by points (desc)
+                        sorted_users = sorted(user_points.items(), key=lambda x: x[1], reverse=True)
+                        
+                        prizes = overall_prize_table[cat_id]
+                        for i, (uid, pts) in enumerate(sorted_users):
+                            rank = i + 1
+                            if rank <= len(prizes):
+                                amount = prizes[rank-1]
+                                add_extra_prize(uid, amount, type_overall)
+
+                    # 2. SEGMENT WINNERS (Time based per gate)
+                    if cat_id in segment_prize_table:
+                        # Group by gateId
+                        by_gate = {}
+                        for r in cat_results:
+                            gid = r.get('gateId')
+                            if gid not in by_gate: by_gate[gid] = []
+                            by_gate[gid].append(r)
+                            
+                        seg_prizes = segment_prize_table[cat_id]
+                        
+                        for gid, gate_results in by_gate.items():
+                            # Filter valid times and sort by finishedTimeOverall (asc) -> First Across Line
+                            # AND filter by valid finishers
+                            valid = [r for r in gate_results if r.get('finishedTimeOverall', 0) > 0 and r.get('userId') in valid_user_ids]
+                            valid.sort(key=lambda x: x.get('finishedTimeOverall', 9999999999))
+                            
+                            for i, r in enumerate(valid):
+                                rank = i + 1
+                                if rank <= len(seg_prizes):
+                                    amount = seg_prizes[rank-1]
+                                    uid = r.get('userId')
+                                    if uid:
+                                        add_extra_prize(uid, amount, type_segment)
+
+        except Exception as e:
+            print(f"Virhe segmenttitiedoston {filename} käsittelyssä: {e}")
+
+    # process_segment_file("sprint_results.json", PRIZES_SPRINT, PRIZES_SEGMENT, "sprint_overall", "sprint_segment")
+    # process_segment_file("kom_results.json", PRIZES_KOM, PRIZES_SEGMENT, "kom_overall", "kom_segment")
+
+    # --- 2. LASKETAAN HENKILÖKOHTAISET (VAIN SUOMALAISET) ---
+    finnish_riders = [r for r in data if r.get('userCountryFlag') == 82]
+    results_list = []
+
+    for rider in finnish_riders:
+        name = rider.get('userFullName', 'Unknown')
+        cat = rider.get('categoryId', 0)
+        rank = rider.get('calculated_rank', 999)
+        status = rider.get('selectionStatus', '')
+        t_name = rider.get('teamName', '')
+        t_name_clean = str(t_name).strip() if t_name else ""
+        
+        indiv_prize = 0
+        team_share = 0
+        t_rank = team_ranks.get(t_name_clean, '-')
+        
+        if status != "ANL":
+            # Indiv
+            if cat in PRIZES_INDIVIDUAL:
+                p_list = PRIZES_INDIVIDUAL[cat]
+                if 1 <= rank <= len(p_list):
+                    indiv_prize = p_list[rank-1]
+            
+            # Team
+            if t_name_clean in team_prize_share:
+                team_share = team_prize_share[t_name_clean]
+        
+        # Extra prizes (Sprint/KOM)
+        uid = rider.get('userId')
+        extra_data = extra_prizes_data.get(uid, {'amount': 0, 'types': []})
+        extra = extra_data['amount']
+        achievements = list(set(extra_data['types'])) # Deduplicate
+        
+        if indiv_prize > 0 or team_share > 0 or extra > 0:
+            results_list.append({
+                "nimi": name,
+                "tiimi": t_name,
+                "kategoria": cat,
+                "sijoitus": rank,
+                "tiimisijoitus": t_rank,
+                "individual": indiv_prize,
+                "team_share": team_share,
+                "extra": extra,
+                "total": indiv_prize + team_share + extra,
+                "achievements": achievements
+            })
+            
+    return results_list
+
+def tallenna_palkintodata(json_file="all_results.json", output_file="palkintodata.json", race_name="", race_date="", event_id=""):
+    """
+    Laskee palkinnot ja tallentaa ne JSON-tiedostoon myöhempää käyttöä varten.
+    Tallentaa myös kisan metatiedot.
+    """
+    prizes = laske_palkinto_erittely(json_file)
+    
+    data = {
+        "meta": {
+            "race_name": race_name,
+            "race_date": race_date,
+            "event_id": event_id
+        },
+        "prizes": prizes
+    }
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+    print(f"Palkintodata tallennettu: {output_file}")
+    return data
 
 def save_results_report(json_file="all_results.json", output_file="tulokset.txt"):
     """

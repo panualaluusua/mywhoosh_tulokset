@@ -12,6 +12,8 @@ results.md
 debug_*.json
 debug_*.txt
 test_*.json
+seurattavat.txt
+palkintohistoria.csv
 
 # Generated content
 kuvat/

@@ -1,0 +1,57 @@
+{
+    "meta": {
+        "race_name": "",
+        "race_date": "",
+        "event_id": ""
+    },
+    "prizes": [
+        {
+            "nimi": "Minna Koistinen",
+            "tiimi": "FCC INDOORPHINS",
+            "kategoria": 1,
+            "sijoitus": 8,
+            "tiimisijoitus": "-",
+            "individual": 330,
+            "team_share": 0,
+            "extra": 0,
+            "total": 330,
+            "achievements": []
+        },
+        {
+            "nimi": "Jenny Ek",
+            "tiimi": "Individual",
+            "kategoria": 2,
+            "sijoitus": 8,
+            "tiimisijoitus": "-",
+            "individual": 200,
+            "team_share": 0,
+            "extra": 0,
+            "total": 200,
+            "achievements": []
+        },
+        {
+            "nimi": "Jenni Penttinen",
+            "tiimi": "Individual",
+            "kategoria": 4,
+            "sijoitus": 5,
+            "tiimisijoitus": "-",
+            "individual": 120,
+            "team_share": 0,
+            "extra": 0,
+            "total": 120,
+            "achievements": []
+        },
+        {
+            "nimi": "Katja Jaaskelainen",
+            "tiimi": "Individual",
+            "kategoria": 6,
+            "sijoitus": 10,
+            "tiimisijoitus": "-",
+            "individual": 10,
+            "team_share": 0,
+            "extra": 0,
+            "total": 10,
+            "achievements": []
+        }
+    ]
+}

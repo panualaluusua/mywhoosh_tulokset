@@ -146,6 +146,27 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         font_small = ImageFont.load_default()
         font_subtitle = ImageFont.load_default()
 
+    # Load Icons
+    try:
+        icon_sprint_jersey = Image.open(os.path.join("assets", "sprint_jersey.png")).convert("RGBA")
+        icon_kom_jersey = Image.open(os.path.join("assets", "kom_jersey.png")).convert("RGBA")
+        icon_sprint_seg = Image.open(os.path.join("assets", "sprint_icon.png")).convert("RGBA")
+        icon_kom_seg = Image.open(os.path.join("assets", "kom_icon.png")).convert("RGBA")
+        
+        # Resize icons (adjust size as needed)
+        # DOUBLED SIZES as requested
+        icon_size_large = int(60 * scale_factor) # Was 30
+        icon_size_small = int(40 * scale_factor) # Was 20
+        
+        icon_sprint_jersey = icon_sprint_jersey.resize((icon_size_large, icon_size_large), Image.Resampling.LANCZOS)
+        icon_kom_jersey = icon_kom_jersey.resize((icon_size_large, icon_size_large), Image.Resampling.LANCZOS)
+        icon_sprint_seg = icon_sprint_seg.resize((icon_size_small, icon_size_small), Image.Resampling.LANCZOS)
+        icon_kom_seg = icon_kom_seg.resize((icon_size_small, icon_size_small), Image.Resampling.LANCZOS)
+        
+    except Exception as e:
+        print(f"Warning: Could not load icons: {e}")
+        icon_sprint_jersey = None
+
     # Piirrä taustalaatikko
     overlay = Image.new('RGBA', img.size, (0,0,0,0))
     overlay_draw = ImageDraw.Draw(overlay)
@@ -291,6 +312,61 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         # Nimi (Iso)
         draw.text((COL_NAME_X, y), name, font=font_large, fill=COLOR_TEXT)
         
+        # ICONS LOGIC
+        # Load detailed prize data if available to determine icons
+        
+        # Draw icons after name
+        name_bbox = draw.textbbox((0, 0), name, font=font_large)
+        name_width = name_bbox[2] - name_bbox[0]
+        icon_x = COL_NAME_X + name_width + 15
+        
+        # Load palkintodata.json here for now (quick fix)
+        palkinto_file = "palkintodata.json"
+        
+        if False: # ICONS DISABLED
+            if os.path.exists(palkinto_file):
+                try:
+                    with open(palkinto_file, 'r', encoding='utf-8') as pf:
+                        p_data = json.load(pf)
+                        p_riders = p_data.get('prizes', [])
+                        # Find this rider
+                        p_rider = next((p for p in p_riders if p['nimi'] == name), None)
+                        if p_rider:
+                            achievements = p_rider.get('achievements', [])
+                            
+                            # OVERRIDE PRIZE WITH TOTAL FROM PALKINTODATA
+                            # This ensures the graphic matches the JSON exactly
+                            total_prize = p_rider.get('total', 0)
+                            if total_prize > 0:
+                                prize_str = f"${int(total_prize)}"
+                                # Re-draw prize with correct amount (overwrite previous if needed, but we haven't drawn it yet)
+                            
+                            # MANUAL OVERRIDE FOR ANTTI PONNI (User Request)
+                            if name.lower() == "antti ponni":
+                                achievements = ["kom_overall", "kom_segment"]
+
+                            # Draw icons based on achievements
+                            # Order: Sprint Overall, KOM Overall, Sprint Segment, KOM Segment
+                            
+                            if "sprint_overall" in achievements and icon_sprint_jersey:
+                                img.paste(icon_sprint_jersey, (int(icon_x), int(y - 5)), icon_sprint_jersey) # Moved up
+                                icon_x += icon_size_large + 5
+                                
+                            if "kom_overall" in achievements and icon_kom_jersey:
+                                img.paste(icon_kom_jersey, (int(icon_x), int(y - 5)), icon_kom_jersey) # Moved up
+                                icon_x += icon_size_large + 5
+                                
+                            if "sprint_segment" in achievements and icon_sprint_seg:
+                                img.paste(icon_sprint_seg, (int(icon_x), int(y + 10)), icon_sprint_seg) # Slightly lower
+                                icon_x += icon_size_small + 5
+                                
+                            if "kom_segment" in achievements and icon_kom_seg:
+                                img.paste(icon_kom_seg, (int(icon_x), int(y + 10)), icon_kom_seg) # Slightly lower
+                                icon_x += icon_size_small + 5
+                                    
+                except Exception:
+                    pass
+
         # Aika (Oikea tasaus)
         bbox = draw.textbbox((0, 0), time_str, font=font_med)
         w = bbox[2] - bbox[0]
@@ -307,6 +383,24 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
 
         y += current_row_height
         row_index += 1
+
+    # Disclaimer text at the bottom
+    disclaimer_text = "* Ei sis. Sprint/KOM -lisiä"
+    try:
+        font_disclaimer = ImageFont.truetype(FONT_BOLD, int(22 * scale_ratio)) # BOLD and slightly larger
+    except ImportError:
+        font_disclaimer = ImageFont.load_default()
+        
+    bbox = draw.textbbox((0, 0), disclaimer_text, font=font_disclaimer)
+    text_width = bbox[2] - bbox[0]
+    
+    # Position: Bottom right or Center? Left aligned as per previous, but brighter.
+    disclaimer_x = MARGIN_X + 20 # Indent slightly
+    disclaimer_y = max_y_scaled - 40 # Move up slightly to ensure valid padding
+    
+    # Draw with shadow for better visibility
+    draw.text((disclaimer_x + 1, disclaimer_y + 1), disclaimer_text, font=font_disclaimer, fill="#000000")
+    draw.text((disclaimer_x, disclaimer_y), disclaimer_text, font=font_disclaimer, fill="#FFFFFF") # WHITE
 
     # Tallenna
     base_filename = "tulokset_kooste"

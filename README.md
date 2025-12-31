@@ -1,37 +1,36 @@
-# MyWhoosh Tuloshaku
+# MyWhoosh Tulospalvelu
 
-Tämä ohjelma hakee MyWhoosh-kisojen tulokset, laskee sijoitukset ja suodattaa suomalaiset osallistujat.
+Työkalu MyWhoosh-kisatulosten hakemiseen, palkintojen laskemiseen ja grafiikoiden luomiseen.
 
 ## Asennus
-Varmista että Python ja tarvittavat kirjastot on asennettu:
-```bash
-pip install -r requirements.txt
-playwright install chromium
-```
+
+1.  Asenna Python (3.8+).
+2.  Asenna riippuvuudet:
+    ```bash
+    pip install -r requirements.txt
+    playwright install
+    ```
 
 ## Käyttö
-Käynnistä ohjelma tuplaklikkaamalla `hae_tulokset.py` tai komentoriviltä:
 
+Aja koko putki `run.bat` -tiedostolla:
 ```bash
-python hae_tulokset.py
+run.bat
 ```
+Tämä komentosarja:
+1.  Hakee tulokset MyWhooshista (kysyy URL/ID jos ei annettu).
+2.  Laskee palkinnot (ml. Sprint/KOM ja tiimipisteet).
+3.  Luo tulosgrafiikat `kuvat/` -kansioon.
+4.  Luo raportit `tulokset.txt` ja `palkintodata.json`.
+5.  (Valinnainen) Tallentaa palkinnot tietovarastoon (`palkintohistoria.csv`).
 
-Ohjelma kysyy:
-1.  **Tapahtuman URL tai Event ID**: (Pakollinen)
-2.  **Kisan nimi**: (Valinnainen, esim. "MYWHOOSH SUNDAY RACE")
-3.  **Kisan pvm**: (Valinnainen, esim. "1.12.2025")
-4.  **Onko kyseessä Finaali?**: (k/E) Oletus on Ei (paina Enter). Jos vastaat Kyllä, tiimipalkinnot lasketaan mukaan.
+## Rakenne
 
-Nämä tiedot tulostetaan kuviin alaotsikoksi.
-
-## Tulokset
-Ohjelma luo seuraavat tiedostot:
-1.  **kuvat/**: Kansiollinen valmiita infograafikuvia. Tärkein on `tulokset_kooste_KISAN_NIMI_PVM.png` (tai `tulokset_kooste.png` jos tietoja ei annettu).
-2.  **results.md**: Tekstimuotoinen taulukko suomalaisista.
-3.  **all_results.json**: Kaikkien osallistujien raakadata JSON-muodossa.
-
-## Tiedostot
-- `hae_tulokset.py`: Pääohjelma (hakee datan ja kutsuu grafiikkamoottoria).
-- `luo_grafiikat.py`: Grafiikkamoottori (piirtää kuvat).
-- `tuloslistapohja.jpg`: Taustakuva grafiikoille.
-- `Hae MyWhoosh Tulokset.bat`: Käynnistystiedosto.
+*   `src/`: Python-lähdekoodit.
+    *   `hae_tulokset.py`: Datan haku APIsta.
+    *   `palkintolaskuri.py`: Palkintojen laskenta.
+    *   `luo_grafiikat.py`: Kuvien generointi.
+    *   `paivita_varasto.py`: Tietokannan päivitys.
+*   `assets/`: Ikonit ja muut resurssit.
+*   `kuvat/`: Generoidut tuloskuvat.
+*   `palkintohistoria.csv`: Tietokanta palkinnoista.

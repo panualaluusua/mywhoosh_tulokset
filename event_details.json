@@ -1,0 +1,962 @@
+{
+    "error": false,
+    "code": 200,
+    "message": "Success",
+    "display": false,
+    "data": {
+        "_id": "6947cb1018c9b198410d9780",
+        "isNew": false,
+        "otp": false,
+        "team": true,
+        "teamSize": 3,
+        "display": false,
+        "display_result": true,
+        "isRecurring": false,
+        "identification": false,
+        "device": false,
+        "isCloneDailyEvent": false,
+        "apply_cap": false,
+        "result_status": "official",
+        "position": 1,
+        "geography": "UAE",
+        "event_type": "featured",
+        "event_category": "open",
+        "serverEventId": "183e8fc8-185e-42dc-9df5-3995099cb77a",
+        "name": "Sunday Race Club - Women Finals",
+        "participantsLimit": 600,
+        "gender": 1,
+        "registration_required": true,
+        "minimum_weight": 45,
+        "distance": 35,
+        "total_duration": 300,
+        "laps": 0,
+        "route": 100,
+        "route_type": 2,
+        "elevation": 712,
+        "details": "<p>Register&nbsp;for&nbsp;the&nbsp;Sunday&nbsp;Race&nbsp;Club&nbsp;Series&nbsp;-&nbsp;be&nbsp;in&nbsp;for&nbsp;a&nbsp;chance&nbsp;of&nbsp;winning&nbsp;some&nbsp;top&nbsp;prizes.&nbsp;Open&nbsp;to&nbsp;riders&nbsp;of&nbsp;all&nbsp;abilities,&nbsp;this&nbsp;racing&nbsp;series&nbsp;is&nbsp;designed&nbsp;to&nbsp;help&nbsp;you&nbsp;push&nbsp;your&nbsp;limits&nbsp;across&nbsp;a&nbsp;variety&nbsp;of&nbsp;routes&nbsp;spread&nbsp;across&nbsp;the&nbsp;MyWhoosh&nbsp;universe!</p>",
+        "datetime_epoc": 1766906700,
+        "closing_datetime_epoc": 1766631600,
+        "datetime": "2025-12-28 11:25",
+        "closing_datetime": "2025-12-25 07:00",
+        "categories": [
+            {
+                "CategoryId": 1,
+                "Label": "Category 1",
+                "StartSplineIndex": 14,
+                "SplinePath": [
+                    "1"
+                ],
+                "StartSplineDistance": 5500,
+                "TotalDistance": 35,
+                "Elevation": 712,
+                "StartCheckpointDirection": 1,
+                "RouteId": 100,
+                "StartTime": 1766908800,
+                "Display": true,
+                "time": "12:00:00",
+                "date": "2025-12-28"
+            },
+            {
+                "CategoryId": 2,
+                "Label": "Category 2",
+                "StartSplineIndex": 12,
+                "SplinePath": [
+                    "1"
+                ],
+                "StartSplineDistance": 5500,
+                "TotalDistance": 35,
+                "Elevation": 712,
+                "StartCheckpointDirection": 1,
+                "RouteId": 100,
+                "StartTime": 1766908500,
+                "Display": true,
+                "time": "11:55:00",
+                "date": "2025-12-28"
+            },
+            {
+                "CategoryId": 3,
+                "Label": "Category 3",
+                "StartSplineIndex": 9,
+                "SplinePath": [
+                    "1"
+                ],
+                "StartSplineDistance": 5500,
+                "TotalDistance": 35,
+                "Elevation": 712,
+                "StartCheckpointDirection": 1,
+                "RouteId": 100,
+                "StartTime": 1766907900,
+                "Display": true,
+                "time": "11:45:00",
+                "date": "2025-12-28"
+            },
+            {
+                "CategoryId": 4,
+                "Label": "Category 4",
+                "StartSplineIndex": 11,
+                "SplinePath": [
+                    "1"
+                ],
+                "StartSplineDistance": 5500,
+                "TotalDistance": 35,
+                "Elevation": 712,
+                "StartCheckpointDirection": 1,
+                "RouteId": 100,
+                "StartTime": 1766907600,
+                "Display": true,
+                "time": "11:40:00",
+                "date": "2025-12-28"
+            },
+            {
+                "CategoryId": 5,
+                "Label": "Category 5",
+                "StartSplineIndex": 13,
+                "SplinePath": [
+                    "1"
+                ],
+                "StartSplineDistance": 5500,
+                "TotalDistance": 35,
+                "Elevation": 712,
+                "StartCheckpointDirection": 1,
+                "RouteId": 100,
+                "StartTime": 1766907300,
+                "Display": true,
+                "time": "11:35:00",
+                "date": "2025-12-28"
+            },
+            {
+                "CategoryId": 6,
+                "Label": "Category 6",
+                "StartSplineIndex": 10,
+                "SplinePath": [
+                    "1"
+                ],
+                "StartSplineDistance": 5500,
+                "TotalDistance": 35,
+                "Elevation": 712,
+                "StartCheckpointDirection": 1,
+                "RouteId": 100,
+                "StartTime": 1766906700,
+                "Display": true,
+                "time": "11:25:00",
+                "date": "2025-12-28"
+            }
+        ],
+        "updated_at": "2025-12-28T20:00:11.221Z",
+        "created_at": "2025-12-21T10:25:20.766Z",
+        "closing_date": "2025-12-25",
+        "closing_time": "07:00",
+        "date": "2025-12-28",
+        "dob_required": false,
+        "live_closing_time": "2025-12-28 16:25",
+        "live_closing_time_epoc": 1766924700,
+        "post_weight": false,
+        "pre_weight": false,
+        "prizeMoney": {
+            "_id": "685bf5573f666b35229aadea",
+            "templateName": "SRC Men/Women Finals",
+            "templateType": "SRC",
+            "currency": "USD",
+            "conversionRate": 3.67,
+            "headings": [
+                {
+                    "gateType": "individual",
+                    "heading": "Individual"
+                },
+                {
+                    "gateType": "teams",
+                    "heading": "Teams"
+                },
+                {
+                    "gateType": "9",
+                    "heading": "Sprint Winner"
+                },
+                {
+                    "gateType": "4",
+                    "heading": "KOM/QOM"
+                },
+                {
+                    "gateType": "segments",
+                    "heading": "Winner Per Segment"
+                }
+            ],
+            "overall_headings": [],
+            "day_headings": [],
+            "categories": {
+                "1": {
+                    "4": {
+                        "prizes": [
+                            495.45
+                        ]
+                    },
+                    "9": {
+                        "prizes": [
+                            495.45
+                        ]
+                    },
+                    "individual": {
+                        "prizes": [
+                            7963.9,
+                            5982.1,
+                            4991.2,
+                            3009.4,
+                            1981.8,
+                            1798.3,
+                            1614.8,
+                            1211.1,
+                            880.8,
+                            513.8
+                        ]
+                    },
+                    "teams": {
+                        "prizes": [
+                            34938.4,
+                            24956,
+                            19964,
+                            12000.9,
+                            9982.4,
+                            8000.6,
+                            4991.2
+                        ]
+                    },
+                    "segments": {
+                        "prizes": [
+                            256.9
+                        ]
+                    }
+                },
+                "2": {
+                    "4": {
+                        "prizes": [
+                            403.7
+                        ]
+                    },
+                    "9": {
+                        "prizes": [
+                            403.7
+                        ]
+                    },
+                    "individual": {
+                        "prizes": [
+                            4807.7,
+                            3596.6,
+                            3009.4,
+                            1798.3,
+                            1211.1,
+                            1064.3,
+                            954.2,
+                            734,
+                            550.5,
+                            293.6
+                        ]
+                    },
+                    "teams": {
+                        "prizes": [
+                            20955.7,
+                            14973.6,
+                            12000.9,
+                            7193.2,
+                            5982.1,
+                            4807.7,
+                            3009.4
+                        ]
+                    },
+                    "segments": {
+                        "prizes": [
+                            183.5
+                        ]
+                    }
+                },
+                "3": {
+                    "4": {
+                        "prizes": [
+                            293.6
+                        ]
+                    },
+                    "9": {
+                        "prizes": [
+                            293.6
+                        ]
+                    },
+                    "individual": {
+                        "prizes": [
+                            2862.6,
+                            2165.3,
+                            1798.3,
+                            1064.3,
+                            719.32,
+                            660.6,
+                            587.2,
+                            440.4,
+                            330.3,
+                            183.5
+                        ]
+                    },
+                    "teams": {
+                        "prizes": [
+                            12588.1,
+                            8991.5,
+                            7193.2,
+                            4330.6,
+                            3596.6,
+                            2862.6,
+                            1798.3
+                        ]
+                    },
+                    "segments": {
+                        "prizes": [
+                            146.8
+                        ]
+                    }
+                },
+                "4": {
+                    "4": {
+                        "prizes": [
+                            201.85
+                        ]
+                    },
+                    "9": {
+                        "prizes": [
+                            201.85
+                        ]
+                    },
+                    "individual": {
+                        "prizes": [
+                            1724.9,
+                            1284.5,
+                            1064.3,
+                            660.6,
+                            440.4,
+                            403.7,
+                            330.3,
+                            293.6,
+                            183.5,
+                            110.1
+                        ]
+                    },
+                    "teams": {
+                        "prizes": [
+                            7340,
+                            5394.9,
+                            4404,
+                            2569,
+                            2165.3,
+                            1724.9,
+                            1082.65
+                        ]
+                    },
+                    "segments": {
+                        "prizes": [
+                            110.1
+                        ]
+                    }
+                },
+                "5": {
+                    "4": {
+                        "prizes": [
+                            110.1
+                        ]
+                    },
+                    "9": {
+                        "prizes": [
+                            110.1
+                        ]
+                    },
+                    "individual": {
+                        "prizes": [
+                            1027.6,
+                            734,
+                            660.6,
+                            367,
+                            256.9,
+                            238.55,
+                            201.85,
+                            146.8,
+                            110.1,
+                            73.4
+                        ]
+                    },
+                    "teams": {
+                        "prizes": [
+                            4514.1,
+                            3266.3,
+                            2605.7,
+                            1578.1,
+                            1284.5,
+                            1027.6,
+                            660.6
+                        ]
+                    },
+                    "segments": {
+                        "prizes": [
+                            73.4
+                        ]
+                    }
+                },
+                "6": {
+                    "4": {
+                        "prizes": [
+                            55.05
+                        ]
+                    },
+                    "9": {
+                        "prizes": [
+                            55.05
+                        ]
+                    },
+                    "individual": {
+                        "prizes": [
+                            623.9,
+                            477.1,
+                            403.7,
+                            220.2,
+                            165.15,
+                            146.8,
+                            128.45,
+                            110.1,
+                            73.4,
+                            36.7
+                        ]
+                    },
+                    "teams": {
+                        "prizes": [
+                            2715.8,
+                            1945.1,
+                            1578.1,
+                            917.5,
+                            770.7,
+                            623.9,
+                            403.7
+                        ]
+                    },
+                    "segments": {
+                        "prizes": [
+                            55.05
+                        ]
+                    }
+                }
+            },
+            "createdAt": "2025-06-25T13:10:47.231Z",
+            "updatedAt": "2025-06-25T15:03:41.934Z",
+            "__v": 0
+        },
+        "requirements": "<p>All&nbsp;users&nbsp;must&nbsp;have&nbsp;a&nbsp;verified&nbsp;Power&nbsp;passport&nbsp;test&nbsp;on&nbsp;approved&nbsp;equipment&nbsp;to&nbsp;be&nbsp;eligible&nbsp;to&nbsp;enter&nbsp;SRC.&nbsp;Please&nbsp;see&nbsp;page&nbsp;11&nbsp;of&nbsp;the&nbsp;ruleset&nbsp;for&nbsp;our&nbsp;approved&nbsp;trainer&nbsp;list,&nbsp;and&nbsp;page&nbsp;17&nbsp;for&nbsp;a&nbsp;detailed&nbsp;step&nbsp;by&nbsp;step&nbsp;run&nbsp;through&nbsp;of&nbsp;the&nbsp;power&nbsp;passport&nbsp;test.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Power&nbsp;passport&nbsp;tests&nbsp;can&nbsp;be&nbsp;submitted&nbsp;via&nbsp;the&nbsp;link&nbsp;in&nbsp;users&nbsp;web&nbsp;profiles.&nbsp;Most&nbsp;tests&nbsp;will&nbsp;be&nbsp;verified&nbsp;within&nbsp;24h.</p>",
+        "ruleset_link": "https://wpcdn-prod.mywhoosh.com/wp-content/uploads/2025/12/MyWhooshEsportsRulesetV2.0.3-Dec-3-25-1.pdf",
+        "teamCalculationSize": 3,
+        "technical_guide_link": "https://wpcdn-prod.mywhoosh.com/wp-content/uploads/2025/12/Road-book-Technical-Guide-SRC-V-7.0.2.pdf",
+        "time": "11:25",
+        "upcoming_slider_display": false,
+        "map_image": "https://service23.mywhoosh.com/event_files/PJFU5H65XF1owRzFnHbQ1GaFquzzel3ks2JX6ark.png",
+        "prizeMoneyTemplateId": "685bf5573f666b35229aadea",
+        "updatedAt": "2025-12-29T09:07:53.601Z",
+        "course_details": "https://mywhooshinfo.com/routes/custom-route/98739884",
+        "totalParticipants": 859,
+        "prize_money_transaction_status": "not_paid",
+        "result_publish_status": "official",
+        "route_name": "",
+        "currentDayRouteId": "",
+        "CurrentDayNumber": 1,
+        "SportsModeType": [
+            0
+        ],
+        "EventFormatType": "TIME_POINTS_BASED",
+        "EventType": 1,
+        "ListOfDays": [
+            {
+                "DayId": "1b4cb64a-f6d6-4204-9028-0190159b7a6d",
+                "DayNo": 1,
+                "Stages": [
+                    {
+                        "StartTime": 1766908800,
+                        "StartDate": "2025-12-28",
+                        "StartDateTime": "12:00:00",
+                        "TotalDistance": 35,
+                        "Name": "WOmen SRC35+ - ZURICH - CP ",
+                        "EventLeaderId": "",
+                        "DayId": "1b4cb64a-f6d6-4204-9028-0190159b7a6d",
+                        "DayNo": 1,
+                        "StageNo": 1,
+                        "StageId": "afae0716-f4d6-4531-8506-1dffec031898",
+                        "DayName": "SRC - Women Finals ",
+                        "LibraryMap": [],
+                        "LibraryRouteId": "693fdf6c742a7bacbb011fb2",
+                        "Description": "Sunday Race Club - Women Finals",
+                        "StartSplineIndex": 1,
+                        "EndSplineIndex": 1,
+                        "Elevation": 712,
+                        "NoOfLaps": 2,
+                        "RouteRewardId": 53,
+                        "RouteId": 100,
+                        "EventWeightType": 0,
+                        "RouteType": 2,
+                        "dayJerseyId": 0,
+                        "dayFrameId": 0,
+                        "TextureId": "68a9ff7844a6d757b20d6f42",
+                        "TotalDuration": 18000,
+                        "Difficulty": 4,
+                        "SplinePath": [
+                            "1"
+                        ],
+                        "SplinePathDirections": [
+                            {
+                                "SplineId": 1
+                            }
+                        ],
+                        "StartCheckpointDirection": 1,
+                        "EndCheckpointDirection": 1,
+                        "IsSeriesEvent": false,
+                        "IsMultipleLaps": false,
+                        "bIsDraftingEnabled": true,
+                        "bLeaderboadPerLap": false,
+                        "bIsGarageLocked": true,
+                        "bIsWindEffectEnabled": false,
+                        "bIsBunchRide": false,
+                        "bIsStreeringFeatureEnabled": true,
+                        "bIsFinishlineFireWorksEnabled": true,
+                        "bIsSeasonalContentAvailable": true,
+                        "bIsMyWhooshEventsGateEnabled": true,
+                        "DayNightMode": 0,
+                        "RequiredWeight": 1,
+                        "SplineCentimeter": 100000,
+                        "ExpiresAt": 1766926800,
+                        "FlagSponsorUrl": {
+                            "pc": null,
+                            "mobile": null
+                        },
+                        "GateSponsorUrl": {
+                            "pc": null,
+                            "mobile": null
+                        },
+                        "EventRouteImageUrl": {
+                            "pc": null,
+                            "mobile": null
+                        },
+                        "EventThumbnailImageUrl": "https://service24.mywhoosh.com/public/cfd0e291-da71-4c3b-91b6-b34ce5b088af.png/1024/1024/resize",
+                        "EventBannerImageUrl": "",
+                        "StartSplineDistance": 78737,
+                        "EndSplineDistance": 78737,
+                        "ListOfGates": [
+                            {
+                                "Overall": false,
+                                "GateId": "4b44ff26-3271-4b18-b9c0-15d815536b5b",
+                                "GateName": "Lindenhof Climb",
+                                "Description": "",
+                                "GateCategory": "Segment 1",
+                                "StartGateDescription": " ",
+                                "EndGateDescription": "Ends in 300 meters",
+                                "TotalDistance": 3.5,
+                                "StartDistance": 1.7,
+                                "GateOrder": 1,
+                                "GateType": 4,
+                                "StartSplineIndex": 1,
+                                "EndSplineIndex": 1,
+                                "RewardId": 70,
+                                "StartGateDirection": 1,
+                                "EndGateDirection": 1,
+                                "StartSplineDistance": 0,
+                                "EndSplineDistance": 2301600,
+                                "StartGateNotificationDistance": 0,
+                                "EndGateNotificationDistance": 2272000,
+                                "NoOfIterations": 2,
+                                "BaseType": 2
+                            },
+                            {
+                                "Overall": false,
+                                "GateId": "64882df5-29a0-4fbb-a64a-09b9d67356b0",
+                                "GateName": "Witikon Climb",
+                                "Description": "",
+                                "GateCategory": "Segment 2",
+                                "StartGateDescription": " ",
+                                "EndGateDescription": "Ends in 300 meters",
+                                "TotalDistance": 7.6,
+                                "StartDistance": 5.1,
+                                "GateOrder": 2,
+                                "GateType": 4,
+                                "StartSplineIndex": 2,
+                                "EndSplineIndex": 2,
+                                "RewardId": 71,
+                                "StartGateDirection": 1,
+                                "EndGateDirection": 1,
+                                "StartSplineDistance": 0,
+                                "EndSplineDistance": 643830,
+                                "StartGateNotificationDistance": 0,
+                                "EndGateNotificationDistance": 614000,
+                                "NoOfIterations": 2,
+                                "BaseType": 2
+                            },
+                            {
+                                "Overall": false,
+                                "GateId": "158fc06a-acbf-408c-a6b1-23535afa94ab",
+                                "GateName": "Zurich Sprint",
+                                "Description": "",
+                                "GateCategory": "Segment 3",
+                                "StartGateDescription": " ",
+                                "EndGateDescription": "Ends in 300 meters",
+                                "TotalDistance": 25.2,
+                                "StartDistance": 25,
+                                "GateOrder": 3,
+                                "GateType": 9,
+                                "StartSplineIndex": 1,
+                                "EndSplineIndex": 1,
+                                "RewardId": 67,
+                                "StartGateDirection": 1,
+                                "EndGateDirection": 1,
+                                "StartSplineDistance": 0,
+                                "EndSplineDistance": 1785400,
+                                "StartGateNotificationDistance": 0,
+                                "EndGateNotificationDistance": 1755000,
+                                "NoOfIterations": 1,
+                                "BaseType": 2
+                            }
+                        ],
+                        "CategoryStartTimes": [
+                            {
+                                "CategoryId": 1,
+                                "Label": "Category 1",
+                                "StartSplineIndex": "14",
+                                "SplinePath": [
+                                    "1"
+                                ],
+                                "SplinePathDirections": [
+                                    {
+                                        "SplineId": 1
+                                    }
+                                ],
+                                "StartSplineDistance": 5500,
+                                "TotalDistance": "35",
+                                "Elevation": "712",
+                                "StartCheckpointDirection": 1,
+                                "date": "2025-12-28",
+                                "time": "12:00:00",
+                                "Display": true,
+                                "RouteId": 100,
+                                "StartTime": 1766908800
+                            },
+                            {
+                                "CategoryId": 2,
+                                "Label": "Category 2",
+                                "StartSplineIndex": "12",
+                                "SplinePath": [
+                                    "1"
+                                ],
+                                "SplinePathDirections": [
+                                    {
+                                        "SplineId": 1
+                                    }
+                                ],
+                                "StartSplineDistance": 5500,
+                                "TotalDistance": "35",
+                                "Elevation": "712",
+                                "StartCheckpointDirection": 1,
+                                "date": "2025-12-28",
+                                "time": "11:55:00",
+                                "Display": true,
+                                "RouteId": 100,
+                                "StartTime": 1766908500
+                            },
+                            {
+                                "CategoryId": 3,
+                                "Label": "Category 3",
+                                "StartSplineIndex": "9",
+                                "SplinePath": [
+                                    "1"
+                                ],
+                                "SplinePathDirections": [
+                                    {
+                                        "SplineId": 1
+                                    }
+                                ],
+                                "StartSplineDistance": 5500,
+                                "TotalDistance": "35",
+                                "Elevation": "712",
+                                "StartCheckpointDirection": 1,
+                                "date": "2025-12-28",
+                                "time": "11:45:00",
+                                "Display": true,
+                                "RouteId": 100,
+                                "StartTime": 1766907900
+                            },
+                            {
+                                "CategoryId": 4,
+                                "Label": "Category 4",
+                                "StartSplineIndex": "11",
+                                "SplinePath": [
+                                    "1"
+                                ],
+                                "SplinePathDirections": [
+                                    {
+                                        "SplineId": 1
+                                    }
+                                ],
+                                "StartSplineDistance": 5500,
+                                "TotalDistance": "35",
+                                "Elevation": "712",
+                                "StartCheckpointDirection": 1,
+                                "date": "2025-12-28",
+                                "time": "11:40:00",
+                                "Display": true,
+                                "RouteId": 100,
+                                "StartTime": 1766907600
+                            },
+                            {
+                                "CategoryId": 5,
+                                "Label": "Category 5",
+                                "StartSplineIndex": "13",
+                                "SplinePath": [
+                                    "1"
+                                ],
+                                "SplinePathDirections": [
+                                    {
+                                        "SplineId": 1
+                                    }
+                                ],
+                                "StartSplineDistance": 5500,
+                                "TotalDistance": "35",
+                                "Elevation": "712",
+                                "StartCheckpointDirection": 1,
+                                "date": "2025-12-28",
+                                "time": "11:35:00",
+                                "Display": true,
+                                "RouteId": 100,
+                                "StartTime": 1766907300
+                            },
+                            {
+                                "CategoryId": 6,
+                                "Label": "Category 6",
+                                "StartSplineIndex": "10",
+                                "SplinePath": [
+                                    "1"
+                                ],
+                                "SplinePathDirections": [
+                                    {
+                                        "SplineId": 1
+                                    }
+                                ],
+                                "StartSplineDistance": 5500,
+                                "TotalDistance": "35",
+                                "Elevation": "712",
+                                "StartCheckpointDirection": 1,
+                                "date": "2025-12-28",
+                                "time": "11:25:00",
+                                "Display": true,
+                                "RouteId": 100,
+                                "StartTime": 1766906700
+                            }
+                        ],
+                        "BotsCommonServerConfig": {
+                            "FreeRideBotsSpawnCount": 5,
+                            "FreeRideBotsSpawnDelay": 5,
+                            "GradePowerPercentageMap": [
+                                {
+                                    "MaxGrade": -6,
+                                    "Name": "tanveer",
+                                    "jango": 20,
+                                    "FTPMultiplier": 0.7
+                                },
+                                {
+                                    "MaxGrade": -4,
+                                    "FTPMultiplier": 0.75
+                                },
+                                {
+                                    "FTPMultiplier": 0.8,
+                                    "MaxGrade": -2
+                                },
+                                {
+                                    "MaxGrade": 0,
+                                    "FTPMultiplier": 0.8
+                                },
+                                {
+                                    "FTPMultiplier": 0.85,
+                                    "MaxGrade": 2
+                                },
+                                {
+                                    "FTPMultiplier": 0.9,
+                                    "MaxGrade": 4
+                                },
+                                {
+                                    "FTPMultiplier": 1,
+                                    "MaxGrade": 7
+                                },
+                                {
+                                    "FTPMultiplier": 1.1,
+                                    "MaxGrade": 10
+                                },
+                                {
+                                    "MaxGrade": 11,
+                                    "FTPMultiplier": 1.3
+                                },
+                                {
+                                    "MaxGrade": 14,
+                                    "FTPMultiplier": 1.5
+                                }
+                            ],
+                            "ZoneDataConfig": [
+                                {
+                                    "VO2MaxTime": 0,
+                                    "CadencePercentage": 0.8,
+                                    "HeartRatePercentage": 0.68
+                                },
+                                {
+                                    "CadencePercentage": 0.95,
+                                    "HeartRatePercentage": 0.73,
+                                    "VO2MaxTime": 0
+                                },
+                                {
+                                    "CadencePercentage": 1,
+                                    "HeartRatePercentage": 0.87,
+                                    "VO2MaxTime": 0
+                                },
+                                {
+                                    "HeartRatePercentage": 0.93,
+                                    "VO2MaxTime": 0,
+                                    "CadencePercentage": 1
+                                },
+                                {
+                                    "VO2MaxTime": 300,
+                                    "CadencePercentage": 1.1,
+                                    "HeartRatePercentage": 1
+                                },
+                                {
+                                    "CadencePercentage": 0.8,
+                                    "HeartRatePercentage": 1,
+                                    "VO2MaxTime": 30
+                                }
+                            ]
+                        },
+                        "DayCompletionType": 1,
+                        "SponsoredJerseyUrl": null,
+                        "SponsoredJerseyId": null,
+                        "SportType": 0,
+                        "EventBannerId": "67d02bf12556d36581f3bb13",
+                        "IdentifierTag": null,
+                        "ClientPoliceConfigId": null,
+                        "bIsGlobalWindEffectEnabled": true,
+                        "WindAngleInStart": 0,
+                        "MinimumSpeedOfWind": 2,
+                        "MaximumSpeedOfWind": 4,
+                        "SpeedChangeIntervalMinimum": 60,
+                        "SpeedChangeIntervalMaximum": 90,
+                        "ChaseLineConfig": {
+                            "Speed": 0,
+                            "GradeMultiplier": 1,
+                            "StartDelay": 30,
+                            "SecondsPerPoint": 5,
+                            "MaxPointsForStage": 1
+                        },
+                        "ClientPoliceFeatureConfiguration": {
+                            "IsClientPoliceDetectionEnabled": false
+                        },
+                        "RewardsStruct": [
+                            {
+                                "Description": "Day 1 Reward",
+                                "RewardId": "1b4cb64a-f6d6-4204-9028-0190159b7a6d",
+                                "Name": "Day Reward",
+                                "RewardItemStruct": {
+                                    "ItemId": 53,
+                                    "ItemType": 8
+                                }
+                            },
+                            {
+                                "Description": "Segment 1 Reward",
+                                "RewardId": "4b44ff26-3271-4b18-b9c0-15d815536b5b",
+                                "Name": "Segment Reward",
+                                "RewardItemStruct": {
+                                    "ItemId": 70,
+                                    "ItemType": 8
+                                }
+                            },
+                            {
+                                "Description": "Segment 2 Reward",
+                                "RewardId": "64882df5-29a0-4fbb-a64a-09b9d67356b0",
+                                "Name": "Segment Reward",
+                                "RewardItemStruct": {
+                                    "ItemId": 71,
+                                    "ItemType": 8
+                                }
+                            },
+                            {
+                                "Description": "Segment 3 Reward",
+                                "RewardId": "158fc06a-acbf-408c-a6b1-23535afa94ab",
+                                "Name": "Segment Reward",
+                                "RewardItemStruct": {
+                                    "ItemId": 67,
+                                    "ItemType": 8
+                                }
+                            },
+                            {
+                                "Description": "Overall Segment 1 Reward",
+                                "RewardId": "fec495c5-fc85-4bdf-b13e-5f9b5b7eacfc",
+                                "Name": "Overall Segment Reward",
+                                "RewardItemStruct": {
+                                    "ItemId": 70,
+                                    "ItemType": 8
+                                }
+                            },
+                            {
+                                "Description": "Overall Segment 2 Reward",
+                                "RewardId": "1c9ed155-8569-4d98-b73e-89ff573e016b",
+                                "Name": "Overall Segment Reward",
+                                "RewardItemStruct": {
+                                    "ItemId": 67,
+                                    "ItemType": 8
+                                }
+                            }
+                        ],
+                        "BotSegmentsData": [],
+                        "BotsCount": 0,
+                        "MaleAICount": 0,
+                        "FemaleAICount": 0,
+                        "MaleSegments": [],
+                        "FemaleSegments": [],
+                        "Textures": [
+                            {
+                                "URL": [
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953618/T_4_DynArc_EndGate_M1_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953619/T_4_DynArc_S2_A01_M1_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953619/T_4_DynArc_SS_A_M0_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953619/T_4_Dyn_Banner_M0_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953619/T_4_Dyn_Sponsor_Flags.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953629/T_4_DynArc_SS_F_M0_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953629/T_4_DynArc_SS_F_M0_N.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953630/T_4_DynArc_StartGate_M1_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953630/T_4_DynArc_SS_A_M0_N.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953630/T_4_DynArc_SS_A_M1_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953634/T_4_DynGra.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765956035/T_4_Dyn_Billboard_M0_D.png"
+                                ],
+                                "Type": "-1",
+                                "UVMapping": 0,
+                                "Ratio": 4,
+                                "bIsAnimation": true
+                            }
+                        ],
+                        "Textures_mobile": [
+                            {
+                                "URL": [
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953662/T_4_DynArc_S2_A01_M1_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953662/T_4_DynArc_SS_A_M0_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953662/T_4_Dyn_Banner_M0_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953662/T_4_Dyn_Sponsor_Flags.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953662/T_4_DynArc_EndGate_M1_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953667/T_4_DynArc_SS_F_M0_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953667/T_4_DynArc_SS_F_M0_N.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953668/T_4_DynArc_StartGate_M1_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953668/T_4_DynArc_SS_A_M0_N.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953668/T_4_DynArc_SS_A_M1_D.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765953670/T_4_DynGra.png",
+                                    "https://prod-cdn-assets.mywhoosh.com/textures/68a9ff7844a6d757b20d6f42/-1/1765956029/T_4_Dyn_Billboard_M0_D.png"
+                                ],
+                                "Type": "-1",
+                                "UVMapping": 0,
+                                "Ratio": 4,
+                                "bIsAnimation": true
+                            }
+                        ],
+                        "SeasonalUpdateType": "Seasonal_S2Event"
+                    }
+                ]
+            }
+        ],
+        "publish_stages": []
+    }
+}
