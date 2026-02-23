@@ -9,7 +9,7 @@ PRIZES_SPRINT = {}
 PRIZES_KOM = {}
 PRIZES_SEGMENT = {}
 
-def load_dynamic_prizes(event_details_file="event_details.json"):
+def load_dynamic_prizes(event_details_file="output/event_details.json"):
     """
     Lataa palkintotiedot event_details.json -tiedostosta.
     Muuntaa AED -> USD (tai käyttää conversionRatea).
@@ -71,7 +71,7 @@ def load_dynamic_prizes(event_details_file="event_details.json"):
 PRIZES_INDIVIDUAL = {}
 PRIZES_TEAM = {}
 
-def get_all_prizes(json_file="all_results.json", is_final=False):
+def get_all_prizes(json_file="output/all_results.json", is_final=False):
     """
     Laskee kaikille ajajille kokonaispalkinnon (Henkilökohtainen + Tiimiosuus).
     Jos is_final on False, lasketaan vain henkilökohtaiset.
@@ -89,124 +89,29 @@ def get_all_prizes(json_file="all_results.json", is_final=False):
     # Lataa dynaamiset palkinnot
     load_dynamic_prizes()
 
-    with open(json_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    # --- 1. LASKETAAN TIIMISIJOITUKSET (KOKO DATA) ---
-    team_rank_by_name = {}   # { "Clean Team Name": rank }
-    team_prize_share = {}    # { "Clean Team Name": share_per_member }
+    # KÄYTÄ OLEMASSA OLEVAA LOGIIKKAA: laske_palkinto_erittely
+    # Tämä varmistaa, että visualisointi käyttää samoja lukuja kuin raportit (API + Team).
     
-    if is_final:
-        df_all = pd.DataFrame(data)
-        
-        # Varmista sarakkeet
-        required_cols = ['categoryId', 'teamName', 'finishedTime', 'selectionStatus', 'userFullName']
-        for col in required_cols:
-            if col not in df_all.columns:
-                df_all[col] = None
-
-        # Siivotaan tiiminimet
-        df_all['clean_team_name'] = df_all['teamName'].fillna("").astype(str).str.strip()
-
-        # Ryhmittele kategorialla
-        for cat_id, cat_group in df_all.groupby('categoryId'):
-            if cat_id not in PRIZES_TEAM:
-                continue
-            
-            team_results = []
-            
-            # Ryhmittele SIIVOTUN tiiminimen mukaan
-            for team_name, team_group in cat_group.groupby('clean_team_name'):
-                # Ohita tyhjät ja yksilöt
-                if team_name in ["", "-", "Individual", "None", "nan"]: 
-                    continue
-                    
-                # Ota vain ne joilla on hyväksytty aika (ei DNF/0) JA ei ole diskattu (ANL)
-                valid_times = team_group[
-                    (team_group['finishedTime'] > 0) & 
-                    (team_group['selectionStatus'] != "ANL")
-                ].copy()
-                
-                valid_times = valid_times.sort_values('finishedTime')
-                
-                # Tarvitaan vähintään 3 ajajaa tuloksen saamiseksi
-                if len(valid_times) >= 3:
-                    top3 = valid_times.head(3)
-                    total_time = top3['finishedTime'].sum()
-                    
-                    team_results.append({
-                        'team': team_name, 
-                        'total_time_ms': total_time,
-                        'total_members': len(team_group) # Kaikki jäsenet palkinnon jakoa varten
-                    })
-            
-            # Järjestä tiimit ajan mukaan
-            team_results.sort(key=lambda x: x['total_time_ms'])
-            
-            # Jaa palkinnot ja tallenna sijoitukset
-            prizes = PRIZES_TEAM[cat_id]
-            
-            for i, res in enumerate(team_results):
-                rank = i + 1
-                t_name = res['team']
-                team_rank_by_name[t_name] = rank
-                
-                if rank <= len(prizes):
-                    total_prize = prizes[rank-1]
-                    # Jaa palkinto KAIKKIEN jäsenten kesken
-                    num_members = res['total_members']
-                    if num_members > 0:
-                        share = total_prize / num_members
-                        team_prize_share[t_name] = share
-
-    # --- 2. LASKETAAN HENKILÖKOHTAISET & YHDISTETÄÄN (VAIN SUOMALAISET) ---
-    finnish_riders = [r for r in data if r.get('userCountryFlag') == 82]
+    erittely = laske_palkinto_erittely(json_file)
     
-    if not finnish_riders:
-        return {}, {}
-
-    df_fin = pd.DataFrame(finnish_riders)
-    # Varmista sarakkeet myös tässä
-    for col in ['categoryId', 'calculated_rank', 'userFullName', 'teamName', 'selectionStatus']:
-        if col not in df_fin.columns:
-            df_fin[col] = None
-            
-    df_fin['clean_team_name'] = df_fin['teamName'].fillna("").astype(str).str.strip()
-
     prize_map = {}
-    team_rank_map = {} # Palautetaan: { "Ajajan Nimi": rank }
-
-    for index, row in df_fin.iterrows():
-        name = row['userFullName']
-        cat = row['categoryId']
-        rank = row['calculated_rank']
-        status = row.get('selectionStatus', '')
-        t_name_clean = row['clean_team_name']
+    team_rank_map = {}
+    
+    for row in erittely:
+        name = row['nimi']
+        total = row['total']
+        t_rank = row['tiimisijoitus']
         
-        # Alusta
-        if name not in prize_map:
-            prize_map[name] = 0
+        # Lisää summa
+        prize_map[name] = total
+        
+        # Lisää tiimisijoitus
+        if t_rank and t_rank != '-':
+            team_rank_map[name] = t_rank
             
-        # A. Henkilökohtainen palkinto
-        if status != "ANL":
-            if cat in PRIZES_INDIVIDUAL:
-                prizes = PRIZES_INDIVIDUAL[cat]
-                if 1 <= rank <= len(prizes):
-                    prize_map[name] += prizes[rank-1]
-
-        # B. Tiimipalkinto & Sijoitus
-        # ... (rest is same) ...
-        # Hae sijoitus (vaikka olisi ANL, sijoitus on olemassa jos tiimi pärjäsi)
-        if t_name_clean in team_rank_by_name:
-            team_rank_map[name] = team_rank_by_name[t_name_clean]
-            
-            # Lisää palkinto-osuus JOS ei ANL
-            if status != "ANL" and t_name_clean in team_prize_share:
-                prize_map[name] += team_prize_share[t_name_clean]
-
     return prize_map, team_rank_map
 
-def laske_palkinto_erittely(json_file="all_results.json"):
+def laske_palkinto_erittely(json_file="output/all_results.json"):
     """
     Laskee palkinnot eritellen henkilökohtaisen ja tiimiosuuden.
     Palauttaa listan sanakirjoja:
@@ -382,21 +287,50 @@ def laske_palkinto_erittely(json_file="all_results.json"):
         t_rank = team_ranks.get(t_name_clean, '-')
         
         if status != "ANL":
-            # Indiv
-            if cat in PRIZES_INDIVIDUAL:
-                p_list = PRIZES_INDIVIDUAL[cat]
-                if 1 <= rank <= len(p_list):
-                    indiv_prize = p_list[rank-1]
+            # 1. Yritä lukea henkilökohtainen palkinto API-datasta
+            raw_prize_str = str(rider.get('prizeMoney', '-') or '-')
+            api_prize_val = 0
             
-            # Team
-            if t_name_clean in team_prize_share:
-                team_share = team_prize_share[t_name_clean]
+            if "USD" in raw_prize_str:
+                try:
+                    clean_str = raw_prize_str.replace("USD", "").replace(",", "").strip()
+                    api_prize_val = float(clean_str)
+                except:
+                    pass
+            
+            # 2. Lue tiimipalkinto (merge_team_prizes.py lisäämä)
+            merged_team_prize = float(rider.get('teamPrize', 0))
+
+            if api_prize_val > 0 or merged_team_prize > 0:
+                # Oletus: API:n "prizeMoney" on henkilökohtainen (koska se on indiv-listassa),
+                # ja "teamPrize" on tiimiosuus (tiimilistasta).
+                indiv_prize = api_prize_val
+                team_share = merged_team_prize
+                
+                # Nollaa extra laskenta varmuuden vuoksi, ellemme halua lisätä sitä päälle
+                extra = 0
+            else:
+                # Fallback: Laske itse jos API ei anna mitään
+                # Indiv
+                if cat in PRIZES_INDIVIDUAL:
+                    p_list = PRIZES_INDIVIDUAL[cat]
+                    if 1 <= rank <= len(p_list):
+                        indiv_prize = p_list[rank-1]
+                
+                # Team
+                if t_name_clean in team_prize_share:
+                    team_share = team_prize_share[t_name_clean]
         
-        # Extra prizes (Sprint/KOM)
-        uid = rider.get('userId')
-        extra_data = extra_prizes_data.get(uid, {'amount': 0, 'types': []})
-        extra = extra_data['amount']
-        achievements = list(set(extra_data['types'])) # Deduplicate
+        # Extra prizes (Sprint/KOM) 
+        if api_prize_val == 0 and merged_team_prize == 0:
+            uid = rider.get('userId')
+            extra_data = extra_prizes_data.get(uid, {'amount': 0, 'types': []})
+            extra = extra_data['amount']
+            achievements = list(set(extra_data['types'])) 
+        else:
+            achievements = ["API Data"] 
+            if merged_team_prize > 0:
+                achievements.append("Team Prize Included")
         
         if indiv_prize > 0 or team_share > 0 or extra > 0:
             results_list.append({
@@ -414,7 +348,7 @@ def laske_palkinto_erittely(json_file="all_results.json"):
             
     return results_list
 
-def tallenna_palkintodata(json_file="all_results.json", output_file="palkintodata.json", race_name="", race_date="", event_id=""):
+def tallenna_palkintodata(json_file="output/all_results.json", output_file="output/palkintodata.json", race_name="", race_date="", event_id=""):
     """
     Laskee palkinnot ja tallentaa ne JSON-tiedostoon myöhempää käyttöä varten.
     Tallentaa myös kisan metatiedot.
@@ -435,7 +369,7 @@ def tallenna_palkintodata(json_file="all_results.json", output_file="palkintodat
     print(f"Palkintodata tallennettu: {output_file}")
     return data
 
-def save_results_report(json_file="all_results.json", output_file="tulokset.txt"):
+def save_results_report(json_file="output/all_results.json", output_file="output/tulokset.txt"):
     """
     Luo tekstitiedoston, jossa on jokaisen suomalaisen ajajan:
     - Nimi

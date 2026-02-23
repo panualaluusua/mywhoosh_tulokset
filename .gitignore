@@ -9,11 +9,14 @@ results.txt
 tulokset.txt
 results.md
 *.csv
-debug_*.json
-debug_*.txt
 test_*.json
 seurattavat.txt
 palkintohistoria.csv
+event_details.json
+kom_results.json
+sprint_results.json
+palkintodata.json
+palkintodata_verified.json
 
 # Generated content
 kuvat/

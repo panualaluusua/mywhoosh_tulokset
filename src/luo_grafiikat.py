@@ -7,7 +7,7 @@ from palkintolaskuri import get_all_prizes
 # --- ASETUKSET ---
 TEMPLATE_FILE = os.path.join("assets", "tuloslistapohja.jpg")
 OUTPUT_DIR = "kuvat"
-JSON_FILE = "all_results.json"
+JSON_FILE = "output/all_results.json"
 
 # Värit
 COLOR_PANEL_BG = (10, 20, 40, 200)   # Tummansininen/Musta, läpinäkyvä
@@ -18,7 +18,7 @@ COLOR_TEXT = "#FFFFFF"               # Valkoinen
 COLOR_TEXT_GRAY = "#AAAAAA"          # Vaaleanharmaa (Tiimi)
 COLOR_PRIZE = "#FFD700"              # Kulta
 COLOR_SUBTITLE = "#FFFFFF"           # Valkoinen (UUSI)
-COLOR_ZEBRA = (255, 255, 255, 13)    # Valkoinen, 5% opacity (255 * 0.05 = 12.75)
+COLOR_ZEBRA = (255, 255, 255, 60)    # Valkoinen, ~23% opacity (oli 30)
 
 # Fontit (Windows oletukset)
 FONT_REGULAR = "arial.ttf"
@@ -26,12 +26,26 @@ FONT_BOLD = "arialbd.ttf"
 
 # Sijainnit (Skaalattu 1080px leveydelle)
 TARGET_WIDTH = 1080
-START_Y = 380                        # Listan alkukohta (otsikon alla) - Säädä tarvittaessa skaalauksen jälkeen
-MAX_Y = 1800                         # Alarajan turvamarginaali (logot) - Skaalattu ylöspäin
+START_Y = 230                        # Laskettu hieman (oli 210 -> 230)
+MAX_Y = 1800                         # Alarajan turvamarginaali 
 MARGIN_X = 20                        # Reunamarginaali
 PANEL_RADIUS = 20
-ROW_HEIGHT = 50                      # Kasvatettu rivikorkeus
-CAT_HEADER_HEIGHT = 70               # Kasvatettu otsikkokorkeus
+# ... (omitted constants)
+
+# ... (omitted functions)
+
+def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=False):
+    # ... (omitted checks)
+    
+    # Päivitä Y-koordinaatit skaalauksen suhteessa
+    scale_ratio = TARGET_WIDTH / 572.0
+    start_y_scaled = int(START_Y * scale_ratio)
+    max_y_scaled = int(img.height - (130 * scale_ratio)) 
+
+    # ... (omitted scaling logic)
+
+ROW_HEIGHT = 60                      # Kasvatettu rivikorkeus
+CAT_HEADER_HEIGHT = 80               # Kasvatettu otsikkokorkeus
 
 # Sarakkeet (X-koordinaatit)
 COL_RANK_X = 40      # Vasen
@@ -39,7 +53,8 @@ COL_NAME_X = 140     # Vasen
 COL_TIME_X_ALIGN = 620 # Oikea tasaus (loppupiste) - SIIRRETTY VASEMMALLE
 COL_TEAM_X = 660     # Vasen - SIIRRETTY VASEMMALLE
 COL_PRIZE_X_ALIGN = 1040 # Oikea tasaus (loppupiste) - LEVENNETTY
-
+PADDING = 15         # Minimum spacing between columns
+ 
 def shorten_team_name(name):
     if not name or name == "-":
         return "-"
@@ -52,6 +67,31 @@ def shorten_team_name(name):
     if len(name) > 18: # Hieman enemmän tilaa nyt
         return name[:16] + "..."
     return name
+
+def draw_text_fitted(draw, text, x, y, max_width, font, fill, min_font_size=12):
+    """Draw text that automatically scales down to fit within max_width."""
+    current_size = font.size
+    current_font = font
+    
+    while current_size >= min_font_size:
+        bbox = draw.textbbox((0, 0), text, font=current_font)
+        text_width = bbox[2] - bbox[0]
+        
+        if text_width <= max_width:
+            draw.text((x, y), text, font=current_font, fill=fill)
+            return current_font
+        
+        # Reduce font size
+        current_size -= 2
+        try:
+            current_font = ImageFont.truetype(font.path, current_size)
+        except:
+            # Fallback if font path not available
+            current_font = ImageFont.truetype(FONT_BOLD if "bold" in str(font).lower() else FONT_REGULAR, current_size)
+    
+    # Draw with minimum size if still doesn't fit
+    draw.text((x, y), text, font=current_font, fill=fill)
+    return current_font
 
 def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=False):
     if not os.path.exists(json_file):
@@ -88,8 +128,8 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
     
     # Päivitä Y-koordinaatit skaalauksen suhteessa
     scale_ratio = TARGET_WIDTH / 572.0
-    start_y_scaled = int(380 * scale_ratio)
-    max_y_scaled = int(img.height - (100 * scale_ratio)) # Jätä tilaa logoille alhaalla
+    start_y_scaled = int(START_Y * scale_ratio)
+    max_y_scaled = int(img.height - (130 * scale_ratio)) # Jätä enemmän tilaa logoille alhaalla (40 -> 130)
 
     # --- DYNAAMINEN SKAALAUS SISÄLLÖLLE ---
     available_height = max_y_scaled - start_y_scaled
@@ -107,9 +147,9 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
     # Oletusarvot (Isommat fontit)
     current_row_height = ROW_HEIGHT
     current_cat_height = CAT_HEADER_HEIGHT
-    current_font_size_large = 28 # Nimi
-    current_font_size_med = 24   # Aika, Palkinto
-    current_font_size_small = 20 # Tiimi
+    current_font_size_large = 46 # Nimi (pysyy samana)
+    current_font_size_med = 42   # Aika, Palkinto (oli 36 -> 42)
+    current_font_size_small = 34 # Tiimi (oli 29 -> 34)
     
     required_height = (num_riders * ROW_HEIGHT) + (num_cats * CAT_HEADER_HEIGHT) + 40
     
@@ -124,9 +164,9 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         
         current_row_height = int(ROW_HEIGHT * scale_factor)
         current_cat_height = int(CAT_HEADER_HEIGHT * scale_factor)
-        current_font_size_large = int(28 * scale_factor)
-        current_font_size_med = int(24 * scale_factor)
-        current_font_size_small = int(20 * scale_factor)
+        current_font_size_large = int(46 * scale_factor) # Nimi
+        current_font_size_med = int(42 * scale_factor)   # Aika, Palkinto (oli 36 -> 42)
+        current_font_size_small = int(34 * scale_factor) # Tiimi (oli 29 -> 34)
 
     # Lataa fontit
     try:
@@ -187,6 +227,25 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
     img = Image.alpha_composite(img, overlay)
     draw = ImageDraw.Draw(img)
 
+    # Piirrä PÄÄOTSIKKO "Sunday Race Club" (Valkoinen, Iso, Keskitetty)
+    title_text = "Sunday Race Club"
+    try:
+        # Kokeile ladata fontti, käytä isompaa kokoa
+        font_main_title = ImageFont.truetype(FONT_BOLD, int(55 * scale_ratio)) # Pienennetty 70 -> 55
+    except IOError:
+        font_main_title = ImageFont.load_default()
+        
+    bbox = draw.textbbox((0, 0), title_text, font=font_main_title)
+    text_width = bbox[2] - bbox[0]
+    title_x = (img.width - text_width) / 2
+    title_y = int(50 * scale_ratio) # Kiinteä sijainti ylhäällä/keskellä
+    
+    # Piirrä teksti mustalla reunuksella (outline) ja varjolla
+    # Varjo
+    draw.text((title_x + 3, title_y + 3), title_text, font=font_main_title, fill="#000000")
+    # Outline
+    draw.text((title_x, title_y), title_text, font=font_main_title, fill="#FFFFFF", stroke_width=4, stroke_fill="#000000")
+
     # Piirrä alaotsikko (Kirkas Punainen, Iso)
     if race_name or race_date:
         # Yhdistä nimi ja pvm
@@ -214,8 +273,12 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         bbox = draw.textbbox((0, 0), subtitle_text, font=font_subtitle_dynamic)
         text_width = bbox[2] - bbox[0]
         subtitle_x = (img.width - text_width) / 2
-        # Sijoita otsikon alle (arvioitu sijainti skaalauksen mukaan)
-        subtitle_y = start_y_scaled - 140 
+        
+        # Sijoita pääotsikon alle
+        # title_y (50) + title_height (approx 70-80) + padding (30)
+        subtitle_y = start_y_scaled - 90 
+        # TAI kiinteämmin relatiivisesti:
+        subtitle_y = int(115 * scale_ratio) # Nostettu ylemmäs (oli 140 -> 115)
         
         # Piirrä teksti mustalla reunuksella (outline)
         draw.text((subtitle_x, subtitle_y), subtitle_text, font=font_subtitle_dynamic, fill=COLOR_SUBTITLE, stroke_width=3, stroke_fill="#000000")
@@ -309,8 +372,14 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         # Sijoitus
         draw.text((COL_RANK_X, y), rank, font=font_med, fill=COLOR_TEXT)
         
-        # Nimi (Iso)
-        draw.text((COL_NAME_X, y), name, font=font_large, fill=COLOR_TEXT)
+        # Nimi (Iso) - with dynamic width constraint
+        # Calculate where time will be positioned to avoid overlap
+        bbox_time = draw.textbbox((0, 0), time_str, font=font_med)
+        time_width = bbox_time[2] - bbox_time[0]
+        time_start_x = COL_TIME_X_ALIGN - time_width
+        max_name_width = time_start_x - COL_NAME_X - PADDING
+        
+        draw_text_fitted(draw, name, COL_NAME_X, y, max_name_width, font_large, COLOR_TEXT)
         
         # ICONS LOGIC
         # Load detailed prize data if available to determine icons
@@ -321,7 +390,7 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         icon_x = COL_NAME_X + name_width + 15
         
         # Load palkintodata.json here for now (quick fix)
-        palkinto_file = "palkintodata.json"
+        palkinto_file = "output/palkintodata.json"
         
         if False: # ICONS DISABLED
             if os.path.exists(palkinto_file):
@@ -372,8 +441,17 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         w = bbox[2] - bbox[0]
         draw.text((COL_TIME_X_ALIGN - w, y), time_str, font=font_med, fill=COLOR_TEXT)
         
-        # Tiimi (Harmaa, pieni)
-        draw.text((COL_TEAM_X, y + 5), team, font=font_small, fill=COLOR_TEXT_GRAY) # Hieman alempana
+        # Tiimi (Harmaa, pieni) - with dynamic width constraint
+        # Calculate where prize will be positioned to avoid overlap
+        if prize_str:
+            bbox_prize = draw.textbbox((0, 0), prize_str, font=font_med_bold)
+            prize_width = bbox_prize[2] - bbox_prize[0]
+            prize_start_x = COL_PRIZE_X_ALIGN - prize_width
+            max_team_width = prize_start_x - COL_TEAM_X - PADDING
+        else:
+            max_team_width = COL_PRIZE_X_ALIGN - COL_TEAM_X - PADDING
+        
+        draw_text_fitted(draw, team, COL_TEAM_X, y + 5, max_team_width, font_small, COLOR_TEXT_GRAY)
         
         # Palkinto (Kulta, Oikea tasaus)
         if prize_str:
@@ -383,24 +461,6 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
 
         y += current_row_height
         row_index += 1
-
-    # Disclaimer text at the bottom
-    disclaimer_text = "* Ei sis. Sprint/KOM -lisiä"
-    try:
-        font_disclaimer = ImageFont.truetype(FONT_BOLD, int(22 * scale_ratio)) # BOLD and slightly larger
-    except ImportError:
-        font_disclaimer = ImageFont.load_default()
-        
-    bbox = draw.textbbox((0, 0), disclaimer_text, font=font_disclaimer)
-    text_width = bbox[2] - bbox[0]
-    
-    # Position: Bottom right or Center? Left aligned as per previous, but brighter.
-    disclaimer_x = MARGIN_X + 20 # Indent slightly
-    disclaimer_y = max_y_scaled - 40 # Move up slightly to ensure valid padding
-    
-    # Draw with shadow for better visibility
-    draw.text((disclaimer_x + 1, disclaimer_y + 1), disclaimer_text, font=font_disclaimer, fill="#000000")
-    draw.text((disclaimer_x, disclaimer_y), disclaimer_text, font=font_disclaimer, fill="#FFFFFF") # WHITE
 
     # Tallenna
     base_filename = "tulokset_kooste"
@@ -422,4 +482,85 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
     print(f"Tallennettu: {filename}")
 
 if __name__ == "__main__":
-    create_images()
+    import sys
+    import os
+    
+    # Yritä importata metadata-funktio palkintolaskurista
+    # Lisätään nykyinen hakemisto polkuun varmuuden vuoksi
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    try:
+        from palkintolaskuri import get_event_metadata
+    except ImportError:
+        # Fallback jos import ei toimi
+        def get_event_metadata(json_file="full_event_details.json"):
+            # Yritä etsiä juuresta tai ylempää
+            candidates = [
+                os.path.join(os.getcwd(), json_file),
+                os.path.join(os.path.dirname(os.getcwd()), json_file),
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", json_file)
+            ]
+            
+            target_file = None
+            for c in candidates:
+                if os.path.exists(c):
+                    target_file = c
+                    break
+            
+            if not target_file:
+                return None, None
+                
+            try:
+                import json
+                with open(target_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                if "data" in data and "ListOfDays" in data["data"]:
+                    days = data["data"]["ListOfDays"]
+                    if days:
+                        stage = days[0].get("Stages", [])[0]
+                        raw_date = stage.get("StartDate", "")
+                        if raw_date:
+                            parts = raw_date.split("-")
+                            if len(parts) == 3:
+                                race_date = f"{int(parts[2])}.{int(parts[1])}.{parts[0]}"
+                            else:
+                                race_date = raw_date
+                        else:
+                            race_date = ""
+                        race_name = stage.get("DayName", stage.get("Name", ""))
+                        return race_name, race_date
+            except:
+                pass
+            return None, None
+
+    # Argumenttien käsittely
+    json_file = "output/all_results.json"
+    
+    # 1. Tarkista CLI argumentit
+    if len(sys.argv) > 1:
+        json_file = sys.argv[1]
+    
+    race_name = None
+    race_date = None
+    is_final = False
+    
+    if len(sys.argv) > 2:
+        race_name = sys.argv[2]
+    if len(sys.argv) > 3:
+        race_date = sys.argv[3]
+        
+    if "--final" in sys.argv:
+        is_final = True
+
+    # 2. Jos argumentteja puuttuu, käytä automaatiota
+    if not race_name or not race_date:
+        auto_name, auto_date = get_event_metadata()
+        if auto_name:
+            if not race_name: race_name = auto_name
+            if not race_date: race_date = auto_date
+            print(f"Käytetään automaattista metadataa: {race_name}, {race_date}")
+        else:
+            # Fallback
+            if not race_name: race_name = "Unknown Race"
+            if not race_date: race_date = "1.1.2000"
+
+    create_images(json_file, race_name, race_date, is_final)

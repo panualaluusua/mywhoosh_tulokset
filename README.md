@@ -11,18 +11,24 @@ Työkalu MyWhoosh-kisatulosten hakemiseen, palkintojen laskemiseen ja grafiikoid
     playwright install
     ```
 
+## Dokumentaatio
+
+Tarkemmat ohjeet löytyvät `docs/` -kansiosta:
+- [Käyttöohje](docs/KAYTTOOHJE.md)
+- [Tekninen dokumentaatio](docs/TEKNINEN_DOKUMENTAATIO.md)
+
 ## Käyttö
 
-Aja koko putki `run.bat` -tiedostolla:
+Aja koko putki **`run_complete_pipeline.bat`** -tiedostolla:
 ```bash
-run.bat
+run_complete_pipeline.bat
 ```
 Tämä komentosarja:
 1.  Hakee tulokset MyWhooshista (kysyy URL/ID jos ei annettu).
 2.  Laskee palkinnot (ml. Sprint/KOM ja tiimipisteet).
 3.  Luo tulosgrafiikat `kuvat/` -kansioon.
 4.  Luo raportit `tulokset.txt` ja `palkintodata.json`.
-5.  (Valinnainen) Tallentaa palkinnot tietovarastoon (`palkintohistoria.csv`).
+5.  (Valinnainen) Tallentaa palkinnot tietovarastoon (`data/palkintohistoria.csv`).
 
 ## Rakenne
 
@@ -33,4 +39,4 @@ Tämä komentosarja:
     *   `paivita_varasto.py`: Tietokannan päivitys.
 *   `assets/`: Ikonit ja muut resurssit.
 *   `kuvat/`: Generoidut tuloskuvat.
-*   `palkintohistoria.csv`: Tietokanta palkinnoista.
+*   `data/palkintohistoria.csv`: Tietokanta palkinnoista.

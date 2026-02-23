@@ -2,8 +2,8 @@ import csv
 import os
 import palkintolaskuri
 
-CSV_FILE = "palkintohistoria.csv"
-OPT_IN_FILE = "seurattavat.txt"
+CSV_FILE = "data/palkintohistoria.csv"
+OPT_IN_FILE = "data/seurattavat.txt"
 
 def lue_seurattavat():
     """Lukee seurattavat.txt tiedoston ja palauttaa nimitietokannan (set)."""
