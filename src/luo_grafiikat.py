@@ -18,6 +18,7 @@ COLOR_TEXT = "#FFFFFF"               # Valkoinen
 COLOR_TEXT_GRAY = "#AAAAAA"          # Vaaleanharmaa (Tiimi)
 COLOR_PRIZE = "#FFD700"              # Kulta
 COLOR_SUBTITLE = "#FFFFFF"           # Valkoinen (UUSI)
+COLOR_TEXT_DIMMED = "#999999"        # Himmeä (ANL/DNF dynaaminen lisäys) - VAIHDETTU VAALEAMMAKSI (oli #555555)
 COLOR_ZEBRA = (255, 255, 255, 60)    # Valkoinen, ~23% opacity (oli 30)
 
 # Fontit (Windows oletukset)
@@ -50,8 +51,9 @@ CAT_HEADER_HEIGHT = 80               # Kasvatettu otsikkokorkeus
 # Sarakkeet (X-koordinaatit)
 COL_RANK_X = 40      # Vasen
 COL_NAME_X = 140     # Vasen
-COL_TIME_X_ALIGN = 620 # Oikea tasaus (loppupiste) - SIIRRETTY VASEMMALLE
-COL_TEAM_X = 660     # Vasen - SIIRRETTY VASEMMALLE
+COL_TIME_X_ALIGN = 520 # Oikea tasaus (loppupiste) - SIIRRETTY VASEMMALLE
+COL_WKG_X_ALIGN = 640 # W/kg Oikea tasaus
+COL_TEAM_X = 680     # Vasen - SIIRRETTY VASEMMALLE
 COL_PRIZE_X_ALIGN = 1040 # Oikea tasaus (loppupiste) - LEVENNETTY
 PADDING = 15         # Minimum spacing between columns
  
@@ -117,8 +119,15 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         print("Ei suomalaisia ajajia datassa.")
         return
 
-    # Järjestä: Kategoria -> Sijoitus
-    finnish_riders.sort(key=lambda x: (x.get('categoryId', 99), x.get('calculated_rank', 9999)))
+    # Järjestä: Kategoria -> (ANL/DNF pohjalle) -> Sijoitus
+    def get_sort_key(x):
+        rank = x.get('calculated_rank', 9999)
+        status = x.get('selectionStatus', '')
+        time_ms = x.get('finishedTime', 0)
+        is_bottom = 1 if status == "ANL" or time_ms >= 999999999 or time_ms == 0 else 0
+        return (x.get('categoryId', 99), is_bottom, rank)
+        
+    finnish_riders.sort(key=get_sort_key)
 
     # Alusta kuva ja skaalaa se
     original_img = Image.open(TEMPLATE_FILE).convert("RGBA")
@@ -309,14 +318,24 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         rider_cat = rider.get('categoryId', 'Unknown')
         if rider_cat != current_cat:
             current_cat = rider_cat
-            y += int(10 * scale_factor) # Padding
+            y += int(15 * scale_factor) # Padding (increased)
+            
+            # Kategoriaotsikko background
+            cat_bg_overlay = Image.new('RGBA', img.size, (0,0,0,0))
+            cat_bg_draw = ImageDraw.Draw(cat_bg_overlay)
+            cat_bg_draw.rectangle(
+                [box_x0, y - 5, box_x1, y + current_cat_height - 25],
+                fill=(255, 68, 68, 40) # Semi-transparent red
+            )
+            img = Image.alpha_composite(img, cat_bg_overlay)
+            draw = ImageDraw.Draw(img) # Update after composite
             
             # Kategoriaotsikko
             draw.text((MARGIN_X + 20, y), f"KATEGORIA {current_cat}", font=font_cat, fill=COLOR_CAT_HEADER)
             
-            # Viiva
+            # Paksumpi Viiva
             line_y = y + int(40 * scale_factor)
-            draw.line([(MARGIN_X + 20, line_y), (img.width - MARGIN_X - 20, line_y)], fill=COLOR_CAT_HEADER, width=2)
+            draw.line([(box_x0, line_y), (box_x1, line_y)], fill=COLOR_CAT_HEADER, width=4)
             
             y += current_cat_height
             row_index = 0 # Nollaa raidoitus laskuri per kategoria (valinnainen, mutta näyttää siistimmältä)
@@ -363,14 +382,22 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
             time_str = "{:d}:{:02d}:{:02d}".format(int(h), int(m), int(s))
 
         # Käsittele DSQ (ANL)
+        is_dimmed = False
+        if time_str == "DNF":
+            is_dimmed = True
+            
         if status == "ANL":
             rank = "ANL"
             time_str = "-"
             prize_str = "" # Ei palkintoa näkyviin vaikka olisi vahingossa laskettu
+            is_dimmed = True
+            
+        txt_color = COLOR_TEXT_DIMMED if is_dimmed else COLOR_TEXT
+        prize_color = COLOR_TEXT_DIMMED if is_dimmed else COLOR_PRIZE
 
         # Piirrä tekstit
         # Sijoitus
-        draw.text((COL_RANK_X, y), rank, font=font_med, fill=COLOR_TEXT)
+        draw.text((COL_RANK_X, y), rank, font=font_med, fill=txt_color)
         
         # Nimi (Iso) - with dynamic width constraint
         # Calculate where time will be positioned to avoid overlap
@@ -379,7 +406,7 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         time_start_x = COL_TIME_X_ALIGN - time_width
         max_name_width = time_start_x - COL_NAME_X - PADDING
         
-        draw_text_fitted(draw, name, COL_NAME_X, y, max_name_width, font_large, COLOR_TEXT)
+        draw_text_fitted(draw, name, COL_NAME_X, y, max_name_width, font_large, txt_color)
         
         # ICONS LOGIC
         # Load detailed prize data if available to determine icons
@@ -439,10 +466,10 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         # Aika (Oikea tasaus)
         bbox = draw.textbbox((0, 0), time_str, font=font_med)
         w = bbox[2] - bbox[0]
-        draw.text((COL_TIME_X_ALIGN - w, y), time_str, font=font_med, fill=COLOR_TEXT)
+        draw.text((COL_TIME_X_ALIGN - w, y), time_str, font=font_med, fill=txt_color)
         
         # Tiimi (Harmaa, pieni) - with dynamic width constraint
-        # Calculate where prize will be positioned to avoid overlap
+        tiimi_color = COLOR_TEXT_DIMMED if is_dimmed else COLOR_TEXT_GRAY
         if prize_str:
             bbox_prize = draw.textbbox((0, 0), prize_str, font=font_med_bold)
             prize_width = bbox_prize[2] - bbox_prize[0]
@@ -451,13 +478,13 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         else:
             max_team_width = COL_PRIZE_X_ALIGN - COL_TEAM_X - PADDING
         
-        draw_text_fitted(draw, team, COL_TEAM_X, y + 5, max_team_width, font_small, COLOR_TEXT_GRAY)
+        draw_text_fitted(draw, team, COL_TEAM_X, y + 5, max_team_width, font_small, tiimi_color)
         
         # Palkinto (Kulta, Oikea tasaus)
         if prize_str:
             bbox = draw.textbbox((0, 0), prize_str, font=font_med_bold)
             w = bbox[2] - bbox[0]
-            draw.text((COL_PRIZE_X_ALIGN - w, y), prize_str, font=font_med_bold, fill=COLOR_PRIZE)
+            draw.text((COL_PRIZE_X_ALIGN - w, y), prize_str, font=font_med_bold, fill=prize_color)
 
         y += current_row_height
         row_index += 1
