@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\panua\projektit\mywhoosh_tulokset\.venv"
+VIRTUAL_ENV="C:\Users\panua\projektit\mywhoosh_tulokset-ratavisualisointi\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

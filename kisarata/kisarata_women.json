@@ -1,0 +1,73 @@
+{
+    "race_details": {
+        "name": "Sunday Race Club - Finals - Women",
+        "date": "22nd February 2026",
+        "location": "Bhutan - Dragon's Fury",
+        "distance_km": 37.8,
+        "elevation_m": 507,
+        "laps": 1
+    },
+    "tactical_analysis": "Kiipeilijöiden juhlaa pitkässä loppunousussa",
+    "key_segments": [
+        {
+            "lap": 1,
+            "type": "climb",
+            "name": "Paro Bukid Climb",
+            "start_km": 4.1,
+            "end_km": 5.7,
+            "length_km": 1.6,
+            "average_gradient_percent": 4.3,
+            "elevation_gain_m": 68
+        },
+        {
+            "lap": 1,
+            "type": "sprint",
+            "name": "Clock Tower Sprint",
+            "start_km": 11.3,
+            "end_km": 11.3,
+            "length_km": 0.0,
+            "average_gradient_percent": 0.0,
+            "elevation_gain_m": 0
+        },
+        {
+            "lap": 1,
+            "type": "climb",
+            "name": "Paro Bukid Climb",
+            "start_km": 21.2,
+            "end_km": 22.8,
+            "length_km": 1.6,
+            "average_gradient_percent": 4.3,
+            "elevation_gain_m": 68
+        },
+        {
+            "lap": 1,
+            "type": "sprint",
+            "name": "Clock Tower Sprint",
+            "start_km": 28.4,
+            "end_km": 28.4,
+            "length_km": 0.0,
+            "average_gradient_percent": 0.0,
+            "elevation_gain_m": 0
+        },
+        {
+            "lap": 1,
+            "type": "climb",
+            "name": "Trongsa Pele Climb",
+            "start_km": 30.2,
+            "end_km": 36.5,
+            "length_km": 6.3,
+            "average_gradient_percent": 4.0,
+            "elevation_gain_m": 253
+        },
+        {
+            "lap": 1,
+            "type": "finish",
+            "name": "Finish",
+            "start_km": 37.8,
+            "end_km": 37.8,
+            "length_km": 0.0,
+            "average_gradient_percent": 0.0,
+            "elevation_gain_m": 0
+        }
+    ]
+}

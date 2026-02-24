@@ -1,0 +1,73 @@
+{
+    "race_details": {
+        "name": "Sunday Race Club - Finals - Men",
+        "date": "22nd February 2026",
+        "location": "Bhutan - Outer Loop",
+        "distance_km": 55.5,
+        "elevation_m": 1018,
+        "laps": 2
+    },
+    "tactical_analysis": "Ratkaisujen paikka raskaassa loppunousussa",
+    "key_segments": [
+        {
+            "lap": 1,
+            "type": "climb",
+            "name": "Dragon's Fury Climb",
+            "start_km": 4.4,
+            "end_km": 9.4,
+            "length_km": 5.0,
+            "average_gradient_percent": 5.1,
+            "elevation_gain_m": 253
+        },
+        {
+            "lap": 1,
+            "type": "sprint",
+            "name": "Trongsa Sprint",
+            "start_km": 17.9,
+            "end_km": 17.9,
+            "length_km": 0.0,
+            "average_gradient_percent": 0.0,
+            "elevation_gain_m": 0
+        },
+        {
+            "lap": 2,
+            "type": "climb",
+            "name": "Dragon's Fury Climb",
+            "start_km": 27.2,
+            "end_km": 32.2,
+            "length_km": 5.0,
+            "average_gradient_percent": 5.1,
+            "elevation_gain_m": 254
+        },
+        {
+            "lap": 2,
+            "type": "sprint",
+            "name": "Trongsa Sprint",
+            "start_km": 40.7,
+            "end_km": 40.7,
+            "length_km": 0.0,
+            "average_gradient_percent": 0.0,
+            "elevation_gain_m": 0
+        },
+        {
+            "lap": 2,
+            "type": "climb",
+            "name": "Trongsa Cresent Climb",
+            "start_km": 51.1,
+            "end_km": 55.1,
+            "length_km": 4.0,
+            "average_gradient_percent": 6.1,
+            "elevation_gain_m": 242
+        },
+        {
+            "lap": 2,
+            "type": "finish",
+            "name": "Finish",
+            "start_km": 55.5,
+            "end_km": 55.5,
+            "length_km": 0.0,
+            "average_gradient_percent": 0.0,
+            "elevation_gain_m": 0
+        }
+    ]
+}
