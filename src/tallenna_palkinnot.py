@@ -25,14 +25,30 @@ def save_prizes():
     print("--- Palkintojen Tallennus ---")
     
     # 1. Kysy tiedot
-    race_name = input("Kisan nimi: ").strip()
-    race_date = input("Päivämäärä (esim. 2025-01-01): ").strip()
+    # Try to load from kisarata data if available
+    race_name = ""
+    race_date = ""
+    kisarata_file = r"C:\Users\panua\projektit\rataprofiili\kisarata\kisarata_men.json"
+    if os.path.exists(kisarata_file):
+        try:
+            import json
+            with open(kisarata_file, 'r', encoding='utf-8') as f:
+                k_data = json.load(f)
+                rd = k_data.get("race_details", {})
+                race_name = rd.get("name", "")
+                race_date = rd.get("date", "")
+        except:
+            pass
+
+    if not race_name:
+        race_name = "Syötetty Kisa" # Default if not found
     if not race_date:
         race_date = datetime.date.today().strftime("%Y-%m-%d")
         print(f"Käytetään tätä päivää: {race_date}")
 
-    is_final_input = input("Onko kyseessä Finaali? (k/E): ").strip().lower()
-    is_final = is_final_input == 'k'
+    # Use arguments if we want to run headlessly, assume False for final if not specified
+    is_final_input = os.environ.get("IS_FINAL", "e")
+    is_final = is_final_input.lower() == 'k'
 
     # 2. Laske palkinnot
     print("Lasketaan palkintoja...")

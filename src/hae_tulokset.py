@@ -414,27 +414,9 @@ if __name__ == "__main__":
     
     if not target_input:
         print("--- MyWhoosh Tuloshaku ---")
-        target_input = input("Anna tapahtuman URL tai Event ID: ").strip()
-        
-        if not race_name:
-             race_name = input("Anna kisan nimi (valinnainen, paina Enter ohittaaksesi): ").strip()
-        
-        if not race_date:
-             race_date = input("Anna kisan pvm (valinnainen, paina Enter ohittaaksesi): ").strip()
-             
-        if not is_final:
-            final_input = input("Onko kyseessä Finaali (lasketaanko tiimipalkinnot)? (k/E): ").strip().lower()
-            if final_input in ['k', 'y', 'kyllä', 'yes']:
-                is_final = True
-            else:
-                is_final = False
-    
-    if not target_input:
-        print("Ei syötettä. Lopetetaan.")
-        input("Paina Enter lopettaaksesi...")
-        exit()
+        target_input = "https://results.mywhoosh.com/result/a109ae16-d5d7-49cf-8eb7-d5f9414e5b0e" # Default fallback if completely empty
+        print(f"Bypassing prompt, using default URL/ID: {target_input}")
 
-    # Determine URL
     if "http" in target_input:
         url = target_input
     else:

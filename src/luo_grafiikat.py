@@ -1,5 +1,6 @@
 import json
 import os
+import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from palkintolaskuri import get_all_prizes
 
@@ -8,6 +9,7 @@ from palkintolaskuri import get_all_prizes
 TEMPLATE_FILE = os.path.join("assets", "tuloslistapohja.jpg")
 OUTPUT_DIR = "kuvat"
 JSON_FILE = "output/all_results.json"
+KISARATA_DIR = "kisarata"
 
 # Värit
 COLOR_PANEL_BG = (10, 20, 40, 200)   # Tummansininen/Musta, läpinäkyvä
@@ -27,7 +29,7 @@ FONT_BOLD = "arialbd.ttf"
 
 # Sijainnit (Skaalattu 1080px leveydelle)
 TARGET_WIDTH = 1080
-START_Y = 230                        # Laskettu hieman (oli 210 -> 230)
+START_Y = 260                        # Tiivistetty takaisin jotta tuloslista pääosassa (oli 320)
 MAX_Y = 1800                         # Alarajan turvamarginaali 
 MARGIN_X = 20                        # Reunamarginaali
 PANEL_RADIUS = 20
@@ -50,13 +52,238 @@ CAT_HEADER_HEIGHT = 80               # Kasvatettu otsikkokorkeus
 
 # Sarakkeet (X-koordinaatit)
 COL_RANK_X = 40      # Vasen
-COL_NAME_X = 140     # Vasen
-COL_TIME_X_ALIGN = 520 # Oikea tasaus (loppupiste) - SIIRRETTY VASEMMALLE
-COL_WKG_X_ALIGN = 640 # W/kg Oikea tasaus
-COL_TEAM_X = 680     # Vasen - SIIRRETTY VASEMMALLE
+COL_NAME_X = 120     # Vasen (siirretty vasemmalle antamaan tilaa nimelle)
+COL_TIME_X_ALIGN = 525 # Oikea tasaus (aika)
+COL_WKG_X_ALIGN = 650 # W/kg Oikea tasaus
+COL_TEAM_X = 680     # Vasen (tiimin alku)
 COL_PRIZE_X_ALIGN = 1040 # Oikea tasaus (loppupiste) - LEVENNETTY
 PADDING = 15         # Minimum spacing between columns
  
+# --- KISARATA-APUFUNKTIOT ---
+
+def load_kisarata_data(gender="men"):
+    """Lataa kisarata-JSON ja silhuettikuva. Palauttaa (data_dict, silhouette_image) tai (None, None)."""
+    json_path = os.path.join(KISARATA_DIR, f"kisarata_{gender}.json")
+    sil_path = os.path.join(KISARATA_DIR, f"{gender}_silhuetti.png")
+
+    data = None
+    silhouette = None
+
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            print(f"Kisaratatiedot ladattu: {json_path}")
+        except Exception as e:
+            print(f"Varoitus: Kisarata-JSON-lataus epäonnistui: {e}")
+    else:
+        print(f"Varoitus: Kisarata-JSONia ei löydy: {json_path}")
+
+    if os.path.exists(sil_path):
+        try:
+            silhouette = Image.open(sil_path).convert("RGBA")
+            print(f"Silhuetti ladattu: {sil_path}")
+        except Exception as e:
+            print(f"Varoitus: Silhuetin lataus epäonnistui: {e}")
+    else:
+        print(f"Varoitus: Silhuettia ei löydy: {sil_path} (jatketaan ilman)")
+
+    return data, silhouette
+
+
+def draw_race_info_panel(img, draw, kisarata_data, silhouette_img, scale_ratio, panel_y):
+    """Piirrä vapaasti leijuva ratasilhuetti + kisan päätiedot."""
+    if not kisarata_data:
+        return img, draw
+
+    rd = kisarata_data.get("race_details", {})
+    wc = kisarata_data.get("weather_conditions", {})
+    tactical = kisarata_data.get("tactical_analysis", "")
+
+    location = rd.get("location", "")
+    distance = rd.get("distance_km", "")
+    elevation = rd.get("elevation_m", "")
+    laps = rd.get("laps", "")
+    date_str = rd.get("date", "")
+    max_wind = wc.get("max_wind_kmh", 0)
+
+    panel_x0 = 20
+    panel_x1 = img.width - 20
+    panel_w = panel_x1 - panel_x0
+
+    # --- Fontit ---
+    try:
+        font_info_large = ImageFont.truetype(FONT_BOLD, int(22 * scale_ratio))
+        font_info_med = ImageFont.truetype(FONT_REGULAR, int(20 * scale_ratio))
+        font_tactical_italic = ImageFont.truetype("ariali.ttf", int(22 * scale_ratio)) # Kasvatettu koko entisestään (oli 20)
+        font_emoji = ImageFont.truetype("seguiemj.ttf", int(18 * scale_ratio))
+    except IOError:
+        font_info_large = ImageFont.load_default()
+        font_info_med = ImageFont.load_default()
+        font_tactical_italic = ImageFont.load_default()
+        font_emoji = font_info_med
+
+    # Parse "kisat" from race name
+    race_name = rd.get("name", "")
+    kisat_str = "Kisa"
+    if "Qualifier" in race_name:
+        import re
+        match = re.search(r"Qualifier Race (\d+)", race_name)
+        if match:
+             kisat_str = f"Yksilökisa {match.group(1)}"
+        else:
+             kisat_str = "Yksilökisa"
+    elif "Final" in race_name or "Finaali" in race_name:
+        kisat_str = "Joukkuekisa"
+
+    gender_str = "Miehet" if "Men" in race_name else ("Naiset" if "Women" in race_name else "")
+    if gender_str:
+        kisat_str = f"{kisat_str} - {gender_str}"
+    # Ei lisätä enää aikaa/päivämäärää
+
+    # --- Sijainnit ---
+    # Keskilinja on sivun keskellä
+    center_x = img.width // 2
+
+    # Silhuetin maksimikoko
+    sil_max_w = int(panel_w * 0.45)
+    sil_max_h = int(90 * scale_ratio)
+    
+    sil_x, sil_y, sil_w, sil_h = 0, 0, 0, 0
+    
+    # Ratkaisemme vasemmalle puolelle silhuetin ja ylle 'radan nimi'
+    left_block_x = img.width // 4 - int(30 * scale_ratio) # Vähän vasemmalle keskustasta
+    
+
+
+    if silhouette_img:
+        orig_w, orig_h = silhouette_img.size
+        
+        # Etsitään näkyvän silhuetin todelliset rajat (ei läpinäkyvää aluetta)
+        bbox = silhouette_img.getbbox()
+        if bbox:
+            vis_left, vis_top, vis_right, vis_bottom = bbox
+            vis_w = vis_right - vis_left
+            
+            # Leikataan noin 1% nimenomaan näkyvän viivan alusta ja lopusta
+            crop_pixels = int(vis_w * 0.02)
+            if crop_pixels > 0:
+                new_left = vis_left + crop_pixels
+                new_right = vis_right - crop_pixels
+                
+                if new_left < new_right:
+                    silhouette_img = silhouette_img.crop((new_left, 0, new_right, orig_h))
+                    orig_w, orig_h = silhouette_img.size
+            
+        ratio = min(sil_max_w / orig_w, sil_max_h / orig_h)
+        sil_w = int(orig_w * ratio)
+        sil_h = int(orig_h * ratio)
+        sil_resized = silhouette_img.resize((sil_w, sil_h), Image.Resampling.LANCZOS)
+        
+        # Sijoitetaan silhuetti
+        sil_x = left_block_x - (sil_w // 2)
+        sil_y = panel_y + int(8 * scale_ratio) # Nostettu entisestään lähemmäs otsikkoa
+        img.paste(sil_resized, (sil_x, sil_y), sil_resized)
+        draw = ImageDraw.Draw(img)
+
+    # 1. Radan Nimi (Silhuetin yläpuolelle, selvästi limittäin silhuetin kanssa)
+    radan_nimi_y = panel_y + int(10 * scale_ratio) # Painettu alemmas silhuetin päälle
+
+    # Dynaaminen fonttikoko (lyhennä jos liian leveä)
+    max_nimi_w = (left_block_x - 20) * 2
+    current_size = int(22 * scale_ratio)
+    current_font = font_info_large
+    
+    while current_size >= 10:
+        bbox = draw.textbbox((0, 0), location, font=current_font)
+        nimi_w = bbox[2] - bbox[0]
+        if nimi_w <= max_nimi_w:
+            break
+        current_size -= 1
+        try:
+            current_font = ImageFont.truetype(FONT_BOLD, current_size)
+        except IOError:
+            break
+
+    bbox = draw.textbbox((0, 0), location, font=current_font)
+    nimi_w = bbox[2] - bbox[0]
+    draw.text((left_block_x - (nimi_w // 2), radan_nimi_y), location, font=current_font, fill="#FFFFFF", stroke_width=2, stroke_fill="#000000")
+
+    # 2. Pystysarake Oikealle (Silhouette/Left Blockin oikealle puolelle)
+    right_block_x = img.width // 2 - int(20 * scale_ratio) # Siirretty vasemmalle lähemmäs silhuettia
+    col_y = panel_y + int(8 * scale_ratio) # Siirretty hieman alaspäin
+    line_spacing = int(28 * scale_ratio) # Kasvatettu riviväli paremman luettavuuden vuoksi
+    emoji_offset = int(24 * scale_ratio)
+
+    # Piirretään tumma läpikuultava taustalevy otsikkotekstien taakse luettavuuden parantamiseksi
+    # Tämä piirretään vain oikean lohkon alle
+    bg_overlay = Image.new('RGBA', img.size, (0,0,0,0))
+    bg_draw = ImageDraw.Draw(bg_overlay)
+    
+    # Laske laatikon leveys tekstien perusteella (arvio)
+    box_width = int(280 * scale_ratio) 
+    box_height = int(95 * scale_ratio) # Palautettu 95
+    
+    bg_draw.rounded_rectangle(
+        [right_block_x - int(10 * scale_ratio), col_y - int(10 * scale_ratio), right_block_x + box_width, col_y + box_height],
+        radius=10,
+        fill=(0, 0, 0, 140) # Läpikuultava musta
+    )
+    img = Image.alpha_composite(img, bg_overlay)
+    draw = ImageDraw.Draw(img)
+
+    draw.text((right_block_x, col_y), "🏁", font=font_emoji, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
+    draw.text((right_block_x + emoji_offset, col_y), kisat_str, font=font_info_med, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
+    col_y += line_spacing
+    
+    draw.text((right_block_x, col_y), "📏", font=font_emoji, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
+    distance_str = f"{distance} km"
+    draw.text((right_block_x + emoji_offset, col_y), distance_str, font=font_info_med, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
+
+    col_y += line_spacing
+    
+    draw.text((right_block_x, col_y), "⛰️", font=font_emoji, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
+    elevation_str = f"{elevation} m"
+    draw.text((right_block_x + emoji_offset, col_y), elevation_str, font=font_info_med, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
+
+    if date_str:
+        import datetime
+        formatted_date = date_str
+        try:
+            # Yritetään parsia englanninkielinen päivämäärä esim. "22nd February 2026" tai "1st March 2026"
+            # Poistetaan ordinaalit (st, nd, rd, th)
+            import re
+            clean_date = re.sub(r'(\d+)(st|nd|rd|th)', r'\1', date_str)
+            dt = datetime.datetime.strptime(clean_date, "%d %B %Y")
+            formatted_date = dt.strftime("%d/%m/%Y")
+        except ValueError:
+            pass # Jos parsinta epäonnistuu, pidetään alkuperäinen
+            
+        bbox = draw.textbbox((0, 0), elevation_str, font=font_info_med)
+        elev_w = bbox[2] - bbox[0]
+        date_x = right_block_x + emoji_offset + elev_w + int(20 * scale_ratio)
+        draw.text((date_x, col_y), "📅", font=font_emoji, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
+        draw.text((date_x + emoji_offset, col_y), formatted_date, font=font_info_med, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
+
+    # 3. Kisa-analyysilause (Toistaiseksi piilotettu käyttäjän pyynnöstä tilaa säästääkseen)
+    # if tactical:
+    #     max_chars = 85 # Enemmän tilaa vasemmalle siirron ansiosta
+    #     if len(tactical) > max_chars:
+    #         tactical_short = tactical[:max_chars - 1] + "\u2026"
+    #     else:
+    #         tactical_short = tactical
+    #         
+    #     tactical_quote = f'"{tactical_short}"'
+    #     col_y += line_spacing + int(15 * scale_ratio)  # Selvästi enemmän väliä ylempään tietoon
+    #     
+    #     # Aloitetaan heti silhuetin oikealta puolelta (tai varalla hieman vasemmalta)
+    #     quote_x = sil_x + sil_w + int(20 * scale_ratio) if silhouette_img else left_block_x
+    #     
+    #     draw.text((quote_x, col_y), tactical_quote, font=font_tactical_italic, fill="#FFFFFF", stroke_width=2, stroke_fill="#000000")
+
+    return img, draw
+
+
 def shorten_team_name(name):
     if not name or name == "-":
         return "-"
@@ -95,7 +322,7 @@ def draw_text_fitted(draw, text, x, y, max_width, font, fill, min_font_size=12):
     draw.text((x, y), text, font=current_font, fill=fill)
     return current_font
 
-def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=False):
+def create_images(json_file=JSON_FILE, kisarata_gender="men", is_final=False):
     if not os.path.exists(json_file):
         print(f"Virhe: Tiedostoa {json_file} ei löydy.")
         return
@@ -107,6 +334,9 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
 
     # Laske palkinnot etukäteen
     prize_map, team_rank_map = get_all_prizes(json_file, is_final)
+
+    # Lataa kisarata-data ja silhuetti
+    kisarata_data, silhouette_img = load_kisarata_data(kisarata_gender)
 
     # Lataa data
     with open(json_file, 'r', encoding='utf-8') as f:
@@ -236,11 +466,12 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
     img = Image.alpha_composite(img, overlay)
     draw = ImageDraw.Draw(img)
 
-    # Piirrä PÄÄOTSIKKO "Sunday Race Club" (Valkoinen, Iso, Keskitetty)
+    # Piirrä PÄÄOTSIKKO
     title_text = "Sunday Race Club"
+
     try:
         # Kokeile ladata fontti, käytä isompaa kokoa
-        font_main_title = ImageFont.truetype(FONT_BOLD, int(55 * scale_ratio)) # Pienennetty 70 -> 55
+        font_main_title = ImageFont.truetype(FONT_BOLD, int(55 * scale_ratio)) 
     except IOError:
         font_main_title = ImageFont.load_default()
         
@@ -255,42 +486,11 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
     # Outline
     draw.text((title_x, title_y), title_text, font=font_main_title, fill="#FFFFFF", stroke_width=4, stroke_fill="#000000")
 
-    # Piirrä alaotsikko (Kirkas Punainen, Iso)
-    if race_name or race_date:
-        # Yhdistä nimi ja pvm
-        parts = []
-        if race_name: parts.append(race_name.upper())
-        if race_date: parts.append(race_date)
-        subtitle_text = " | ".join(parts)
-        
-        # Dynaaminen fontin koon säätö
-        max_subtitle_width = TARGET_WIDTH - 100 # Marginaalit
-        current_subtitle_size = int(36 * scale_ratio)
-        font_subtitle_dynamic = ImageFont.truetype(FONT_BOLD, current_subtitle_size)
-        
-        while True:
-            bbox = draw.textbbox((0, 0), subtitle_text, font=font_subtitle_dynamic)
-            text_width = bbox[2] - bbox[0]
-            
-            if text_width <= max_subtitle_width or current_subtitle_size <= 20:
-                break
-                
-            current_subtitle_size -= 2
-            font_subtitle_dynamic = ImageFont.truetype(FONT_BOLD, current_subtitle_size)
-        
-        # Keskitä
-        bbox = draw.textbbox((0, 0), subtitle_text, font=font_subtitle_dynamic)
-        text_width = bbox[2] - bbox[0]
-        subtitle_x = (img.width - text_width) / 2
-        
-        # Sijoita pääotsikon alle
-        # title_y (50) + title_height (approx 70-80) + padding (30)
-        subtitle_y = start_y_scaled - 90 
-        # TAI kiinteämmin relatiivisesti:
-        subtitle_y = int(115 * scale_ratio) # Nostettu ylemmäs (oli 140 -> 115)
-        
-        # Piirrä teksti mustalla reunuksella (outline)
-        draw.text((subtitle_x, subtitle_y), subtitle_text, font=font_subtitle_dynamic, fill=COLOR_SUBTITLE, stroke_width=3, stroke_fill="#000000")
+    # Piirrä kisarata-paneeli (silhuetti + kisan tiedot)
+    race_info_y = int(115 * scale_ratio)
+    img, draw = draw_race_info_panel(
+        img, draw, kisarata_data, silhouette_img, scale_ratio, race_info_y
+    )
 
     # Piirrä sarakeotsikot
     y = start_y_scaled
@@ -302,6 +502,11 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
     bbox = draw.textbbox((0, 0), "AIKA", font=font_header)
     w = bbox[2] - bbox[0]
     draw.text((COL_TIME_X_ALIGN - w, y - 40), "AIKA", font=font_header, fill=COLOR_HEADER_TEXT)
+
+    # Laske "W/kg" leveys ja sijoita oikein
+    bbox = draw.textbbox((0, 0), "W/kg", font=font_header)
+    w = bbox[2] - bbox[0]
+    draw.text((COL_WKG_X_ALIGN - w, y - 40), "W/kg", font=font_header, fill=COLOR_HEADER_TEXT)
     
     draw.text((COL_TEAM_X, y - 40), "TIIMI", font=font_header, fill=COLOR_HEADER_TEXT)
     
@@ -313,6 +518,52 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
     current_cat = None
     row_index = 0
     
+    # PRE-PASS: Etsi yhtenäinen fonttikoko kaikille nimille
+    uniform_name_size = current_font_size_large
+    for rider in finnish_riders:
+        name = rider.get('userFullName', 'Unknown')
+        time_ms = rider.get('finishedTime', 0)
+        status = rider.get('selectionStatus', '')
+        
+        if status == "ANL":
+            time_str = "-"
+        elif time_ms >= 999999999 or time_ms == 0:
+            time_str = "DNF"
+        else:
+            seconds = (time_ms / 1000)
+            m, s = divmod(seconds, 60)
+            h, m = divmod(m, 60)
+            time_str = "{:d}:{:02d}:{:02d}".format(int(h), int(m), int(s))
+
+        bbox_time = draw.textbbox((0, 0), time_str, font=font_med)
+        time_width = bbox_time[2] - bbox_time[0]
+        time_start_x = COL_TIME_X_ALIGN - time_width
+        max_name_width = time_start_x - COL_NAME_X - PADDING
+        
+        test_size = uniform_name_size
+        try:
+            test_font = ImageFont.truetype(FONT_BOLD, test_size)
+            while test_size >= 12:
+                bbox_name = draw.textbbox((0, 0), name, font=test_font)
+                if bbox_name[2] - bbox_name[0] <= max_name_width:
+                    break
+                test_size -= 2
+                test_font = ImageFont.truetype(FONT_BOLD, test_size)
+        except IOError:
+            pass
+            
+        if test_size < uniform_name_size:
+            uniform_name_size = test_size
+
+    # Päivitä globaali font_large yhtenäiseen kokoon
+    try:
+        font_large = ImageFont.truetype(FONT_BOLD, uniform_name_size)
+        font_med = ImageFont.truetype(FONT_REGULAR, uniform_name_size)
+        font_med_bold = ImageFont.truetype(FONT_BOLD, uniform_name_size)
+        font_small = ImageFont.truetype(FONT_REGULAR, uniform_name_size)
+    except IOError:
+        pass
+
     for rider in finnish_riders:
         # Tarkista kategoria
         rider_cat = rider.get('categoryId', 'Unknown')
@@ -468,6 +719,15 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         w = bbox[2] - bbox[0]
         draw.text((COL_TIME_X_ALIGN - w, y), time_str, font=font_med, fill=txt_color)
         
+        # W/kg (Oikea tasaus)
+        raw_wkg = rider.get('wattPerKG', 0)
+        wkg_str = f"{float(raw_wkg):.1f}" if raw_wkg else "-"
+        if status == "ANL" or time_str == "DNF" or time_str == "-":
+            wkg_str = "-"
+        bbox_wkg = draw.textbbox((0, 0), wkg_str, font=font_med)
+        w_wkg = bbox_wkg[2] - bbox_wkg[0]
+        draw.text((COL_WKG_X_ALIGN - w_wkg, y), wkg_str, font=font_med, fill=txt_color)
+        
         # Tiimi (Harmaa, pieni) - with dynamic width constraint
         tiimi_color = COLOR_TEXT_DIMMED if is_dimmed else COLOR_TEXT_GRAY
         if prize_str:
@@ -489,20 +749,24 @@ def create_images(json_file=JSON_FILE, race_name="", race_date="", is_final=Fals
         y += current_row_height
         row_index += 1
 
-    # Tallenna
+    # Tallenna — käytä kisarata-JSON:n tietoja tiedostonimeen
     base_filename = "tulokset_kooste"
-    if race_name:
-        safe_name = "".join([c if c.isalnum() else "_" for c in race_name]).strip("_")
-        while "__" in safe_name:
-            safe_name = safe_name.replace("__", "_")
-        if safe_name:
-            base_filename = f"{base_filename}_{safe_name}"
-
-    if race_date:
-        safe_date = race_date.replace(".", "_").replace("/", "_").replace("-", "_")
-        safe_date = "".join([c if c.isalnum() or c == "_" else "" for c in safe_date]).strip("_")
-        if safe_date:
-            base_filename = f"{base_filename}_{safe_date}"
+    if kisarata_data:
+        rd = kisarata_data.get("race_details", {})
+        race_name = rd.get("name", "")
+        race_date = rd.get("date", "")
+        if race_name:
+            safe_name = "".join([c if c.isalnum() else "_" for c in race_name]).strip("_")
+            while "__" in safe_name:
+                safe_name = safe_name.replace("__", "_")
+            if safe_name:
+                base_filename = f"{base_filename}_{safe_name}"
+        if race_date:
+            safe_date = "".join([c if c.isalnum() else "_" for c in race_date]).strip("_")
+            while "__" in safe_date:
+                safe_date = safe_date.replace("__", "_")
+            if safe_date:
+                base_filename = f"{base_filename}_{safe_date}"
 
     filename = os.path.join(OUTPUT_DIR, f"{base_filename}.png")
     img.convert("RGB").save(filename)
@@ -561,33 +825,18 @@ if __name__ == "__main__":
 
     # Argumenttien käsittely
     json_file = "output/all_results.json"
-    
+    kisarata_gender = "men"
+    is_final = False
+
     # 1. Tarkista CLI argumentit
     if len(sys.argv) > 1:
         json_file = sys.argv[1]
-    
-    race_name = None
-    race_date = None
-    is_final = False
-    
     if len(sys.argv) > 2:
-        race_name = sys.argv[2]
-    if len(sys.argv) > 3:
-        race_date = sys.argv[3]
-        
+        kisarata_gender = sys.argv[2]  # "men" tai "women"
+
     if "--final" in sys.argv:
         is_final = True
+    if "--women" in sys.argv:
+        kisarata_gender = "women"
 
-    # 2. Jos argumentteja puuttuu, käytä automaatiota
-    if not race_name or not race_date:
-        auto_name, auto_date = get_event_metadata()
-        if auto_name:
-            if not race_name: race_name = auto_name
-            if not race_date: race_date = auto_date
-            print(f"Käytetään automaattista metadataa: {race_name}, {race_date}")
-        else:
-            # Fallback
-            if not race_name: race_name = "Unknown Race"
-            if not race_date: race_date = "1.1.2000"
-
-    create_images(json_file, race_name, race_date, is_final)
+    create_images(json_file, kisarata_gender, is_final)

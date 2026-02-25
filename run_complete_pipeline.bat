@@ -14,9 +14,10 @@ echo.
 echo Valittu URL: %target_url%
 echo.
 
-:: Kysy Nimi ja Pvm (User request)
-set /p race_name="Anna kisan nimi (Jata tyhjaksi jos haluat automaation): "
-set /p race_date="Anna kisan pvm (Jata tyhjaksi jos haluat automaation): "
+:: Kysy sukupuolikategoria (men/women)
+set /p kisarata_gender="Anna sukupuolikategoria (men/women, Enter=men): "
+if "%kisarata_gender%"=="" set kisarata_gender=men
+echo Kategoria: %kisarata_gender%
 echo.
 
 echo [1/6] Haetaan tiimitulokset (capture_team_data.py)...
@@ -46,23 +47,20 @@ echo [3/6] Yhdistetaan tiimipalkinnot (merge_team_prizes.py)...
 if %ERRORLEVEL% NEQ 0 goto error
 
 echo [4/6] Lasketaan lopulliset palkinnot (palkintolaskuri.py)...
-:: Argumentit: source_json, output_json, race_name, race_date, (event_id)
-if "%race_name%"=="" (
-    .venv\Scripts\python.exe src/palkintolaskuri.py tallenna_palkintodata
-) else (
-    .venv\Scripts\python.exe src/palkintolaskuri.py tallenna_palkintodata output/all_results.json output/palkintodata.json "%race_name%" "%race_date%"
-)
+.venv\Scripts\python.exe src/palkintolaskuri.py tallenna_palkintodata
 if %ERRORLEVEL% NEQ 0 goto error
 
-echo [5/6] Paivitetaan varastoa...
+echo [5/7] Paivitetaan varastoa...
 .venv\Scripts\python.exe src/paivita_varasto.py --file output/palkintodata.json
 
-echo [6/6] Luodaan grafiikat...
-if "%race_name%"=="" (
-    .venv\Scripts\python.exe src/luo_grafiikat.py
-) else (
-    .venv\Scripts\python.exe src/luo_grafiikat.py output/all_results.json "%race_name%" "%race_date%"
+echo [6/7] Prosessoidaan ratasilhuetit (extract_silhouette.py)...
+.venv\Scripts\python.exe src/extract_silhouette.py kisarata
+if %ERRORLEVEL% NEQ 0 (
+    echo Varoitus: Silhuettien prosessointi epaonnistui, jatketaan ilmankin.
 )
+
+echo [7/7] Luodaan grafiikat...
+.venv\Scripts\python.exe src/luo_grafiikat.py output/all_results.json %kisarata_gender%
 if %ERRORLEVEL% NEQ 0 goto error
 
 echo VALMIS!

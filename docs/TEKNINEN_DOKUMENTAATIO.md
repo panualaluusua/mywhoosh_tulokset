@@ -38,7 +38,9 @@ Projekti koostuu sarjasta Python-skriptejä, joita ajetaan peräkkäin `run_comp
 
 6. **`src/luo_grafiikat.py`**
    - Lukee `all_results.json` (tai `palkintodata.json`).
-   - Renderöi PNG-kuvan (`PIL` kirjasto).
+   - Lukee radan profiilitiedot (sijainti, pituus, nousumetrit, kierrokset, jne) ja silhuettikuvan `kisarata/` -kansiosta (`kisarata_men.json` / `kisarata_women.json`).
+   - Renderöi PNG-kuvan (`PIL` kirjasto) hyödyntäen siistiä tummaa läpikuultavaa taustaa metadatateksteille.
+   - Esittää kuskien datan (Sijoitus, Nimi, Aika, W/kg, Tiimi, Palkinto).
    - Käyttää dynaamista skaalausta (sovittaa fontit ja rivit kuvan korkeuteen).
    - Tuottaa: `kuvat/tulokset_kooste_*.png`.
 
@@ -65,6 +67,7 @@ graph TD
     Laskuri --> PalkData[palkintodata.json]
     
     Bat -->|Nimi/Pvm| Graf[luo_grafiikat.py]
+    Rataprofiili[kisarata/kisarata_*.json] -.-> Graf
     AllResUpdated --> Graf
     Graf --> Png[kuvat/kuva.png]
 ```
