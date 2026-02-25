@@ -7,1111 +7,2289 @@
         "resultData": [
             {
                 "rank": 1,
-                "teamId": "8b16648e-5e45-492c-971b-b482e2113df1",
-                "teamName": "ALFAJOR",
+                "teamId": "4b51d6fc-2b98-4c5f-aff6-4d5b2521fcc0",
+                "teamName": "FCC INDOORPHINS",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/104_2igMkuKzqHdVYNBTByO6LLFcOlpEfDGF9XpwR5n9.png",
                 "players": [
                     {
                         "rank": 3,
-                        "userId": "62619777-1770-4492-8823-e6c768771141",
-                        "userFullName": "Lionel Vujasin",
+                        "userId": "9d8aaebd-8d56-11ef-889b-06c5fa4c0029",
+                        "userFullName": "Francesca Tommasi",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belgium.png",
-                        "finishedTime": 4630855,
-                        "gapTime": 0,
-                        "categoryId": 1
-                    },
-                    {
-                        "rank": 6,
-                        "userId": "40f7d928-abd2-11ed-81b4-026dfe51841d",
-                        "userFullName": "Michal Kaminski",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 4726045,
-                        "gapTime": 95190,
-                        "categoryId": 1
-                    },
-                    {
-                        "rank": 8,
-                        "userId": "ea6cbb19-8994-4ef9-b3a6-40814b7a67a9",
-                        "userFullName": "Ollie Jones",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
-                        "finishedTime": 4755916,
-                        "gapTime": 125061,
-                        "categoryId": 1
-                    },
-                    {
-                        "rank": 22,
-                        "userId": "a70bfb2d-5cae-4abf-8738-223cb23d75a3",
-                        "userFullName": "Daniel Turek",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/czech_republic.png",
-                        "finishedTime": 4895638,
-                        "gapTime": 264783,
-                        "categoryId": 1
-                    }
-                ],
-                "finishedTime": 14112816,
-                "gapTime": 0,
-                "categoryId": 1,
-                "prizeMoney": "-"
-            },
-            {
-                "rank": 2,
-                "teamId": "11a69649-8f3e-4d60-b3d4-622346775f87",
-                "teamName": "BOSS MOVES ONLY",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/104_2igMkuKzqHdVYNBTByO6LLFcOlpEfDGF9XpwR5n9.png",
-                "players": [
-                    {
-                        "rank": 4,
-                        "userId": "7912e021-348b-4eb0-a10d-3705ca1c1fc7",
-                        "userFullName": "michael knudsen",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/denmark.png",
-                        "finishedTime": 4630989,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
+                        "finishedTime": 3617217,
                         "gapTime": 0,
                         "categoryId": 1
                     },
                     {
                         "rank": 5,
-                        "userId": "b228a940-ae4c-4fc4-9915-8e0ae65ec6ce",
-                        "userFullName": "Michael Vink",
+                        "userId": "18e2b300-8ca0-11ee-bd0e-066d4aa1673f",
+                        "userFullName": "Elyse Gallegos",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
-                        "finishedTime": 4682660,
-                        "gapTime": 51671,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 3637842,
+                        "gapTime": 20625,
                         "categoryId": 1
                     },
                     {
-                        "rank": 13,
-                        "userId": "7e7cff66-220e-45ed-a5c9-8ef9e0787c83",
-                        "userFullName": "Saeid Safarzadeh",
+                        "rank": 6,
+                        "userId": "7ff75f34-f12b-11ee-9489-02bbe3eaafd1",
+                        "userFullName": "Camilla Ahlberg",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/iran.png",
-                        "finishedTime": 4801272,
-                        "gapTime": 170283,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 3652721,
+                        "gapTime": 35504,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 8,
+                        "userId": "30634818-b2e3-46b8-80d9-db820a4cabc9",
+                        "userFullName": "Minna Koistinen",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
+                        "finishedTime": 3690195,
+                        "gapTime": 72978,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 12,
+                        "userId": "59052ffd-c445-45d0-82f1-581f39a38491",
+                        "userFullName": "Elizabeth Van Houweling",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 3705959,
+                        "gapTime": 88742,
                         "categoryId": 1
                     }
                 ],
-                "finishedTime": 14114921,
-                "gapTime": 2105,
+                "finishedTime": 10907780,
+                "gapTime": 0,
                 "categoryId": 1,
-                "prizeMoney": "-"
+                "prizeMoney": "USD\u00a09,520"
             },
             {
-                "rank": 3,
-                "teamId": "6ef04bfc-7541-4cd3-bfd1-d16aa15f3d1e",
-                "teamName": "TEAM SCANDI RACING",
+                "rank": 2,
+                "teamId": "87b35fde-838d-44f8-babb-81548b40907f",
+                "teamName": "SWEAT SENSATIONS",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/104_2igMkuKzqHdVYNBTByO6LLFcOlpEfDGF9XpwR5n9.png",
                 "players": [
                     {
                         "rank": 2,
-                        "userId": "2a334bb7-bae0-11ef-9dcf-02bbe3eaafd1",
-                        "userFullName": "Njal Pedersen",
+                        "userId": "8f8fa29e-7055-48af-be33-8d5dad500ea3",
+                        "userFullName": "Gabriela Guerra",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/norway.png",
-                        "finishedTime": 4630697,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 3611263,
                         "gapTime": 0,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 4,
+                        "userId": "9112dfe7-61ee-4627-b056-5d5d6e1c7908",
+                        "userFullName": "Kathrin Fuhrer",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/switzerland.png",
+                        "finishedTime": 3637350,
+                        "gapTime": 26087,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 9,
+                        "userId": "dc3808bd-9edf-11ef-9e42-06c5fa4c0029",
+                        "userFullName": "Nicole Meyer",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 3694676,
+                        "gapTime": 83413,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 82,
+                        "userId": "78e5c9f5-87f0-11ee-93a0-06c5fa4c0029",
+                        "userFullName": "Merle Brunnee",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4141920,
+                        "gapTime": 530657,
+                        "categoryId": 1
+                    }
+                ],
+                "finishedTime": 10943289,
+                "gapTime": 35509,
+                "categoryId": 1,
+                "prizeMoney": "USD\u00a06,800"
+            },
+            {
+                "rank": 3,
+                "teamId": "bf7a749b-b5c5-45b8-b90b-fa1dcbf6deca",
+                "teamName": "ABLOC INTERNATIONAL",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/182_POgQOIBG7sc1AChy9HzIJKnrFpTB3mAa9uzoeuC0.png",
+                "players": [
+                    {
+                        "rank": 1,
+                        "userId": "4b3e766c-594a-11ed-bf6e-026dfe51841d",
+                        "userFullName": "Mary Kate McCarthy",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 3604166,
+                        "gapTime": 0,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 7,
+                        "userId": "a58af5b5-e6c4-11ee-97de-06c5fa4c0029",
+                        "userFullName": "Kristen Kulchinsky",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 3657272,
+                        "gapTime": 53106,
                         "categoryId": 1
                     },
                     {
                         "rank": 10,
-                        "userId": "31ab3613-9368-11ee-b495-02bbe3eaafd1",
-                        "userFullName": "Bjoern Andreassen",
+                        "userId": "5edb0b39-d384-11ec-a043-026dfe51841d",
+                        "userFullName": "Lisa Hermansson",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/denmark.png",
-                        "finishedTime": 4761441,
-                        "gapTime": 130744,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 3703432,
+                        "gapTime": 99266,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 13,
+                        "userId": "726bc65d-9dd3-11ee-bd0e-066d4aa1673f",
+                        "userFullName": "Maria Holdcroft",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 3706618,
+                        "gapTime": 102452,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 15,
+                        "userId": "31d2f417-a702-4b7c-8e75-2ef1fa5bd5dc",
+                        "userFullName": "Mika Soderstrom",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 3728587,
+                        "gapTime": 124421,
+                        "categoryId": 1
+                    }
+                ],
+                "finishedTime": 10964870,
+                "gapTime": 57090,
+                "categoryId": 1,
+                "prizeMoney": "USD\u00a05,439.78"
+            },
+            {
+                "rank": 4,
+                "teamId": "7561eab8-720c-471f-83c4-7c470ddbe517",
+                "teamName": "WATT SISTERS",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/104_2igMkuKzqHdVYNBTByO6LLFcOlpEfDGF9XpwR5n9.png",
+                "players": [
+                    {
+                        "rank": 11,
+                        "userId": "1519ee82-6c23-11ee-a5c2-066d4aa1673f",
+                        "userFullName": "Amelia Van Hove",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belgium.png",
+                        "finishedTime": 3703916,
+                        "gapTime": 0,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 14,
+                        "userId": "fce4dd9e-cbd5-4a63-8a5d-7706a15253af",
+                        "userFullName": "Brigitte Filensky",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 3712314,
+                        "gapTime": 8398,
                         "categoryId": 1
                     },
                     {
                         "rank": 36,
-                        "userId": "6c9d049a-fbc0-4c22-b61c-50bfe3beef94",
-                        "userFullName": "Ruben Dhondt",
+                        "userId": "5f58a7fe-8962-11ee-93a0-06c5fa4c0029",
+                        "userFullName": "Emilia Welte",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belgium.png",
-                        "finishedTime": 4986006,
-                        "gapTime": 355309,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 3808812,
+                        "gapTime": 104896,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 111,
+                        "userId": "86f1b6b4-e0b4-4182-b9c2-efdeae82c741",
+                        "userFullName": "Kelsey jade Van schoor",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/south_africa.png",
+                        "finishedTime": 4261110,
+                        "gapTime": 557194,
                         "categoryId": 1
                     }
                 ],
-                "finishedTime": 14378144,
-                "gapTime": 265328,
+                "finishedTime": 11225042,
+                "gapTime": 317262,
                 "categoryId": 1,
-                "prizeMoney": "-"
+                "prizeMoney": "USD\u00a03,270"
             },
             {
-                "rank": 4,
-                "teamId": "3150b4ed-58a2-4b37-a34d-8deea92175b9",
-                "teamName": "BEASTMODE & FRIENDS",
+                "rank": 5,
+                "teamId": "b2566c4b-1bf1-4978-b1bb-360497e953b7",
+                "teamName": "FCC CHAIN REACTION",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/104_2igMkuKzqHdVYNBTByO6LLFcOlpEfDGF9XpwR5n9.png",
+                "players": [
+                    {
+                        "rank": 17,
+                        "userId": "1d91ddd7-d3b6-11ec-a043-026dfe51841d",
+                        "userFullName": "Nellie Larsson",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 3743328,
+                        "gapTime": 0,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 26,
+                        "userId": "70f91dad-ca3b-11ef-9076-066d4aa1673f",
+                        "userFullName": "Bridget Kiddle",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 3770123,
+                        "gapTime": 26795,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 29,
+                        "userId": "3318be4c-98ef-11ef-b256-06c5fa4c0029",
+                        "userFullName": "Jennifer Gothilander",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 3777801,
+                        "gapTime": 34473,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 71,
+                        "userId": "0afc405a-45d8-11ee-b5ec-06c5fa4c0029",
+                        "userFullName": "Jenny Ek",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
+                        "finishedTime": 4052281,
+                        "gapTime": 308953,
+                        "categoryId": 1
+                    }
+                ],
+                "finishedTime": 11291252,
+                "gapTime": 383472,
+                "categoryId": 1,
+                "prizeMoney": "USD\u00a02,720"
+            },
+            {
+                "rank": 6,
+                "teamId": "ef206142-306e-4b66-a4c2-77909785adc0",
+                "teamName": "CAT 2 OUTCASTS",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
                 "players": [
                     {
-                        "rank": 14,
-                        "userId": "a14b6316-20e4-11f0-bbeb-02bbe3eaafd1",
-                        "userFullName": "Kristof Flebus",
+                        "rank": 25,
+                        "userId": "e90dabd6-636c-4955-a838-e6c7123f0b3f",
+                        "userFullName": "Karrie Stewart",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belgium.png",
-                        "finishedTime": 4844714,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 3766008,
                         "gapTime": 0,
-                        "categoryId": 2
-                    },
-                    {
-                        "rank": 18,
-                        "userId": "d970df45-d0c9-414e-b17f-9f98ee028435",
-                        "userFullName": "christoph thiem",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 4854679,
-                        "gapTime": 9965,
                         "categoryId": 2
                     },
                     {
                         "rank": 27,
-                        "userId": "b317ae25-2dfe-11ed-a043-026dfe51841d",
-                        "userFullName": "Simon Walter",
+                        "userId": "049c10f2-ec36-11ee-946b-06c5fa4c0029",
+                        "userFullName": "Stephanie Briggs",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 4921941,
-                        "gapTime": 77227,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/canada.png",
+                        "finishedTime": 3772639,
+                        "gapTime": 6631,
                         "categoryId": 2
                     },
                     {
-                        "rank": 78,
-                        "userId": "7aea8062-5732-43ab-a1e9-1fa3b2c7ee2f",
-                        "userFullName": "Marc Santo",
+                        "rank": 30,
+                        "userId": "29377dc4-2ff5-11ef-93c3-02bbe3eaafd1",
+                        "userFullName": "Mali Stier",
                         "selectionStatus": null,
                         "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 5208777,
-                        "gapTime": 364063,
+                        "finishedTime": 3783622,
+                        "gapTime": 17614,
                         "categoryId": 2
-                    }
-                ],
-                "finishedTime": 14621334,
-                "gapTime": 508518,
-                "categoryId": 2,
-                "prizeMoney": "-"
-            },
-            {
-                "rank": 5,
-                "teamId": "ebae04ff-ceeb-4f8e-9513-ede5df9de637",
-                "teamName": "LEVEL RACING 3A",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
-                "players": [
-                    {
-                        "rank": 47,
-                        "userId": "3157171e-623e-11ef-8a17-066d4aa1673f",
-                        "userFullName": "Rune Vegard Bakken",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/norway.png",
-                        "finishedTime": 5047540,
-                        "gapTime": 0,
-                        "categoryId": 3
                     },
                     {
-                        "rank": 57,
-                        "userId": "ecb679e4-8f07-11f0-b307-06c5fa4c0029",
-                        "userFullName": "George King",
+                        "rank": 39,
+                        "userId": "d06f5225-f12e-11ee-ac69-066d4aa1673f",
+                        "userFullName": "Hollie Burgin",
                         "selectionStatus": null,
                         "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
-                        "finishedTime": 5050600,
-                        "gapTime": 3060,
-                        "categoryId": 3
-                    },
-                    {
-                        "rank": 93,
-                        "userId": "f7e6f35f-c6b4-4f15-8b5a-5c9936df8987",
-                        "userFullName": "Rene Semela",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/czech_republic.png",
-                        "finishedTime": 5238509,
-                        "gapTime": 190969,
-                        "categoryId": 3
+                        "finishedTime": 3844935,
+                        "gapTime": 78927,
+                        "categoryId": 2
                     }
                 ],
-                "finishedTime": 15336649,
-                "gapTime": 1223833,
-                "categoryId": 3,
-                "prizeMoney": "-"
-            },
-            {
-                "rank": 6,
-                "teamId": "d272a17f-07d9-4240-9b7a-b41c9b37250b",
-                "teamName": "PEAK POWER RACING 3",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
-                "players": [
-                    {
-                        "rank": 61,
-                        "userId": "a15c2951-b4d6-4cc0-ab82-202bd43f9def",
-                        "userFullName": "Jakub Vojacek",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/czech_republic.png",
-                        "finishedTime": 5054984,
-                        "gapTime": 0,
-                        "categoryId": 3
-                    },
-                    {
-                        "rank": 63,
-                        "userId": "3b8e9639-1c55-4ce6-b03b-bc79b77c9910",
-                        "userFullName": "Jonatan G\u00f3mez",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
-                        "finishedTime": 5057147,
-                        "gapTime": 2163,
-                        "categoryId": 3
-                    },
-                    {
-                        "rank": 96,
-                        "userId": "4503e32a-e6d1-11ee-97de-06c5fa4c0029",
-                        "userFullName": "Hendrik van der Zandt",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 5257529,
-                        "gapTime": 202545,
-                        "categoryId": 3
-                    }
-                ],
-                "finishedTime": 15369660,
-                "gapTime": 1256844,
-                "categoryId": 3,
-                "prizeMoney": "-"
+                "finishedTime": 11322269,
+                "gapTime": 414489,
+                "categoryId": 2,
+                "prizeMoney": "USD\u00a05,710"
             },
             {
                 "rank": 7,
-                "teamId": "d4463744-6e48-4eea-a274-918e4720d69b",
-                "teamName": "RIDE CLUB FINLAND 4A",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "teamId": "8aa136c2-8835-4fce-8f8a-f48612b6280e",
+                "teamName": "WATT TEAM",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
                 "players": [
                     {
-                        "rank": 88,
-                        "userId": "55dab58d-b12f-4ef6-9407-6594652b8322",
-                        "userFullName": "Joona Tuikka",
+                        "rank": 22,
+                        "userId": "f77c6d00-744b-11ee-a397-06c5fa4c0029",
+                        "userFullName": "Rachel Brown",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
-                        "finishedTime": 5229148,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 3764382,
                         "gapTime": 0,
-                        "categoryId": 4
+                        "categoryId": 2
                     },
                     {
-                        "rank": 89,
-                        "userId": "ca95012e-0ca3-11ef-9259-02bbe3eaafd1",
-                        "userFullName": "Miika Ruismaki",
+                        "rank": 28,
+                        "userId": "b32949b7-9587-49a6-a9e3-b440c1a26e2a",
+                        "userFullName": "mandana dehghan manshadi",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
-                        "finishedTime": 5229249,
-                        "gapTime": 101,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/iran.png",
+                        "finishedTime": 3776175,
+                        "gapTime": 11793,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 123,
-                        "userId": "0698bc47-5e88-11ee-9f19-02bbe3eaafd1",
-                        "userFullName": "Jarno Piik",
+                        "rank": 35,
+                        "userId": "153339c7-81bc-43d4-ad8c-e29068eadae9",
+                        "userFullName": "Taneal Otto",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
-                        "finishedTime": 5350697,
-                        "gapTime": 121549,
-                        "categoryId": 4
-                    },
-                    {
-                        "rank": 126,
-                        "userId": "77dbaf63-d5eb-11ed-accf-026dfe51841d",
-                        "userFullName": "Sami Tuomi",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
-                        "finishedTime": 5404740,
-                        "gapTime": 175592,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/south_africa.png",
+                        "finishedTime": 3800866,
+                        "gapTime": 36484,
+                        "categoryId": 2
                     }
                 ],
-                "finishedTime": 15809094,
-                "gapTime": 1696278,
-                "categoryId": 4,
-                "prizeMoney": "-"
+                "finishedTime": 11341423,
+                "gapTime": 433643,
+                "categoryId": 2,
+                "prizeMoney": "USD\u00a04,080"
             },
             {
                 "rank": 8,
-                "teamId": "4c90e4bd-3caf-4a53-ad56-630598bb5e96",
-                "teamName": "LEVEL RACING 3B",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "teamId": "c9b9ef96-6862-439d-81f3-d31fcc115d50",
+                "teamName": "FCC UNITED CADENCE",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
                 "players": [
                     {
-                        "rank": 51,
-                        "userId": "729dfeb6-f708-11ee-ac69-066d4aa1673f",
-                        "userFullName": "Ole Solar",
+                        "rank": 23,
+                        "userId": "9dced0a0-e45e-43a6-9969-d9b51c8fa339",
+                        "userFullName": "Eleisa Haag",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/norway.png",
-                        "finishedTime": 5047908,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 3764420,
                         "gapTime": 0,
-                        "categoryId": 3
+                        "categoryId": 2
                     },
                     {
-                        "rank": 53,
-                        "userId": "74e156bf-de18-403d-9531-d849ecaf3a52",
-                        "userFullName": "Rasmus Hammer",
+                        "rank": 32,
+                        "userId": "90341b00-e241-11ef-b334-06c5fa4c0029",
+                        "userFullName": "Hanna Hakkinen",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/denmark.png",
-                        "finishedTime": 5048467,
-                        "gapTime": 559,
-                        "categoryId": 3
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
+                        "finishedTime": 3788725,
+                        "gapTime": 24305,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 239,
-                        "userId": "6a8417ca-df85-11ee-a191-066d4aa1673f",
-                        "userFullName": "Christopher Morgan",
+                        "rank": 38,
+                        "userId": "0faa33c9-0c89-11ef-9259-02bbe3eaafd1",
+                        "userFullName": "Kamila Mroz",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
-                        "finishedTime": 5987629,
-                        "gapTime": 939721,
-                        "categoryId": 3
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 3826000,
+                        "gapTime": 61580,
+                        "categoryId": 2
+                    },
+                    {
+                        "rank": 48,
+                        "userId": "83d7613c-bad7-11ef-9dcf-02bbe3eaafd1",
+                        "userFullName": "Tjasa Susnik",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/slovenia.png",
+                        "finishedTime": 3915522,
+                        "gapTime": 151102,
+                        "categoryId": 2
                     }
                 ],
-                "finishedTime": 16084004,
-                "gapTime": 1971188,
-                "categoryId": 3,
-                "prizeMoney": "-"
+                "finishedTime": 11379145,
+                "gapTime": 471365,
+                "categoryId": 2,
+                "prizeMoney": "USD\u00a03,270"
             },
             {
                 "rank": 9,
-                "teamId": "35bc8189-b673-437f-8f5b-88084c99ae4c",
-                "teamName": "LEVEL GOLDEN 4A",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "teamId": "9b55e440-eef0-411f-a0f8-492e2a928c1d",
+                "teamName": "WATT CREW",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/104_2igMkuKzqHdVYNBTByO6LLFcOlpEfDGF9XpwR5n9.png",
                 "players": [
                     {
-                        "rank": 91,
-                        "userId": "8cfbede1-8271-11ee-a470-066d4aa1673f",
-                        "userFullName": "Erik Rindborg",
+                        "rank": 16,
+                        "userId": "c67e2067-0041-4108-b80e-06936117a19c",
+                        "userFullName": "Ana Caramelo",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
-                        "finishedTime": 5229676,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/portugal.png",
+                        "finishedTime": 3735627,
                         "gapTime": 0,
-                        "categoryId": 4
+                        "categoryId": 1
                     },
                     {
-                        "rank": 117,
-                        "userId": "9d74bb07-5253-11ee-bdac-06c5fa4c0029",
-                        "userFullName": "Andrew Rushmer",
+                        "rank": 34,
+                        "userId": "97a17caa-888f-431a-b7af-0de99a7f0288",
+                        "userFullName": "Katerina Karamani",
                         "selectionStatus": null,
                         "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
-                        "finishedTime": 5338792,
-                        "gapTime": 109116,
-                        "categoryId": 4
+                        "finishedTime": 3798158,
+                        "gapTime": 62531,
+                        "categoryId": 1
                     },
                     {
-                        "rank": 161,
-                        "userId": "e380a0a3-0941-4a3b-99f7-a336a61cc471",
-                        "userFullName": "Roar Sollie",
+                        "rank": 40,
+                        "userId": "d3432abe-710a-11ee-8e42-02bbe3eaafd1",
+                        "userFullName": "Serena Vittori",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/norway.png",
-                        "finishedTime": 5529697,
-                        "gapTime": 300021,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
+                        "finishedTime": 3849291,
+                        "gapTime": 113664,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 54,
+                        "userId": "a5293495-8c74-11ee-b495-02bbe3eaafd1",
+                        "userFullName": "Sarah Roach",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 3979361,
+                        "gapTime": 243734,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 79,
+                        "userId": "bcba5154-0b24-45d5-8e65-baf98915fa63",
+                        "userFullName": "sharlotte Lucas",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 4114384,
+                        "gapTime": 378757,
+                        "categoryId": 1
                     }
                 ],
-                "finishedTime": 16098165,
-                "gapTime": 1985349,
-                "categoryId": 4,
-                "prizeMoney": "-"
+                "finishedTime": 11383076,
+                "gapTime": 475296,
+                "categoryId": 1,
+                "prizeMoney": "USD\u00a02,180"
             },
             {
                 "rank": 10,
-                "teamId": "8f032d2f-50c3-480c-acea-e9736e69af40",
-                "teamName": "LEVEL GOLDEN 4B",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "teamId": "9167a1f4-b275-4458-9a81-d0eed3ecd5d7",
+                "teamName": "CORE P/B SPRITZ",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
                 "players": [
                     {
-                        "rank": 112,
-                        "userId": "2d106045-3858-11ef-a795-06c5fa4c0029",
-                        "userFullName": "Darryl Carter",
+                        "rank": 20,
+                        "userId": "324a6a26-f90e-11ee-ac69-066d4aa1673f",
+                        "userFullName": "Silvia gorrea",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
+                        "finishedTime": 3763326,
+                        "gapTime": 0,
+                        "categoryId": 2
+                    },
+                    {
+                        "rank": 33,
+                        "userId": "9f427866-fcdd-11ef-89e2-06c5fa4c0029",
+                        "userFullName": "Hayley Simmonds",
                         "selectionStatus": null,
                         "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
-                        "finishedTime": 5336927,
-                        "gapTime": 0,
-                        "categoryId": 4
+                        "finishedTime": 3790341,
+                        "gapTime": 27015,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 118,
-                        "userId": "abd93bf2-ebd0-4f66-9423-774849d919f9",
-                        "userFullName": "Adrian Gonzalez",
+                        "rank": 43,
+                        "userId": "76ad5063-9e0c-11ee-93a0-06c5fa4c0029",
+                        "userFullName": "Nasly Alejandra Monedero Jaramillo",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/spain.png",
-                        "finishedTime": 5338842,
-                        "gapTime": 1915,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 3879317,
+                        "gapTime": 115991,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 136,
-                        "userId": "84d056af-2864-11ed-a043-026dfe51841d",
-                        "userFullName": "Arthur Corbani",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
-                        "finishedTime": 5453600,
-                        "gapTime": 116673,
-                        "categoryId": 4
-                    },
-                    {
-                        "rank": 255,
-                        "userId": "bcba7804-3d02-11ee-8733-066d4aa1673f",
-                        "userFullName": "Andreas Lindebner",
+                        "rank": 106,
+                        "userId": "ec4d1241-28c0-4edf-9624-1f1474fbac86",
+                        "userFullName": "Pia Kummer",
                         "selectionStatus": null,
                         "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 6061162,
-                        "gapTime": 724235,
-                        "categoryId": 4
+                        "finishedTime": 4229065,
+                        "gapTime": 465739,
+                        "categoryId": 2
                     }
                 ],
-                "finishedTime": 16129369,
-                "gapTime": 2016553,
-                "categoryId": 4,
-                "prizeMoney": "-"
+                "finishedTime": 11432984,
+                "gapTime": 525204,
+                "categoryId": 2,
+                "prizeMoney": "USD\u00a01,960"
             },
             {
                 "rank": 11,
-                "teamId": "48d00e44-47d7-4409-96aa-1f97e50ae8a7",
-                "teamName": "PEDAL CLUB",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "teamId": "c546e6c6-4d91-4623-949d-deb2ec9b6173",
+                "teamName": "SUPERNOVA",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/104_2igMkuKzqHdVYNBTByO6LLFcOlpEfDGF9XpwR5n9.png",
                 "players": [
                     {
-                        "rank": 84,
-                        "userId": "90c9f914-b4f8-11f0-b7b4-02bbe3eaafd1",
-                        "userFullName": "Guillaume Arsenne",
+                        "rank": 41,
+                        "userId": "6cc9e7f6-8fed-49ab-baa4-58f91383a4bb",
+                        "userFullName": "Tiffany Penner",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/france.png",
-                        "finishedTime": 5228116,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/canada.png",
+                        "finishedTime": 3864512,
                         "gapTime": 0,
-                        "categoryId": 4
+                        "categoryId": 1
                     },
                     {
-                        "rank": 92,
-                        "userId": "2f030979-7053-11f0-9cc1-02bbe3eaafd1",
-                        "userFullName": "Milan Termaten",
+                        "rank": 44,
+                        "userId": "3429d490-4662-4fc0-b33d-9606d321b28f",
+                        "userFullName": "Karolina Kolkowicz",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/netherlands.png",
-                        "finishedTime": 5233787,
-                        "gapTime": 5671,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 3879691,
+                        "gapTime": 15179,
+                        "categoryId": 1
                     },
                     {
-                        "rank": 233,
-                        "userId": "c6208834-99f6-11ef-b256-06c5fa4c0029",
-                        "userFullName": "Daniel Schulz",
+                        "rank": 49,
+                        "userId": "5808d1da-b302-4ca9-a4f1-fe72ea66c5a3",
+                        "userFullName": "Matilda Field",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 5960273,
-                        "gapTime": 732157,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 3919569,
+                        "gapTime": 55057,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 67,
+                        "userId": "22f91615-3f5a-11ee-8ed3-06c5fa4c0029",
+                        "userFullName": "Sophie Giovane",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
+                        "finishedTime": 4034892,
+                        "gapTime": 170380,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": 72,
+                        "userId": "e6daf006-6c08-11ee-a5c2-066d4aa1673f",
+                        "userFullName": "Joanna Kalman",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 4056125,
+                        "gapTime": 191613,
+                        "categoryId": 1
                     }
                 ],
-                "finishedTime": 16422176,
-                "gapTime": 2309360,
-                "categoryId": 4,
-                "prizeMoney": "-"
+                "finishedTime": 11663772,
+                "gapTime": 755992,
+                "categoryId": 1,
+                "prizeMoney": "USD\u00a01,360"
             },
             {
                 "rank": 12,
-                "teamId": "c3ab133b-905a-46c7-bbb2-482f3692e67d",
-                "teamName": "RIDE CLUB FINLAND 4B",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "teamId": "9c9e759d-a0d2-4feb-855b-124218638444",
+                "teamName": "RIOT",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
                 "players": [
                     {
-                        "rank": 85,
-                        "userId": "f64f2ccf-3aff-11ef-b00d-06c5fa4c0029",
-                        "userFullName": "Jerry Piipponen",
+                        "rank": 31,
+                        "userId": "54438fee-5594-11f0-8a11-06c5fa4c0029",
+                        "userFullName": "kirsty hebersmith",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
-                        "finishedTime": 5228716,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 3783681,
                         "gapTime": 0,
-                        "categoryId": 4
+                        "categoryId": 2
                     },
                     {
-                        "rank": 167,
-                        "userId": "b9fab950-3aea-11f0-b3ed-06c5fa4c0029",
-                        "userFullName": "Aleksi Lager",
+                        "rank": 45,
+                        "userId": "5f5b5aa5-31c3-4dd8-bc41-7c3ba471e3dc",
+                        "userFullName": "Vanessa Murray",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
-                        "finishedTime": 5612854,
-                        "gapTime": 384138,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 3887323,
+                        "gapTime": 103642,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 211,
-                        "userId": "a15424d5-7697-11ef-8abf-06c5fa4c0029",
-                        "userFullName": "Panu Alaluusua",
+                        "rank": 68,
+                        "userId": "5e198b53-9dfa-4a1f-b596-7f4d595cec02",
+                        "userFullName": "Anna Russell",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
-                        "finishedTime": 5849335,
-                        "gapTime": 620619,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 4038503,
+                        "gapTime": 254822,
+                        "categoryId": 2
+                    },
+                    {
+                        "rank": 103,
+                        "userId": "23e30c2c-847e-4c5a-8356-d50c5c11249b",
+                        "userFullName": "Jennifer Real",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 4214629,
+                        "gapTime": 430948,
+                        "categoryId": 2
                     }
                 ],
-                "finishedTime": 16690905,
-                "gapTime": 2578089,
-                "categoryId": 4,
-                "prizeMoney": "-"
+                "finishedTime": 11709507,
+                "gapTime": 801727,
+                "categoryId": 2,
+                "prizeMoney": "USD\u00a01,630"
             },
             {
                 "rank": 13,
-                "teamId": "ff4c8308-4600-4ceb-a54a-d301ac6a4965",
-                "teamName": "CYCLING DISTRICT 5",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/151_vR8LJ9HceYuk1G7rMy0G7F2HPB8TUFRhTWEDYhy6.png",
+                "teamId": "45641c05-0f6c-493b-a2fd-a4209910e833",
+                "teamName": "VELOCITY VIKINGS",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
                 "players": [
                     {
-                        "rank": 138,
-                        "userId": "4e4d21d0-10b3-4d3f-8bc8-5aa0763a7e67",
-                        "userFullName": "Felipe Rheinheimer",
+                        "rank": 19,
+                        "userId": "0c8f05c7-7b7a-4503-a061-3c8f23fe8a9b",
+                        "userFullName": "Catrin Nilsson",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
-                        "finishedTime": 5458731,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 3762733,
                         "gapTime": 0,
-                        "categoryId": 5
+                        "categoryId": 2
                     },
                     {
-                        "rank": 193,
-                        "userId": "d2bc8485-39d6-11f0-b3ed-06c5fa4c0029",
-                        "userFullName": "icaro silva",
+                        "rank": 42,
+                        "userId": "f847377f-e633-11ec-a043-026dfe51841d",
+                        "userFullName": "Sara Lundin",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
-                        "finishedTime": 5750545,
-                        "gapTime": 291814,
-                        "categoryId": 5
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 3868352,
+                        "gapTime": 105619,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 204,
-                        "userId": "e3bd5003-3e04-11ee-8935-02bbe3eaafd1",
-                        "userFullName": "Pedro Pereira",
+                        "rank": 80,
+                        "userId": "1dee8a89-d3bb-11ec-a043-026dfe51841d",
+                        "userFullName": "Cornelia Engstrom",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/portugal.png",
-                        "finishedTime": 5807383,
-                        "gapTime": 348652,
-                        "categoryId": 5
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 4125818,
+                        "gapTime": 363085,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 228,
-                        "userId": "ccd7c597-616a-4cf0-89f4-41b8b0e89a6b",
-                        "userFullName": "Junior Alberto Penz",
+                        "rank": 99,
+                        "userId": "a7554f35-6210-4bc5-8c7a-37df53f6c483",
+                        "userFullName": "Jessica Edqvist",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
-                        "finishedTime": 5920738,
-                        "gapTime": 462007,
-                        "categoryId": 5
-                    },
-                    {
-                        "rank": 277,
-                        "userId": "72dfd0d1-6ddb-11ee-a5c2-066d4aa1673f",
-                        "userFullName": "Carlos Mourato",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/portugal.png",
-                        "finishedTime": 6247784,
-                        "gapTime": 789053,
-                        "categoryId": 5
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 4207608,
+                        "gapTime": 444875,
+                        "categoryId": 2
                     }
                 ],
-                "finishedTime": 17016659,
-                "gapTime": 2903843,
-                "categoryId": 5,
-                "prizeMoney": "-"
+                "finishedTime": 11756903,
+                "gapTime": 849123,
+                "categoryId": 2,
+                "prizeMoney": "USD\u00a01,310"
             },
             {
                 "rank": 14,
-                "teamId": "d63474b5-71f2-454a-8240-7c9ac070d503",
-                "teamName": "CYCLING DISTRICT 4A",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "teamId": "51796cbc-8bb5-4490-90ef-26fc7d8b8f3c",
+                "teamName": "CORE",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
                 "players": [
                     {
-                        "rank": 119,
-                        "userId": "cfbf81dc-0f96-11ef-9760-06c5fa4c0029",
-                        "userFullName": "Luis Canossa",
+                        "rank": 37,
+                        "userId": "81eecda2-6672-11ee-8b4a-066d4aa1673f",
+                        "userFullName": "Roberta Bussone",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/portugal.png",
-                        "finishedTime": 5341008,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
+                        "finishedTime": 3822408,
                         "gapTime": 0,
-                        "categoryId": 4
+                        "categoryId": 2
                     },
                     {
-                        "rank": 191,
-                        "userId": "21825f8c-f76e-11ef-b3ce-066d4aa1673f",
-                        "userFullName": "Maicon Perdonsini",
+                        "rank": 53,
+                        "userId": "39047a60-7a37-47d4-b7eb-caecf3b464a2",
+                        "userFullName": "Dorancy Gonzalez Rua",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
-                        "finishedTime": 5749059,
-                        "gapTime": 408051,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 3959379,
+                        "gapTime": 136971,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 236,
-                        "userId": "38a1f68e-2d99-11f0-8313-066d4aa1673f",
-                        "userFullName": "Alex Arseno",
+                        "rank": 55,
+                        "userId": "8f6c4a07-4865-11ef-a210-02bbe3eaafd1",
+                        "userFullName": "Milene Proust",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
-                        "finishedTime": 5981924,
-                        "gapTime": 640916,
-                        "categoryId": 4
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/france.png",
+                        "finishedTime": 3983970,
+                        "gapTime": 161562,
+                        "categoryId": 2
+                    },
+                    {
+                        "rank": 110,
+                        "userId": "4c81cf9b-a8d9-11ef-9360-06c5fa4c0029",
+                        "userFullName": "Kate MacLeod",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 4260704,
+                        "gapTime": 438296,
+                        "categoryId": 2
                     }
                 ],
-                "finishedTime": 17071991,
-                "gapTime": 2959175,
-                "categoryId": 4,
-                "prizeMoney": "-"
+                "finishedTime": 11765757,
+                "gapTime": 857977,
+                "categoryId": 2,
+                "prizeMoney": "USD\u00a0820"
             },
             {
                 "rank": 15,
-                "teamId": "a8227d14-3764-4af6-a80e-d124f5daab4b",
-                "teamName": "MPCC TEAM",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/151_vR8LJ9HceYuk1G7rMy0G7F2HPB8TUFRhTWEDYhy6.png",
+                "teamId": "873b7700-0d08-41ca-9769-3063eb6e0d95",
+                "teamName": "FCC WATT WHEELS",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/104_2igMkuKzqHdVYNBTByO6LLFcOlpEfDGF9XpwR5n9.png",
                 "players": [
                     {
-                        "rank": 152,
-                        "userId": "5662261f-c45d-11ef-b494-06c5fa4c0029",
-                        "userFullName": "Sebastian Duda",
+                        "rank": 18,
+                        "userId": "f55d4d70-2635-4eea-9b43-d54944d258b7",
+                        "userFullName": "Marlene Bjarehed",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 5485025,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 3752812,
                         "gapTime": 0,
-                        "categoryId": 5
+                        "categoryId": 1
                     },
                     {
-                        "rank": 184,
-                        "userId": "5db1d5b4-894c-11ef-889b-06c5fa4c0029",
-                        "userFullName": "Daniel Furgala",
+                        "rank": 47,
+                        "userId": "337e69d1-82ec-11ef-97e1-066d4aa1673f",
+                        "userFullName": "Katarzyna Welna",
                         "selectionStatus": null,
                         "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 5683531,
-                        "gapTime": 198506,
-                        "categoryId": 5
+                        "finishedTime": 3894539,
+                        "gapTime": 141727,
+                        "categoryId": 1
                     },
                     {
-                        "rank": 229,
-                        "userId": "0964f130-c9f6-440b-8346-9caa9750be5a",
-                        "userFullName": "Krzysztof Labno",
+                        "rank": 81,
+                        "userId": "54c6ef09-7bdd-4437-a88b-b363d087a71c",
+                        "userFullName": "Dana Wagner",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 5946189,
-                        "gapTime": 461164,
-                        "categoryId": 5
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4137243,
+                        "gapTime": 384431,
+                        "categoryId": 1
+                    },
+                    {
+                        "rank": -1,
+                        "userId": "51412240-930f-4124-9651-a2cd6cb79398",
+                        "userFullName": "Ellexi Snover",
+                        "selectionStatus": "ANL",
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 0,
+                        "gapTime": 0,
+                        "categoryId": 1
                     }
                 ],
-                "finishedTime": 17114745,
-                "gapTime": 3001929,
-                "categoryId": 5,
+                "finishedTime": 11784594,
+                "gapTime": 876814,
+                "categoryId": 1,
                 "prizeMoney": "-"
             },
             {
                 "rank": 16,
-                "teamId": "71ab5224-74ff-430e-aa2b-a9184e3107ce",
-                "teamName": "LEVEL RAIDERS",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/151_vR8LJ9HceYuk1G7rMy0G7F2HPB8TUFRhTWEDYhy6.png",
+                "teamId": "c90142a8-f508-4e16-a484-b8ed3b081e56",
+                "teamName": "ANTIPODEAN RACING TEAM",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
                 "players": [
                     {
-                        "rank": 173,
-                        "userId": "3afbe5fd-9d38-4db1-8560-498b5d7eabb8",
-                        "userFullName": "lenard gregg cadabona",
+                        "rank": 46,
+                        "userId": "97af8b35-f191-11ee-9489-02bbe3eaafd1",
+                        "userFullName": "Christine Schneider",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/philippines.png",
-                        "finishedTime": 5630003,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 3891485,
                         "gapTime": 0,
-                        "categoryId": 5
+                        "categoryId": 2
                     },
                     {
-                        "rank": 199,
-                        "userId": "85f4e072-e556-11ee-b118-02bbe3eaafd1",
-                        "userFullName": "Rodolphe Bertrand",
+                        "rank": 52,
+                        "userId": "3a18625b-c5df-11ef-bb83-02bbe3eaafd1",
+                        "userFullName": "Emma Tod",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/canada.png",
-                        "finishedTime": 5772996,
-                        "gapTime": 142993,
-                        "categoryId": 5
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 3955389,
+                        "gapTime": 63904,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 237,
-                        "userId": "75135d1b-4f38-11ee-9f19-02bbe3eaafd1",
-                        "userFullName": "Aliaksei Tsikhanau",
+                        "rank": 56,
+                        "userId": "731e0628-745a-11ee-a5c2-066d4aa1673f",
+                        "userFullName": "Katie Banerjee",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belarus.png",
-                        "finishedTime": 5983482,
-                        "gapTime": 353479,
-                        "categoryId": 5
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 3994989,
+                        "gapTime": 103504,
+                        "categoryId": 2
                     },
                     {
-                        "rank": 309,
-                        "userId": "ae287ca1-dbfe-417d-a7f5-6a955b90c10b",
-                        "userFullName": "florian dromard",
+                        "rank": 57,
+                        "userId": "b6a87ab7-c7a0-429d-9d21-e12c53b0bfd4",
+                        "userFullName": "Maria Marb",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/france.png",
-                        "finishedTime": 6793779,
-                        "gapTime": 1163776,
-                        "categoryId": 5
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4004866,
+                        "gapTime": 113381,
+                        "categoryId": 2
                     }
                 ],
-                "finishedTime": 17386481,
-                "gapTime": 3273665,
-                "categoryId": 5,
+                "finishedTime": 11841863,
+                "gapTime": 934083,
+                "categoryId": 2,
                 "prizeMoney": "-"
             },
             {
                 "rank": 17,
-                "teamId": "488a73e5-a086-4c32-a5bf-11dc5909cd3a",
-                "teamName": "LEVEL RACING 5",
+                "teamId": "f32b785e-20b1-40a6-99ac-e5f79b46e836",
+                "teamName": "FCC PEDAL PUSHERS",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "players": [
+                    {
+                        "rank": 62,
+                        "userId": "865a2760-0fbf-11ef-9760-06c5fa4c0029",
+                        "userFullName": "Sabrina Horner",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4023791,
+                        "gapTime": 0,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 66,
+                        "userId": "fe885550-07d8-413f-9706-2982685d56e9",
+                        "userFullName": "Sarah Karollus",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4030435,
+                        "gapTime": 6644,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 70,
+                        "userId": "86b5024f-92c4-11f0-b6d6-066d4aa1673f",
+                        "userFullName": "Marion Wittler",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4049419,
+                        "gapTime": 25628,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 73,
+                        "userId": "4841be5f-46ad-11f0-8d95-06c5fa4c0029",
+                        "userFullName": "Angelika Wr\u00f3bel",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 4061378,
+                        "gapTime": 37587,
+                        "categoryId": 3
+                    }
+                ],
+                "finishedTime": 12103645,
+                "gapTime": 1195865,
+                "categoryId": 3,
+                "prizeMoney": "USD\u00a03,430"
+            },
+            {
+                "rank": 18,
+                "teamId": "c35ad3ed-8c83-422b-b9f3-e7ad88eaa06c",
+                "teamName": "BONK BRIGADE",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "players": [
+                    {
+                        "rank": 59,
+                        "userId": "48a49b19-e1da-11ec-a043-026dfe51841d",
+                        "userFullName": "Anna Embring",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 4017418,
+                        "gapTime": 0,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 65,
+                        "userId": "69f5d15b-b1bf-11ec-a043-026dfe51841d",
+                        "userFullName": "Angel Jadloc",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/philippines.png",
+                        "finishedTime": 4024016,
+                        "gapTime": 6598,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 83,
+                        "userId": "ef5ced5c-a9c5-11ee-b495-02bbe3eaafd1",
+                        "userFullName": "LORENA BELTRAN",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4168556,
+                        "gapTime": 151138,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 87,
+                        "userId": "877e3435-6514-403e-9597-54cfdca3a799",
+                        "userFullName": "Laura Toconas",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4194851,
+                        "gapTime": 177433,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 151,
+                        "userId": "c22f6a5c-b8d4-11f0-9155-06c5fa4c0029",
+                        "userFullName": "Tajda Glamocak",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/slovenia.png",
+                        "finishedTime": 4701466,
+                        "gapTime": 684048,
+                        "categoryId": 3
+                    }
+                ],
+                "finishedTime": 12209990,
+                "gapTime": 1302210,
+                "categoryId": 3,
+                "prizeMoney": "USD\u00a02,450"
+            },
+            {
+                "rank": 19,
+                "teamId": "d0462a7e-82af-449a-a691-6400133a1944",
+                "teamName": "BLUE BREAKAWAY",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "players": [
+                    {
+                        "rank": 76,
+                        "userId": "c3a294a4-639a-11ef-9365-02bbe3eaafd1",
+                        "userFullName": "Izabela Karwaszewska",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 4096775,
+                        "gapTime": 0,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 78,
+                        "userId": "f4021e44-a1fa-11ef-a3a3-02bbe3eaafd1",
+                        "userFullName": "Susanne Stenman",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 4111399,
+                        "gapTime": 14624,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 88,
+                        "userId": "37229ff0-b8b2-11ef-9275-066d4aa1673f",
+                        "userFullName": "Jenni Penttinen",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
+                        "finishedTime": 4196505,
+                        "gapTime": 99730,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 92,
+                        "userId": "50a917ce-1deb-4940-b336-a166fc1b52b4",
+                        "userFullName": "Julia Walkenhorst",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4204154,
+                        "gapTime": 107379,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 152,
+                        "userId": "d0821857-918c-4827-b2fa-61610f6e1999",
+                        "userFullName": "Camila Salgado",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4716127,
+                        "gapTime": 619352,
+                        "categoryId": 3
+                    }
+                ],
+                "finishedTime": 12404679,
+                "gapTime": 1496899,
+                "categoryId": 3,
+                "prizeMoney": "USD\u00a01,960"
+            },
+            {
+                "rank": 20,
+                "teamId": "4000118c-ff25-49b0-9ae8-c3c18d01ade2",
+                "teamName": "CYCLING DISTRICT 3B",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "players": [
+                    {
+                        "rank": 60,
+                        "userId": "c197121f-1660-11f0-a148-066d4aa1673f",
+                        "userFullName": "Caroline Manfron",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 4021107,
+                        "gapTime": 0,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 75,
+                        "userId": "d293684b-b9d3-4209-a14f-c8cd69333385",
+                        "userFullName": "Karen Michelle Machado de Paiva",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 4069716,
+                        "gapTime": 48609,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 117,
+                        "userId": "ab648742-cc31-11ee-93dc-06c5fa4c0029",
+                        "userFullName": "Melissa Simkin",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 4320451,
+                        "gapTime": 299344,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 120,
+                        "userId": "70426dd5-6d63-4de3-a128-b9195e2becda",
+                        "userFullName": "Monika Pluta",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 4364172,
+                        "gapTime": 343065,
+                        "categoryId": 3
+                    }
+                ],
+                "finishedTime": 12411274,
+                "gapTime": 1503494,
+                "categoryId": 3,
+                "prizeMoney": "USD\u00a01,180"
+            },
+            {
+                "rank": 21,
+                "teamId": "f1980898-d3ef-4d37-9be9-45b5ed942857",
+                "teamName": "REBEL RUSH",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "players": [
+                    {
+                        "rank": 96,
+                        "userId": "88bca120-9e00-4bef-995d-fabd21b91943",
+                        "userFullName": "Ting Liu",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/china.png",
+                        "finishedTime": 4205088,
+                        "gapTime": 0,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 97,
+                        "userId": "a6845ccc-d363-11ef-8276-066d4aa1673f",
+                        "userFullName": "Camila Pamplona",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4205877,
+                        "gapTime": 789,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 100,
+                        "userId": "c6b77157-4f32-48f8-9f7c-ea0e41905b74",
+                        "userFullName": "Camila Atahualpa",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4209637,
+                        "gapTime": 4549,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 102,
+                        "userId": "302cb11e-ab2c-11ee-8938-066d4aa1673f",
+                        "userFullName": "Geneva Ellos",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/philippines.png",
+                        "finishedTime": 4211014,
+                        "gapTime": 5926,
+                        "categoryId": 4
+                    }
+                ],
+                "finishedTime": 12620602,
+                "gapTime": 1712822,
+                "categoryId": 4,
+                "prizeMoney": "USD\u00a02,000"
+            },
+            {
+                "rank": 22,
+                "teamId": "9c0d4d81-263b-4fc9-b0c4-8610328600d0",
+                "teamName": "CYCLING DISTRICT 3A",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "players": [
+                    {
+                        "rank": 85,
+                        "userId": "385847e6-e6ea-11ef-89e2-06c5fa4c0029",
+                        "userFullName": "Liliana Silva",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/portugal.png",
+                        "finishedTime": 4193221,
+                        "gapTime": 0,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 104,
+                        "userId": "233efff2-46aa-11ee-b5ec-06c5fa4c0029",
+                        "userFullName": "Fl\u00e1via Lopes",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/portugal.png",
+                        "finishedTime": 4218305,
+                        "gapTime": 25084,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 105,
+                        "userId": "5ebe9346-ccb5-11f0-b406-066d4aa1673f",
+                        "userFullName": "Mariepierre Berard",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/canada.png",
+                        "finishedTime": 4227398,
+                        "gapTime": 34177,
+                        "categoryId": 3
+                    }
+                ],
+                "finishedTime": 12638924,
+                "gapTime": 1731144,
+                "categoryId": 3,
+                "prizeMoney": "USD\u00a0980"
+            },
+            {
+                "rank": 23,
+                "teamId": "23a9d911-ec99-4b18-84fa-0089be91d954",
+                "teamName": "RIOT 3",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "players": [
+                    {
+                        "rank": 61,
+                        "userId": "af182b6c-7100-11ef-ae5e-066d4aa1673f",
+                        "userFullName": "Gemma Daniels",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 4022963,
+                        "gapTime": 0,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 64,
+                        "userId": "9553de64-e132-11ee-a191-066d4aa1673f",
+                        "userFullName": "Emily Nyquist",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 4023908,
+                        "gapTime": 945,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 147,
+                        "userId": "f7fa2097-cc71-11ef-b494-06c5fa4c0029",
+                        "userFullName": "Helen McKay",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 4632081,
+                        "gapTime": 609118,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 204,
+                        "userId": "3198008b-35b2-11ee-86e1-026dfe51841d",
+                        "userFullName": "kim bonilla",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/philippines.png",
+                        "finishedTime": 7010636,
+                        "gapTime": 2987673,
+                        "categoryId": 3
+                    }
+                ],
+                "finishedTime": 12678952,
+                "gapTime": 1771172,
+                "categoryId": 3,
+                "prizeMoney": "USD\u00a0780"
+            },
+            {
+                "rank": 24,
+                "teamId": "8b061f98-dda4-4813-a8f7-4cbb88b4e43e",
+                "teamName": "CYCLING DISTRICT 4",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "players": [
+                    {
+                        "rank": 93,
+                        "userId": "2c266396-ba18-11f0-950c-066d4aa1673f",
+                        "userFullName": "Brooke Donoghue",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 4204277,
+                        "gapTime": 0,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 94,
+                        "userId": "7b83334e-3290-11ef-8bd3-066d4aa1673f",
+                        "userFullName": "Brianna Samuhel",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 4204375,
+                        "gapTime": 98,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 114,
+                        "userId": "3101514c-9d80-11f0-8819-06c5fa4c0029",
+                        "userFullName": "Rosaura Hagelin",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/argentina.png",
+                        "finishedTime": 4314885,
+                        "gapTime": 110608,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 165,
+                        "userId": "2970b899-2475-11ed-a043-026dfe51841d",
+                        "userFullName": "Rosa Herrero",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/spain.png",
+                        "finishedTime": 4834985,
+                        "gapTime": 630708,
+                        "categoryId": 4
+                    }
+                ],
+                "finishedTime": 12723537,
+                "gapTime": 1815757,
+                "categoryId": 4,
+                "prizeMoney": "USD\u00a01,470"
+            },
+            {
+                "rank": 25,
+                "teamId": "3bd3c6aa-b808-4576-82a0-177053e0c78b",
+                "teamName": "POWER BITES",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "players": [
+                    {
+                        "rank": 89,
+                        "userId": "262db2f2-6158-11ef-b97d-06c5fa4c0029",
+                        "userFullName": "Sophie Maenhout",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belgium.png",
+                        "finishedTime": 4201054,
+                        "gapTime": 0,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 98,
+                        "userId": "69a1ab24-c7ee-11ed-a669-0646d4e99f19",
+                        "userFullName": "Natalia Idzik",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 4207002,
+                        "gapTime": 5948,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 115,
+                        "userId": "ba7a1e3b-f163-4ead-984d-df2939c8e35f",
+                        "userFullName": "Claudia Hyde",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 4318916,
+                        "gapTime": 117862,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 122,
+                        "userId": "8c10f859-18c9-11ef-9259-02bbe3eaafd1",
+                        "userFullName": "Hannah Goodall",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 4382105,
+                        "gapTime": 181051,
+                        "categoryId": 4
+                    }
+                ],
+                "finishedTime": 12726972,
+                "gapTime": 1819192,
+                "categoryId": 4,
+                "prizeMoney": "USD\u00a01,200"
+            },
+            {
+                "rank": 26,
+                "teamId": "e48468d5-41a7-4ec3-9974-82b8a8b1fc1b",
+                "teamName": "REBEL UNION",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "players": [
+                    {
+                        "rank": 95,
+                        "userId": "062edf97-711d-11ef-8abf-06c5fa4c0029",
+                        "userFullName": "Miriam Taylor",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 4204933,
+                        "gapTime": 0,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 107,
+                        "userId": "2c1b8c00-b90b-43d1-958b-7e4d963828cd",
+                        "userFullName": "Gina De gracia",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/philippines.png",
+                        "finishedTime": 4238724,
+                        "gapTime": 33791,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 113,
+                        "userId": "fc2a574e-8d05-11ee-b495-02bbe3eaafd1",
+                        "userFullName": "Rebecca Johnson",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 4303561,
+                        "gapTime": 98628,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 123,
+                        "userId": "0522cf3f-35b3-4c68-a100-fcccdf56ca7b",
+                        "userFullName": "Katherin Montoya ",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4395153,
+                        "gapTime": 190220,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 192,
+                        "userId": "4b08c182-a703-11ef-bf06-066d4aa1673f",
+                        "userFullName": "Maria Hjalmarsson",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 5346668,
+                        "gapTime": 1141735,
+                        "categoryId": 4
+                    }
+                ],
+                "finishedTime": 12747218,
+                "gapTime": 1839438,
+                "categoryId": 4,
+                "prizeMoney": "USD\u00a0700"
+            },
+            {
+                "rank": 27,
+                "teamId": "b3c2f8ed-e540-46ba-99fd-5281e6c89f68",
+                "teamName": "FCC CHAIN RIGHT",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "players": [
+                    {
+                        "rank": 77,
+                        "userId": "6cbe96a3-9899-4acf-8386-fb9820e5f656",
+                        "userFullName": "Veronika Vojackova",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/czech_republic.png",
+                        "finishedTime": 4111352,
+                        "gapTime": 0,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 116,
+                        "userId": "7d0a9335-412f-4156-b1d0-af3b7214558c",
+                        "userFullName": "Weronika Ciesiolka",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 4320415,
+                        "gapTime": 209063,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 121,
+                        "userId": "f60f9555-3f94-11ee-b0f9-066d4aa1673f",
+                        "userFullName": "Lisa Weinert",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belgium.png",
+                        "finishedTime": 4370812,
+                        "gapTime": 259460,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 138,
+                        "userId": "ea288bd3-7206-11ee-8e42-02bbe3eaafd1",
+                        "userFullName": "Dayna Davidson",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 4473531,
+                        "gapTime": 362179,
+                        "categoryId": 3
+                    }
+                ],
+                "finishedTime": 12802579,
+                "gapTime": 1894799,
+                "categoryId": 3,
+                "prizeMoney": "USD\u00a0490"
+            },
+            {
+                "rank": 28,
+                "teamId": "5493ea0d-0603-40be-871a-300897fcec87",
+                "teamName": "FCC WATTWORX",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "players": [
+                    {
+                        "rank": 86,
+                        "userId": "08689cc7-6c1e-401c-aa20-aec16da9f7e0",
+                        "userFullName": "Kimberly Miller",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4193927,
+                        "gapTime": 0,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 101,
+                        "userId": "30347365-a1b9-11ef-a3a3-02bbe3eaafd1",
+                        "userFullName": "Seba Alraai",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/syria.png",
+                        "finishedTime": 4210640,
+                        "gapTime": 16713,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 136,
+                        "userId": "832982a7-c5a7-11ee-b1e4-066d4aa1673f",
+                        "userFullName": "Kathryn Tomkinson",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 4449138,
+                        "gapTime": 255211,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 139,
+                        "userId": "e5f4c2eb-b419-460c-8d8e-c1a558c4f0b2",
+                        "userFullName": "Shanna Martinewski",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 4485262,
+                        "gapTime": 291335,
+                        "categoryId": 4
+                    }
+                ],
+                "finishedTime": 12853705,
+                "gapTime": 1945925,
+                "categoryId": 4,
+                "prizeMoney": "USD\u00a0590"
+            },
+            {
+                "rank": 29,
+                "teamId": "b290e7b9-38fd-43ff-bf26-1457a209011f",
+                "teamName": "FCC PEDALICIOUS",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "players": [
+                    {
+                        "rank": 108,
+                        "userId": "f9cdbd97-11db-40d3-aaf5-4a647f15f74f",
+                        "userFullName": "Amy Young",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 4256253,
+                        "gapTime": 0,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 112,
+                        "userId": "173ef1eb-6970-11f0-9cc1-02bbe3eaafd1",
+                        "userFullName": "femke vaessen",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/netherlands.png",
+                        "finishedTime": 4296183,
+                        "gapTime": 39930,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 132,
+                        "userId": "47d4752e-f695-11ee-ac69-066d4aa1673f",
+                        "userFullName": "Palma Mongelli",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
+                        "finishedTime": 4431810,
+                        "gapTime": 175557,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 143,
+                        "userId": "d32a1551-526c-11ee-9f19-02bbe3eaafd1",
+                        "userFullName": "Natalija Anderluh",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/slovenia.png",
+                        "finishedTime": 4506877,
+                        "gapTime": 250624,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 145,
+                        "userId": "5dc54915-a5c7-11ef-bcac-06c5fa4c0029",
+                        "userFullName": "Lenka Petrova",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/czech_republic.png",
+                        "finishedTime": 4531291,
+                        "gapTime": 275038,
+                        "categoryId": 4
+                    }
+                ],
+                "finishedTime": 12984246,
+                "gapTime": 2076466,
+                "categoryId": 4,
+                "prizeMoney": "USD\u00a0470"
+            },
+            {
+                "rank": 30,
+                "teamId": "6ad00a8d-6d28-4d2b-8754-0c079e50cb50",
+                "teamName": "FCC UNITED TEMPO",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
+                "players": [
+                    {
+                        "rank": 74,
+                        "userId": "16f50f09-fd51-475c-af9e-b365a0c74ef0",
+                        "userFullName": "Heather Shanks",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/scotland.png",
+                        "finishedTime": 4064476,
+                        "gapTime": 0,
+                        "categoryId": 2
+                    },
+                    {
+                        "rank": 84,
+                        "userId": "0440e74a-a25b-11ee-bd0e-066d4aa1673f",
+                        "userFullName": "Alice Lethbridge",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_kingdom.png",
+                        "finishedTime": 4180938,
+                        "gapTime": 116462,
+                        "categoryId": 2
+                    },
+                    {
+                        "rank": 159,
+                        "userId": "50a1f146-2811-11ef-a12e-02bbe3eaafd1",
+                        "userFullName": "Larissa Heijboer",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/netherlands.png",
+                        "finishedTime": 4758022,
+                        "gapTime": 693546,
+                        "categoryId": 2
+                    }
+                ],
+                "finishedTime": 13003436,
+                "gapTime": 2095656,
+                "categoryId": 2,
+                "prizeMoney": "-"
+            },
+            {
+                "rank": 31,
+                "teamId": "31598743-cb6c-415a-b171-660358c34b08",
+                "teamName": "FCC SPEED SQUAD",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/106_XfnyqzKjygqiVexa9R5tfNOQYQmYG9cgdqkPlxsT.png",
+                "players": [
+                    {
+                        "rank": 91,
+                        "userId": "48afb11e-586c-11ee-bdac-06c5fa4c0029",
+                        "userFullName": "Valentina Disegna",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
+                        "finishedTime": 4204134,
+                        "gapTime": 0,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 118,
+                        "userId": "a586afdb-edf2-11ee-946b-06c5fa4c0029",
+                        "userFullName": "Gina van Rossum",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/netherlands.png",
+                        "finishedTime": 4320579,
+                        "gapTime": 116445,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 167,
+                        "userId": "c36d1c2f-d30c-11ee-b1e4-066d4aa1673f",
+                        "userFullName": "Hana Pekarkova",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/czech_republic.png",
+                        "finishedTime": 4840067,
+                        "gapTime": 635933,
+                        "categoryId": 3
+                    },
+                    {
+                        "rank": 172,
+                        "userId": "db00d699-af59-11ef-9360-06c5fa4c0029",
+                        "userFullName": "Katerina Krausova",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/czech_republic.png",
+                        "finishedTime": 4911838,
+                        "gapTime": 707704,
+                        "categoryId": 3
+                    }
+                ],
+                "finishedTime": 13364780,
+                "gapTime": 2457000,
+                "categoryId": 3,
+                "prizeMoney": "-"
+            },
+            {
+                "rank": 32,
+                "teamId": "cc81f247-d03a-4ed9-b68a-9d3858b5ef3f",
+                "teamName": "FCC PEDAL ARTISTS",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/151_vR8LJ9HceYuk1G7rMy0G7F2HPB8TUFRhTWEDYhy6.png",
                 "players": [
                     {
-                        "rank": 157,
-                        "userId": "16ec71d9-6613-11ee-8b4a-066d4aa1673f",
-                        "userFullName": "Nikola Savic",
+                        "rank": 129,
+                        "userId": "f8d5ff23-4759-11ef-a210-02bbe3eaafd1",
+                        "userFullName": "Karen Van de rakt",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/serbia.png",
-                        "finishedTime": 5519864,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/netherlands.png",
+                        "finishedTime": 4428413,
                         "gapTime": 0,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 135,
+                        "userId": "81d1f14e-f8df-420a-9303-07d509f43dd2",
+                        "userFullName": "Maria Elvira Wilhelm",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
+                        "finishedTime": 4442692,
+                        "gapTime": 14279,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 154,
+                        "userId": "8d68b64b-8764-4442-b458-5f1a71f51e8e",
+                        "userFullName": "Anta Damniece",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/latvia.png",
+                        "finishedTime": 4733592,
+                        "gapTime": 305179,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": -1,
+                        "userId": "13aa0c34-c62b-11f0-ae8e-06c5fa4c0029",
+                        "userFullName": "Ewa Scierska",
+                        "selectionStatus": "ANL",
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 0,
+                        "gapTime": 0,
+                        "categoryId": 5
+                    }
+                ],
+                "finishedTime": 13604697,
+                "gapTime": 2696917,
+                "categoryId": 5,
+                "prizeMoney": "USD\u00a01,230"
+            },
+            {
+                "rank": 33,
+                "teamId": "6eeae882-67f2-48e8-af3a-0aee50950bb4",
+                "teamName": "RIOT 2B",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/105_UBMbbTRAzJvg4AUHEWEvE4hjDPKjPHuioTxWEBJQ.png",
+                "players": [
+                    {
+                        "rank": 50,
+                        "userId": "dbbf48e5-cd71-11f0-bfe4-06c5fa4c0029",
+                        "userFullName": "Christie Tracy",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 3928269,
+                        "gapTime": 0,
+                        "categoryId": 2
+                    },
+                    {
+                        "rank": 124,
+                        "userId": "95622501-7745-11ee-a397-06c5fa4c0029",
+                        "userFullName": "Julia Montgomery",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 4399712,
+                        "gapTime": 471443,
+                        "categoryId": 2
+                    },
+                    {
+                        "rank": 188,
+                        "userId": "db3ff1d0-43f7-416c-930d-5a351c4bb5d8",
+                        "userFullName": "Brittney Litton",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 5282132,
+                        "gapTime": 1353863,
+                        "categoryId": 2
+                    }
+                ],
+                "finishedTime": 13610113,
+                "gapTime": 2702333,
+                "categoryId": 2,
+                "prizeMoney": "-"
+            },
+            {
+                "rank": 34,
+                "teamId": "cafdd0b9-0595-456c-a8b4-cb4ea449ea75",
+                "teamName": "PEDAL DANCERS",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/151_vR8LJ9HceYuk1G7rMy0G7F2HPB8TUFRhTWEDYhy6.png",
+                "players": [
+                    {
+                        "rank": 141,
+                        "userId": "ef290485-9183-11ee-bd0e-066d4aa1673f",
+                        "userFullName": "Emma Sonerson",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 4493846,
+                        "gapTime": 0,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 146,
+                        "userId": "502e2ac0-c774-11ed-a669-0646d4e99f19",
+                        "userFullName": "Natalia Becerra",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4544165,
+                        "gapTime": 50319,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 148,
+                        "userId": "f87dbe8c-c62e-4d83-a9a5-4afcf22c5d44",
+                        "userFullName": "Johanna Warren",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
+                        "finishedTime": 4659467,
+                        "gapTime": 165621,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 149,
+                        "userId": "ec94a78c-91f2-416e-ad68-4b2a06d433bf",
+                        "userFullName": "Isabel Alzate",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4670011,
+                        "gapTime": 176165,
+                        "categoryId": 5
+                    }
+                ],
+                "finishedTime": 13697478,
+                "gapTime": 2789698,
+                "categoryId": 5,
+                "prizeMoney": "USD\u00a0890"
+            },
+            {
+                "rank": 35,
+                "teamId": "c1bcbbc7-b7c6-4a8e-989e-9cdfa339c88f",
+                "teamName": "CYCLING DISTRICT 5 ALPHA",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/151_vR8LJ9HceYuk1G7rMy0G7F2HPB8TUFRhTWEDYhy6.png",
+                "players": [
+                    {
+                        "rank": 137,
+                        "userId": "6fd272ff-b118-456d-8f18-0738aa31f3da",
+                        "userFullName": "Marita Isokallio",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
+                        "finishedTime": 4463425,
+                        "gapTime": 0,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 144,
+                        "userId": "f00aeabf-f9fb-11f0-8164-06c5fa4c0029",
+                        "userFullName": "Ida Fredholm",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/norway.png",
+                        "finishedTime": 4527766,
+                        "gapTime": 64341,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 153,
+                        "userId": "8db294ec-fe7e-11ef-8548-066d4aa1673f",
+                        "userFullName": "Helia Santos",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/portugal.png",
+                        "finishedTime": 4724542,
+                        "gapTime": 261117,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 156,
+                        "userId": "93a6523e-1b7c-11ef-9259-02bbe3eaafd1",
+                        "userFullName": "Emma Pinto",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
+                        "finishedTime": 4746584,
+                        "gapTime": 283159,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 158,
+                        "userId": "244e7137-0569-11ef-9e45-066d4aa1673f",
+                        "userFullName": "Jackeline Almeida",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 4754889,
+                        "gapTime": 291464,
+                        "categoryId": 5
+                    }
+                ],
+                "finishedTime": 13715733,
+                "gapTime": 2807953,
+                "categoryId": 5,
+                "prizeMoney": "USD\u00a0710"
+            },
+            {
+                "rank": 36,
+                "teamId": "d397fd5c-3116-4988-86f8-2943ef65634f",
+                "teamName": "FCC WATT WARRIORS",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/109_uDYFgwMTtD3Fp2QSlG4YuoqHMdjN3w95I3OHLc6p.png",
+                "players": [
+                    {
+                        "rank": 119,
+                        "userId": "b0ce9a5a-db9c-4c87-8c99-1c69b7f55678",
+                        "userFullName": "Martina Erjavec",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/slovenia.png",
+                        "finishedTime": 4357097,
+                        "gapTime": 0,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 155,
+                        "userId": "2792db3a-029f-4257-9108-3e6aee21a110",
+                        "userFullName": "Tanja Hohwieler ",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 4740649,
+                        "gapTime": 383552,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 157,
+                        "userId": "47f03d7d-b035-4c43-aa3d-3e39e14a203c",
+                        "userFullName": "jacqui giuliano",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 4749352,
+                        "gapTime": 392255,
+                        "categoryId": 4
+                    },
+                    {
+                        "rank": 186,
+                        "userId": "4e8d5efe-c9c7-4c69-86be-4d9d807aa354",
+                        "userFullName": "Luisa Schulz",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 5262654,
+                        "gapTime": 905557,
+                        "categoryId": 4
+                    }
+                ],
+                "finishedTime": 13847098,
+                "gapTime": 2939318,
+                "categoryId": 4,
+                "prizeMoney": "USD\u00a0295"
+            },
+            {
+                "rank": 37,
+                "teamId": "1f637499-0f78-40c5-90b1-a6719f36035d",
+                "teamName": "AERONOVA",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/151_vR8LJ9HceYuk1G7rMy0G7F2HPB8TUFRhTWEDYhy6.png",
+                "players": [
+                    {
+                        "rank": 133,
+                        "userId": "635f1d94-042a-11ef-96c1-02bbe3eaafd1",
+                        "userFullName": "Brooke Samuhel",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 4433656,
+                        "gapTime": 0,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": 142,
+                        "userId": "bb188b3e-e7a6-4376-84e7-bd86f9d2e5d2",
+                        "userFullName": "Amy Sudibyo",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 4506824,
+                        "gapTime": 73168,
                         "categoryId": 5
                     },
                     {
                         "rank": 177,
-                        "userId": "2f9706eb-7fbc-11ee-807f-02bbe3eaafd1",
-                        "userFullName": "Christopher Bengtson",
+                        "userId": "5618611e-e328-11ef-b334-06c5fa4c0029",
+                        "userFullName": "Amber Johnson",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
-                        "finishedTime": 5639491,
-                        "gapTime": 119627,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
+                        "finishedTime": 5079673,
+                        "gapTime": 646017,
                         "categoryId": 5
                     },
                     {
-                        "rank": 292,
-                        "userId": "5adb7bfb-ecb3-11f0-8909-066d4aa1673f",
-                        "userFullName": "Matthias Kreuz",
+                        "rank": 179,
+                        "userId": "da1420a4-798f-424c-9b63-0dba46e70190",
+                        "userFullName": "bridget bremner",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 6444482,
-                        "gapTime": 924618,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
+                        "finishedTime": 5160294,
+                        "gapTime": 726638,
                         "categoryId": 5
                     }
                 ],
-                "finishedTime": 17603837,
-                "gapTime": 3491021,
+                "finishedTime": 14020153,
+                "gapTime": 3112373,
                 "categoryId": 5,
-                "prizeMoney": "-"
+                "prizeMoney": "USD\u00a0430"
             },
             {
-                "rank": 18,
-                "teamId": "5558526a-4f6f-45f7-98e6-dce311a24037",
-                "teamName": "QUO VADIS",
+                "rank": 38,
+                "teamId": "77d47157-4865-48f1-851c-5798b8bb8607",
+                "teamName": "VELOCITY VIPERS 6",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/152_Aa10eLcqexd2kAmnWVYmJVNpspDJmTG8U2iodq2j.png",
                 "players": [
                     {
-                        "rank": 212,
-                        "userId": "3bd3bfc2-f06e-419a-ac73-cb05a5064bb7",
-                        "userFullName": "Krystian Korzanski",
+                        "rank": 161,
+                        "userId": "e91f0c41-1053-11ee-8665-0646d4e99f19",
+                        "userFullName": "Angie Cristina Gaviria Arias",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 5852398,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4830701,
                         "gapTime": 0,
                         "categoryId": 6
                     },
                     {
-                        "rank": 219,
-                        "userId": "87e99393-992b-11ef-beb3-066d4aa1673f",
-                        "userFullName": "Mateusz Cierpiol",
+                        "rank": 164,
+                        "userId": "7c754aec-ff58-11ed-933e-026dfe51841d",
+                        "userFullName": "Cinthia Michele Narvaez Hoyos",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 5890429,
-                        "gapTime": 38031,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4832366,
+                        "gapTime": 1665,
                         "categoryId": 6
                     },
                     {
-                        "rank": 222,
-                        "userId": "bb991a8d-946b-11f0-8819-06c5fa4c0029",
-                        "userFullName": "Grzegorz Kubiak",
+                        "rank": 166,
+                        "userId": "79b7d482-1354-44c6-bc76-f16c4e78a0d8",
+                        "userFullName": "Isabela Giraldo",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 5896689,
-                        "gapTime": 44291,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 4836462,
+                        "gapTime": 5761,
+                        "categoryId": 6
+                    },
+                    {
+                        "rank": 175,
+                        "userId": "a1502b92-e33a-4843-84eb-38baef8f569d",
+                        "userFullName": "\u00c9lida Macharete",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 5001767,
+                        "gapTime": 171066,
+                        "categoryId": 6
+                    },
+                    {
+                        "rank": 193,
+                        "userId": "e1b3cd91-9c19-4c7d-92ce-85f6288c92a1",
+                        "userFullName": "Julieth Narvaez",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 5357472,
+                        "gapTime": 526771,
                         "categoryId": 6
                     }
                 ],
-                "finishedTime": 17639516,
-                "gapTime": 3526700,
+                "finishedTime": 14499529,
+                "gapTime": 3591749,
                 "categoryId": 6,
-                "prizeMoney": "-"
+                "prizeMoney": "USD\u00a0740"
             },
             {
-                "rank": 19,
-                "teamId": "c802c38e-d843-47b9-bef2-8e2af6e541b8",
-                "teamName": "LEVEL RACING 6A",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/152_Aa10eLcqexd2kAmnWVYmJVNpspDJmTG8U2iodq2j.png",
-                "players": [
-                    {
-                        "rank": 238,
-                        "userId": "fdd9e891-54ee-11ee-9f19-02bbe3eaafd1",
-                        "userFullName": "Jeff Rooney",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
-                        "finishedTime": 5987247,
-                        "gapTime": 0,
-                        "categoryId": 6
-                    },
-                    {
-                        "rank": 247,
-                        "userId": "2d56eb60-cf14-11ed-a669-0646d4e99f19",
-                        "userFullName": "Ola Warren",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
-                        "finishedTime": 6041305,
-                        "gapTime": 54058,
-                        "categoryId": 6
-                    },
-                    {
-                        "rank": 250,
-                        "userId": "80db4812-c047-11ef-8cf1-066d4aa1673f",
-                        "userFullName": "Malte Neumann",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 6053430,
-                        "gapTime": 66183,
-                        "categoryId": 6
-                    },
-                    {
-                        "rank": 313,
-                        "userId": "5f5f25db-2d53-11ed-a043-026dfe51841d",
-                        "userFullName": "Fredrik Sj\u00f6berg",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/sweden.png",
-                        "finishedTime": 6973567,
-                        "gapTime": 986320,
-                        "categoryId": 6
-                    }
-                ],
-                "finishedTime": 18081982,
-                "gapTime": 3969166,
-                "categoryId": 6,
-                "prizeMoney": "-"
-            },
-            {
-                "rank": 20,
-                "teamId": "7dec4acf-5014-4463-affb-3088ae5aad42",
-                "teamName": "DIRT FIRST",
+                "rank": 39,
+                "teamId": "f6045cb3-d103-493c-919a-e17eca59aaab",
+                "teamName": "CYCLING DISTRICT 5",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/151_vR8LJ9HceYuk1G7rMy0G7F2HPB8TUFRhTWEDYhy6.png",
                 "players": [
                     {
-                        "rank": 142,
-                        "userId": "339fc76e-766d-4316-9188-73b8fac5a11a",
-                        "userFullName": "Grzesiek Ligeza",
+                        "rank": 134,
+                        "userId": "e0930435-868c-11f0-85cf-066d4aa1673f",
+                        "userFullName": "Katarzyna Polakowska",
                         "selectionStatus": null,
                         "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 5459568,
+                        "finishedTime": 4434258,
                         "gapTime": 0,
                         "categoryId": 5
                     },
                     {
-                        "rank": 174,
-                        "userId": "694a35c1-4ceb-11ed-8273-026dfe51841d",
-                        "userFullName": "David Young",
+                        "rank": 178,
+                        "userId": "c9c99a6f-179c-4429-89b1-feb38f1b514a",
+                        "userFullName": "Katja Jaaskelainen",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
-                        "finishedTime": 5630684,
-                        "gapTime": 171116,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/finland.png",
+                        "finishedTime": 5088461,
+                        "gapTime": 654203,
                         "categoryId": 5
                     },
                     {
-                        "rank": 315,
-                        "userId": "b9b6129b-4e20-46ae-b32c-e170c0603f51",
-                        "userFullName": "Krzysztof Fizyta",
+                        "rank": 181,
+                        "userId": "5c3800d6-e344-11ef-b334-06c5fa4c0029",
+                        "userFullName": "Carla Oltrogge",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_states_of_america.png",
-                        "finishedTime": 7033086,
-                        "gapTime": 1573518,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 5224176,
+                        "gapTime": 789918,
+                        "categoryId": 5
+                    },
+                    {
+                        "rank": -1,
+                        "userId": "de7ac1a8-0086-401c-bd34-853b2314d92e",
+                        "userFullName": "Leydy Giraldo Montoya",
+                        "selectionStatus": "ANL",
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 0,
+                        "gapTime": 0,
                         "categoryId": 5
                     }
                 ],
-                "finishedTime": 18123338,
-                "gapTime": 4010522,
+                "finishedTime": 14746895,
+                "gapTime": 3839115,
                 "categoryId": 5,
-                "prizeMoney": "-"
+                "prizeMoney": "USD\u00a0350"
             },
             {
-                "rank": 21,
-                "teamId": "2a123538-89d5-4c76-b1f1-f81a6d2f1398",
-                "teamName": "BMC6A",
+                "rank": 40,
+                "teamId": "0d47d897-60de-4c63-a644-1f881c906cd1",
+                "teamName": "CYCLING DISTRICT 6",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/152_Aa10eLcqexd2kAmnWVYmJVNpspDJmTG8U2iodq2j.png",
                 "players": [
                     {
-                        "rank": 244,
-                        "userId": "d0947cba-0ae3-11ee-be28-069e1676ee0b",
-                        "userFullName": "Grzegorz Gacek",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 6036517,
-                        "gapTime": 0,
-                        "categoryId": 6
-                    },
-                    {
-                        "rank": 252,
-                        "userId": "9852ac2c-6390-11ef-8a17-066d4aa1673f",
-                        "userFullName": "drew abbott",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
-                        "finishedTime": 6054824,
-                        "gapTime": 18307,
-                        "categoryId": 6
-                    },
-                    {
-                        "rank": 267,
-                        "userId": "8e5a6843-88f4-11ec-a043-026dfe51841d",
-                        "userFullName": "Stephan Tytgadt",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belgium.png",
-                        "finishedTime": 6149560,
-                        "gapTime": 113043,
-                        "categoryId": 6
-                    },
-                    {
-                        "rank": 289,
-                        "userId": "edba954a-2e07-45f4-9b5c-4b5b83c77178",
-                        "userFullName": "Petr Otruba",
+                        "rank": 160,
+                        "userId": "d1fc3eac-a66d-11ef-bcac-06c5fa4c0029",
+                        "userFullName": "Barbora Herren",
                         "selectionStatus": null,
                         "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/czech_republic.png",
-                        "finishedTime": 6394263,
-                        "gapTime": 357746,
-                        "categoryId": 6
-                    }
-                ],
-                "finishedTime": 18240901,
-                "gapTime": 4128085,
-                "categoryId": 6,
-                "prizeMoney": "-"
-            },
-            {
-                "rank": 22,
-                "teamId": "af82cfa4-831b-427c-a525-f45c9992c558",
-                "teamName": "BMC6B",
-                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/152_Aa10eLcqexd2kAmnWVYmJVNpspDJmTG8U2iodq2j.png",
-                "players": [
-                    {
-                        "rank": 220,
-                        "userId": "97002190-b305-11ed-81b4-026dfe51841d",
-                        "userFullName": "Cosimo Damiano Giorg Mangino",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/italy.png",
-                        "finishedTime": 5894902,
+                        "finishedTime": 4828957,
                         "gapTime": 0,
                         "categoryId": 6
                     },
                     {
-                        "rank": 253,
-                        "userId": "ed93c560-177d-11ef-9259-02bbe3eaafd1",
-                        "userFullName": "Michael Rademacher",
+                        "rank": 163,
+                        "userId": "79a80429-c621-11f0-ae8e-06c5fa4c0029",
+                        "userFullName": "Marika Knoetze",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 6058629,
-                        "gapTime": 163727,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/south_africa.png",
+                        "finishedTime": 4830951,
+                        "gapTime": 1994,
                         "categoryId": 6
                     },
                     {
-                        "rank": 307,
-                        "userId": "7e308423-0b94-4495-a12d-26dfc5176d93",
-                        "userFullName": "Michael Cuypers",
+                        "rank": 184,
+                        "userId": "9ed26d56-6d5d-11ed-81b4-026dfe51841d",
+                        "userFullName": "Angelica Limbaga",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/belgium.png",
-                        "finishedTime": 6786289,
-                        "gapTime": 891387,
-                        "categoryId": 6
-                    },
-                    {
-                        "rank": 308,
-                        "userId": "03cfb72b-b87a-11ef-9dcf-02bbe3eaafd1",
-                        "userFullName": "Tomasz Mirek",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 6786720,
-                        "gapTime": 891818,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/united_arab_emirates.png",
+                        "finishedTime": 5238692,
+                        "gapTime": 409735,
                         "categoryId": 6
                     }
                 ],
-                "finishedTime": 18739820,
-                "gapTime": 4627004,
+                "finishedTime": 14898600,
+                "gapTime": 3990820,
                 "categoryId": 6,
-                "prizeMoney": "-"
+                "prizeMoney": "USD\u00a0530"
             },
             {
-                "rank": 23,
-                "teamId": "0ac9ec80-c262-4004-958a-c85fe7808de0",
-                "teamName": "LEVEL RACING 6B",
+                "rank": 41,
+                "teamId": "297e2d95-bb94-4cfd-bb89-ff0eebee0c43",
+                "teamName": "CHERRY PIES",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/152_Aa10eLcqexd2kAmnWVYmJVNpspDJmTG8U2iodq2j.png",
                 "players": [
+                    {
+                        "rank": 174,
+                        "userId": "6f4d2cea-5167-40fd-8893-a5e91dbcf82a",
+                        "userFullName": "Georgina Jones",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/new_zealand.png",
+                        "finishedTime": 4949227,
+                        "gapTime": 0,
+                        "categoryId": 6
+                    },
+                    {
+                        "rank": 185,
+                        "userId": "5e0f049e-da74-4402-9e96-ec29cde3c7ed",
+                        "userFullName": "Jaqueline Kirchner",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 5239641,
+                        "gapTime": 290414,
+                        "categoryId": 6
+                    },
+                    {
+                        "rank": 187,
+                        "userId": "65a20acd-a90d-11ec-a043-026dfe51841d",
+                        "userFullName": "Adriana Barco",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/colombia.png",
+                        "finishedTime": 5277062,
+                        "gapTime": 327835,
+                        "categoryId": 6
+                    },
+                    {
+                        "rank": 191,
+                        "userId": "986880a5-b51c-11ec-a043-026dfe51841d",
+                        "userFullName": "Phanutchakorn Sarasuk",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/thailand.png",
+                        "finishedTime": 5332263,
+                        "gapTime": 383036,
+                        "categoryId": 6
+                    }
+                ],
+                "finishedTime": 15465930,
+                "gapTime": 4558150,
+                "categoryId": 6,
+                "prizeMoney": "USD\u00a0430"
+            },
+            {
+                "rank": 42,
+                "teamId": "3c1434ab-6b6c-472c-8a3e-0a73a61ba890",
+                "teamName": "FCC CADENCE CREW",
+                "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/152_Aa10eLcqexd2kAmnWVYmJVNpspDJmTG8U2iodq2j.png",
+                "players": [
+                    {
+                        "rank": 173,
+                        "userId": "cc27d750-3ad6-11ef-bafd-066d4aa1673f",
+                        "userFullName": "Silvie Timmers-Coenen",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/netherlands.png",
+                        "finishedTime": 4947718,
+                        "gapTime": 0,
+                        "categoryId": 6
+                    },
+                    {
+                        "rank": 182,
+                        "userId": "f1a2c7f4-939a-45f8-8ae6-515576587723",
+                        "userFullName": "Monika Hajduk",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
+                        "finishedTime": 5226652,
+                        "gapTime": 278934,
+                        "categoryId": 6
+                    },
+                    {
+                        "rank": 197,
+                        "userId": "c997fbd6-1d5d-11f0-a860-02bbe3eaafd1",
+                        "userFullName": "Sonja Weber",
+                        "selectionStatus": null,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/switzerland.png",
+                        "finishedTime": 5589653,
+                        "gapTime": 641935,
+                        "categoryId": 6
+                    },
                     {
                         "rank": 198,
-                        "userId": "1e10366f-56cc-11ee-bdac-06c5fa4c0029",
-                        "userFullName": "Vladislav German",
+                        "userId": "6adf8e64-08d4-11f0-8dfa-066d4aa1673f",
+                        "userFullName": "Melissa Scrivin",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/slovakia.png",
-                        "finishedTime": 5771951,
-                        "gapTime": 0,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/scotland.png",
+                        "finishedTime": 5679168,
+                        "gapTime": 731450,
                         "categoryId": 6
                     },
                     {
-                        "rank": 273,
-                        "userId": "3ac9cd34-5473-11ee-9f19-02bbe3eaafd1",
-                        "userFullName": "Simon Patzel",
+                        "rank": 203,
+                        "userId": "f4b52612-799e-11ee-807f-02bbe3eaafd1",
+                        "userFullName": "Berdien Driscoll",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
-                        "finishedTime": 6238316,
-                        "gapTime": 466365,
-                        "categoryId": 6
-                    },
-                    {
-                        "rank": 304,
-                        "userId": "5f310d75-716c-4e9f-8066-fd5a64274726",
-                        "userFullName": "Wojciech Sebzda",
-                        "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/poland.png",
-                        "finishedTime": 6744993,
-                        "gapTime": 973042,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/ireland.png",
+                        "finishedTime": 6791678,
+                        "gapTime": 1843960,
                         "categoryId": 6
                     }
                 ],
-                "finishedTime": 18755260,
-                "gapTime": 4642444,
+                "finishedTime": 15764023,
+                "gapTime": 4856243,
                 "categoryId": 6,
-                "prizeMoney": "-"
+                "prizeMoney": "USD\u00a0250"
             },
             {
-                "rank": 24,
-                "teamId": "c81ebb7f-6ad3-4e1c-85ed-2b6721eefe3b",
-                "teamName": "BMC SPINERGY",
+                "rank": 43,
+                "teamId": "db894641-849e-44cd-8441-6d7fc39d6286",
+                "teamName": "KITTYHAWK  RACING",
                 "jerseyImage": "https://dr1p4fknkqe6w.cloudfront.net/jersies/152_Aa10eLcqexd2kAmnWVYmJVNpspDJmTG8U2iodq2j.png",
                 "players": [
                     {
-                        "rank": 195,
-                        "userId": "c471d1eb-5aec-11ef-93dd-06c5fa4c0029",
-                        "userFullName": "Brent Gibson",
+                        "rank": 199,
+                        "userId": "7143ea50-485e-494d-9fe2-16c522254049",
+                        "userFullName": "Marineiva Ebeling Michels",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
-                        "finishedTime": 5771668,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 5703904,
                         "gapTime": 0,
                         "categoryId": 6
                     },
                     {
-                        "rank": 297,
-                        "userId": "fc304aea-265a-11ef-b47e-066d4aa1673f",
-                        "userFullName": "Andrew Bain",
+                        "rank": 200,
+                        "userId": "027a3c19-a0e2-4ede-9c8a-e4c6b20f9194",
+                        "userFullName": "Sarajane Voos",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
-                        "finishedTime": 6502009,
-                        "gapTime": 730341,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/brazil.png",
+                        "finishedTime": 5812575,
+                        "gapTime": 108671,
                         "categoryId": 6
                     },
                     {
-                        "rank": 320,
-                        "userId": "aafa1fe6-da49-11ed-a669-0646d4e99f19",
-                        "userFullName": "Simon Llewellyn",
+                        "rank": 202,
+                        "userId": "25dc1e76-9e91-4655-b6d5-b08d2667b83e",
+                        "userFullName": "Silvia Sch\u00fcring",
                         "selectionStatus": null,
-                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/australia.png",
-                        "finishedTime": 7403548,
-                        "gapTime": 1631880,
+                        "userCountryFlag": "https://service18.mywhoosh.com/assets/flags/germany.png",
+                        "finishedTime": 6656645,
+                        "gapTime": 952741,
                         "categoryId": 6
                     }
                 ],
-                "finishedTime": 19677225,
-                "gapTime": 5564409,
+                "finishedTime": 18173124,
+                "gapTime": 7265344,
                 "categoryId": 6,
-                "prizeMoney": "-"
+                "prizeMoney": "USD\u00a0210"
             }
         ],
         "displayPrizeMoney": true

@@ -53,9 +53,9 @@ CAT_HEADER_HEIGHT = 80               # Kasvatettu otsikkokorkeus
 # Sarakkeet (X-koordinaatit)
 COL_RANK_X = 40      # Vasen
 COL_NAME_X = 120     # Vasen (siirretty vasemmalle antamaan tilaa nimelle)
-COL_TIME_X_ALIGN = 600 # Oikea tasaus (loppupiste) (siirretty oikealle)
-COL_WKG_X_ALIGN = 640 # W/kg Oikea tasaus
-COL_TEAM_X = 640     # Vasen (tuotiin lähemmäs aikaa)
+COL_TIME_X_ALIGN = 525 # Oikea tasaus (aika)
+COL_WKG_X_ALIGN = 650 # W/kg Oikea tasaus
+COL_TEAM_X = 680     # Vasen (tiimin alku)
 COL_PRIZE_X_ALIGN = 1040 # Oikea tasaus (loppupiste) - LEVENNETTY
 PADDING = 15         # Minimum spacing between columns
  
@@ -158,6 +158,23 @@ def draw_race_info_panel(img, draw, kisarata_data, silhouette_img, scale_ratio, 
 
     if silhouette_img:
         orig_w, orig_h = silhouette_img.size
+        
+        # Etsitään näkyvän silhuetin todelliset rajat (ei läpinäkyvää aluetta)
+        bbox = silhouette_img.getbbox()
+        if bbox:
+            vis_left, vis_top, vis_right, vis_bottom = bbox
+            vis_w = vis_right - vis_left
+            
+            # Leikataan noin 1% nimenomaan näkyvän viivan alusta ja lopusta
+            crop_pixels = int(vis_w * 0.02)
+            if crop_pixels > 0:
+                new_left = vis_left + crop_pixels
+                new_right = vis_right - crop_pixels
+                
+                if new_left < new_right:
+                    silhouette_img = silhouette_img.crop((new_left, 0, new_right, orig_h))
+                    orig_w, orig_h = silhouette_img.size
+            
         ratio = min(sil_max_w / orig_w, sil_max_h / orig_h)
         sil_w = int(orig_w * ratio)
         sil_h = int(orig_h * ratio)
@@ -171,9 +188,26 @@ def draw_race_info_panel(img, draw, kisarata_data, silhouette_img, scale_ratio, 
 
     # 1. Radan Nimi (Silhuetin yläpuolelle, selvästi limittäin silhuetin kanssa)
     radan_nimi_y = panel_y + int(10 * scale_ratio) # Painettu alemmas silhuetin päälle
-    bbox = draw.textbbox((0, 0), location, font=font_info_large)
+
+    # Dynaaminen fonttikoko (lyhennä jos liian leveä)
+    max_nimi_w = (left_block_x - 20) * 2
+    current_size = int(22 * scale_ratio)
+    current_font = font_info_large
+    
+    while current_size >= 10:
+        bbox = draw.textbbox((0, 0), location, font=current_font)
+        nimi_w = bbox[2] - bbox[0]
+        if nimi_w <= max_nimi_w:
+            break
+        current_size -= 1
+        try:
+            current_font = ImageFont.truetype(FONT_BOLD, current_size)
+        except IOError:
+            break
+
+    bbox = draw.textbbox((0, 0), location, font=current_font)
     nimi_w = bbox[2] - bbox[0]
-    draw.text((left_block_x - (nimi_w // 2), radan_nimi_y), location, font=font_info_large, fill="#FFFFFF", stroke_width=2, stroke_fill="#000000")
+    draw.text((left_block_x - (nimi_w // 2), radan_nimi_y), location, font=current_font, fill="#FFFFFF", stroke_width=2, stroke_fill="#000000")
 
     # 2. Pystysarake Oikealle (Silhouette/Left Blockin oikealle puolelle)
     right_block_x = img.width // 2 - int(20 * scale_ratio) # Siirretty vasemmalle lähemmäs silhuettia
@@ -205,13 +239,6 @@ def draw_race_info_panel(img, draw, kisarata_data, silhouette_img, scale_ratio, 
     draw.text((right_block_x, col_y), "📏", font=font_emoji, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
     distance_str = f"{distance} km"
     draw.text((right_block_x + emoji_offset, col_y), distance_str, font=font_info_med, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
-    
-    if laps:
-        bbox = draw.textbbox((0, 0), distance_str, font=font_info_med)
-        dist_w = bbox[2] - bbox[0]
-        laps_x = right_block_x + emoji_offset + dist_w + int(20 * scale_ratio)
-        draw.text((laps_x, col_y), "♻️", font=font_emoji, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
-        draw.text((laps_x + emoji_offset, col_y), f"{laps}", font=font_info_med, fill="#FFFFFF", stroke_width=1, stroke_fill="#000000")
 
     col_y += line_spacing
     
@@ -475,6 +502,11 @@ def create_images(json_file=JSON_FILE, kisarata_gender="men", is_final=False):
     bbox = draw.textbbox((0, 0), "AIKA", font=font_header)
     w = bbox[2] - bbox[0]
     draw.text((COL_TIME_X_ALIGN - w, y - 40), "AIKA", font=font_header, fill=COLOR_HEADER_TEXT)
+
+    # Laske "W/kg" leveys ja sijoita oikein
+    bbox = draw.textbbox((0, 0), "W/kg", font=font_header)
+    w = bbox[2] - bbox[0]
+    draw.text((COL_WKG_X_ALIGN - w, y - 40), "W/kg", font=font_header, fill=COLOR_HEADER_TEXT)
     
     draw.text((COL_TEAM_X, y - 40), "TIIMI", font=font_header, fill=COLOR_HEADER_TEXT)
     
@@ -526,6 +558,9 @@ def create_images(json_file=JSON_FILE, kisarata_gender="men", is_final=False):
     # Päivitä globaali font_large yhtenäiseen kokoon
     try:
         font_large = ImageFont.truetype(FONT_BOLD, uniform_name_size)
+        font_med = ImageFont.truetype(FONT_REGULAR, uniform_name_size)
+        font_med_bold = ImageFont.truetype(FONT_BOLD, uniform_name_size)
+        font_small = ImageFont.truetype(FONT_REGULAR, uniform_name_size)
     except IOError:
         pass
 
@@ -683,6 +718,15 @@ def create_images(json_file=JSON_FILE, kisarata_gender="men", is_final=False):
         bbox = draw.textbbox((0, 0), time_str, font=font_med)
         w = bbox[2] - bbox[0]
         draw.text((COL_TIME_X_ALIGN - w, y), time_str, font=font_med, fill=txt_color)
+        
+        # W/kg (Oikea tasaus)
+        raw_wkg = rider.get('wattPerKG', 0)
+        wkg_str = f"{float(raw_wkg):.1f}" if raw_wkg else "-"
+        if status == "ANL" or time_str == "DNF" or time_str == "-":
+            wkg_str = "-"
+        bbox_wkg = draw.textbbox((0, 0), wkg_str, font=font_med)
+        w_wkg = bbox_wkg[2] - bbox_wkg[0]
+        draw.text((COL_WKG_X_ALIGN - w_wkg, y), wkg_str, font=font_med, fill=txt_color)
         
         # Tiimi (Harmaa, pieni) - with dynamic width constraint
         tiimi_color = COLOR_TEXT_DIMMED if is_dimmed else COLOR_TEXT_GRAY
